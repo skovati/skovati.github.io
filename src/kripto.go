@@ -33,14 +33,19 @@ func addCrypto(db *sql.DB, currency string, amount float64) {
 }
 
 func getPortfolio(db *sql.DB) {
+    var sum float64
 	rows, _ := db.Query("SELECT * FROM Portfolio ORDER BY Amount DESC")
 	for rows.Next() {
 		var tempCur string
 		var tempAmt float64
 		rows.Scan(&tempCur, &tempAmt)
         tempPrice := getPrice(tempCur)
+        sum += tempPrice * tempAmt
 		fmt.Printf("%s: %.3f, $%.2f\n", tempCur, tempAmt, tempPrice*tempAmt)
 	}
+    fmt.Println("")
+    fmt.Printf("Total: $%.2f\n", sum)
+    fmt.Println("---------------")
 }
 
 func removeCrypto(db *sql.DB, currency string) {
