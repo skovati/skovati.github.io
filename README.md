@@ -1,2 +1,2 @@
-# skovati.github.io / skovati.com
+# skovati.com
 Welcome to my personal portfolio website!
