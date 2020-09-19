@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
-    "net/http"
-    "io/ioutil"
-    "os"
+  "net/http"
+  "io/ioutil"
+  "os"
 )
 
 /*
@@ -21,8 +21,7 @@ list
 help
 */
 
-const fileName string = "portfolio.json"
-
+var fileName string = string(os.Getenv("HOME")) + "/.portfolio.json"
 
 func main() {
     if len(os.Args) < 2 {
