@@ -23,6 +23,15 @@ help
 
 var fileName string = findFileName()
 
+const colorReset = "\033[0m"
+const colorRed = "\033[31m"
+const colorGreen = "\033[32m"
+const colorYellow = "\033[33m"
+const colorBlue = "\033[34m"
+const colorPurple = "\033[35m"
+const colorCyan = "\033[36m"
+const colorWhite = "\033[37m"
+
 func main() {
     if len(os.Args) < 2 {
         usage()
@@ -63,8 +72,15 @@ func main() {
         removeCrypto(strings.ToLower(os.Args[2]))
         fmt.Println(os.Args[2], "has been removed.")
     case "list":
-        fmt.Println("\nKripto Portfolio:\nCoin, Amount, Value, Market Price")
-        fmt.Println("-------------------------")
+        fmt.Println(
+            colorBlue, "\nKripto Portfolio:", colorReset, "\n\n",
+            colorRed, "Coin", colorReset, "|",
+            colorYellow, "Amount", colorReset, "|",
+            colorGreen, "Value", colorReset, "|",
+            colorPurple, "Market Price", colorReset, "|",
+            colorCyan, "24h Ago", colorReset, "|",
+            colorRed, "7d Ago", colorReset)
+        fmt.Println("---------------------------------------------------------------------------")
         listPortfolio()
         fmt.Println("")
     default:
@@ -150,14 +166,43 @@ func listPortfolio() {
         return
     }
     sum := 0.0
+    sum24 := 0.0
+    sum7D := 0.0
     for s, v := range(portfolio) {
-        price := getPrice(s)
-        fmt.Printf("%s: %.3f, $%.2f, $%.2f\n", strings.Title(s), v, v*price, price)
+        price, price24, price7D, percent24, percent7D := getPrice(s)
+        fmt.Printf("%s%s%s | %s%.3f%s | %s$%.2f%s | %s$%.2f%s | ", colorRed, strings.Title(s), colorReset,
+            colorYellow, v, colorReset,
+            colorGreen, v*price, colorReset,
+            colorPurple, price, colorReset)
+        if(percent24 < 0) {
+            fmt.Printf("%s$%.2f%s(%s%.2f%%%s) | ", colorCyan, price24, colorReset, colorRed, percent24, colorReset)
+        } else {
+            fmt.Printf("%s$%.2f%s(%s%.2f%%%s) | ", colorCyan, price24, colorReset, colorGreen, percent24, colorReset)
+        }
+        if(percent7D < 0) {
+            fmt.Printf("%s$%.2f%s(%s%.2f%%%s)\n", colorRed, price7D, colorReset, colorRed, percent7D, colorReset)
+        } else {
+            fmt.Printf("%s$%.2f%s(%s%.2f%%%s)\n", colorRed, price24, colorReset, colorGreen, percent7D, colorReset)
+        }
         sum += price*v
+        sum24 += price24*v
+        sum7D += price7D*v
     }
-    fmt.Println("-------------------------")
-    fmt.Printf("Total: $%.2f", sum)
-    fmt.Println("")
+    fmt.Println("---------------------------------------------------------------------------")
+    fmt.Printf("\n%sTotal: $%.2f%s\n", colorGreen, sum, colorReset)
+
+    totalPercent24 := ((sum/sum24)-1)*100
+    totalPercent7D := ((sum/sum7D)-1)*100
+    if(totalPercent24 < 0) {
+        fmt.Printf("Total 24h ago: $%.2f(%s%.2f%%%s)\n", sum24, colorRed, totalPercent24, colorReset)
+    } else {
+        fmt.Printf("Total 24h ago: $%.2f(%s%.2f%%%s)\n", sum24, colorGreen, totalPercent24, colorReset)
+    }
+    if(totalPercent24 < 0) {
+        fmt.Printf("Total 7d ago: $%.2f(%s%.2f%%%s)\n", sum7D, colorRed, totalPercent7D, colorReset)
+    } else {
+        fmt.Printf("Total 7d ago: $%.2f(%s%.2f%%%s)\n", sum7D, colorGreen, totalPercent7D, colorReset)
+    }
 }
 
 func isErr(err error) bool {
@@ -167,9 +212,9 @@ func isErr(err error) bool {
     return false
 }
 
-func getPrice(currency string) float64 {
+func getPrice(currency string) (usdPrice, usdPrice24, usdPrice7D, percentChange24, percentChange7D float64) {
     currency = strings.ToLower(currency)
-	url := "https://api.coingecko.com/api/v3/simple/price?ids=" + currency + "&vs_currencies=usd"
+    url := "https://api.coingecko.com/api/v3/coins/" + currency + "?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false"
 	req, err := http.NewRequest("GET", url, nil)
 	if isErr(err) {
         fmt.Println("err")
@@ -183,7 +228,15 @@ func getPrice(currency string) float64 {
 	defer resp.Body.Close()
 	body, _ := ioutil.ReadAll(resp.Body)
 
-	var result map[string]map[string]float64
+	var result map[string]map[string]map[string]float64
 	json.Unmarshal([]byte(body), &result)
-	return result[currency]["usd"]
+
+    usdPrice = result["market_data"]["current_price"]["usd"]
+    percentChange24 = result["market_data"]["price_change_percentage_24h_in_currency"]["usd"]
+    percentChange7D = result["market_data"]["price_change_percentage_7d_in_currency"]["usd"]
+
+    usdPrice24 = usdPrice / (1+(percentChange24/100))
+    usdPrice7D = usdPrice / (1+(percentChange7D/100))
+
+	return
 }
