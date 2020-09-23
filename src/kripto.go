@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
-  "net/http"
-  "io/ioutil"
-  "os"
+    "net/http"
+    "io/ioutil"
+    "os"
 )
 
 /*
@@ -21,7 +21,7 @@ list
 help
 */
 
-var fileName string = string(os.Getenv("HOME")) + "/.portfolio.json"
+var fileName string = findFileName()
 
 func main() {
     if len(os.Args) < 2 {
@@ -66,23 +66,31 @@ func main() {
         fmt.Println("\nKripto Portfolio:\nCoin, Amount, Value, Market Price")
         fmt.Println("-------------------------")
         listPortfolio()
-        fmt.Println("\n")
+        fmt.Println("")
     default:
         usage()
     }
 }
 
+func findFileName() string {
+    fileName, err := os.UserHomeDir()
+    if isErr(err) {
+        fmt.Println("Cannot find an adequate location for portfolio...")
+    }
+    return fileName + "/.portfolio.json"
+}
+
 func usage() {
-    fmt.Println(
+    fmt.Print(
         "\n",
         "Welcome to Kripto!\n\n",
         "commands:\n",
-        "init - create a new portfolio\n", 
+        "init - create a new portfolio\n",
         "add - Use 'kripto add <currency> <amount>' to add a new crypto\n",
         "remove - Use 'kripto remove <currency>' to remove\n",
         "update - Use 'kripto update <currency>' <new amount> to update holdings\n",
         "list - lists current porfolio and holdings\n",
-        "help - show this message\n",
+        "help - show this message\n\n",
     )
 }
 
@@ -149,6 +157,7 @@ func listPortfolio() {
     }
     fmt.Println("-------------------------")
     fmt.Printf("Total: $%.2f", sum)
+    fmt.Println("")
 }
 
 func isErr(err error) bool {
