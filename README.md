@@ -2,6 +2,8 @@
 Simple cryptocurrency tracker written in Go.
 Uses the [CoinGecko](https://www.coingecko.com/en/api) api to fetch real time prices and persistently stores the portfolio in json format.
 
+![](https://github.com/skovati/kripto/blob/master/etc/example.gif)
+
 ### installation
 Unix
 ```
