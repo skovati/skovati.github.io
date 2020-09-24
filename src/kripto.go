@@ -5,9 +5,10 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
-    "net/http"
-    "io/ioutil"
-    "os"
+  "net/http"
+  "io/ioutil"
+  "os"
+  "runtime"
 )
 
 /*
@@ -92,6 +93,9 @@ func findFileName() string {
     fileName, err := os.UserHomeDir()
     if isErr(err) {
         fmt.Println("Cannot find an adequate location for portfolio...")
+    }
+    if runtime.GOOS == "windows" {
+      return fileName + "\\portfolio.json"
     }
     return fileName + "/.portfolio.json"
 }
