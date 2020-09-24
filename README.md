@@ -29,3 +29,7 @@ kripto list - Lists current porfolio and holdings
 kripto help - Show this message
 ```
 
+### uninstall
+```
+sudo make uninstall
+```

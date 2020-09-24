@@ -23,6 +23,8 @@ run:
 	./bin/$(BINARY_NAME)
 install:
 	install -D ./bin/kripto $(DIR)
+uninstall:
+	rm -f $(DIR)kripto
 # Cross compilation
 build-linux:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_UNIX) -v
