@@ -1,4 +1,5 @@
 ## Chapter 1 - Why should I care?
+*Author: Skovati, Date: 2020-12-24*
 
 If I had to condense why I care about free and open source (FOSS) operating systems like Linux into one word, it would be freedom. Almost everyone values having choice in their daily lives—imagine if there was only one type of car that everyone had to use, or you could only buy one style of house. Hell, the US launched a whole revolution because we wanted freedom of religion, so why don't people care about freedom in software? The way it currently works with popular proprietary operating systems is the designers at Microsoft or Apple decide what's best for the general population, and then you—even as a poweruser—are stuck with those decisions unless you *really* want to get hacky with some unsupported third-party software.
 
@@ -12,4 +13,4 @@ Also, Linux is a perfect development environment. The vast majority of servers i
 
 Finally, I think Linux is just an interesting operating system. Windows and macOS **don't** want you to know how the inner-workings work, but Linux *does* want you to understand. That means there is so much educational value in learning the ins and outs of Linux—you'll learn everything from bash scripting to filesystems to disk partitioning to  compiling code manually to basics of networking and so much more. I'm passionate about Linux, you don't hear many people saying that about Windows or macOS because there just isn't much to be passionate *about*. Sure computers are just tools to get more work done, but Linux is a tool that will improve *yourself* as well.
 
-[Chapter 2 - What is a 'Linux' anyways?](https://blog.skovati.com/linux/intro/ch2)
+[Chapter 2 - What is a 'Linux' anyways?](/linux/intro/ch2)

@@ -1,4 +1,5 @@
 ## What is a "Linux" anyways?
+*Author: Skovati, Date: 2020-12-25*
 
 This chapter *is* optional, but highly recommended. To really get a good perspective on Linux as a whole I think some historical context is necessary. It all starts back in the 60s when MIT and AT&T's Bell Labs were developing Multics, a time-sharing operating system for the GE-645 mainframe computer. That baby had dual 435kHz processors, 3 MBs of memory, could connect to 35 terminals simultaneously, and looked like this: 
 
@@ -28,4 +29,4 @@ I would be remissed if I didn't mention Linux's cousins, the BSDs. I'll keep thi
 
 Finally, the preamble is over, and we can get into the meat of using Linux.
 
-[Chapter 3 - Linux Terminology - Distros, Package Managers, and More.](https://blog.skovati.com/linux/intro/ch3)
+[Chapter 3 - Linux Terminology - Distros, Package Managers, and More.](/linux/intro/ch3)
