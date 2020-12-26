@@ -16,8 +16,8 @@ So what is a "kernel" in an operating system? I'm no systems programmer, but ess
 
 An operating system kernel is a *lot* of work to create, so you can understand why it was the last thing for the GNU system to implement. Luckily, a Finnish programmer by the name of Linus Torvalds came to the rescue, as he was working on a Unix-like OS kernel called Linux around the early 90s. So, the GNU system needed a Unix-like kernel, and Linux needed Unix-like userland utilities, so Richard Stallman and Linux Torvalds worked together to create what is now know as the GNU/Linux operating system, which often goes by its nickname "Linux".
 
-[![](https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Unix_history-simple.svg/1200px-Unix_history-simple.svg.png)](https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Unix_history-simple.svg/1200px-Unix_history-simple.svg.png)
-*Flowchart showing the history of Unix-like systems*
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Unix_history-simple.svg/1200px-Unix_history-simple.svg.png)
+[*Flowchart*](https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Unix_history-simple.svg/1200px-Unix_history-simple.svg.png)* showing the history of Unix-like systems*
 
 Today Linux is everywhere. Over 90% of the world's cloud infrastructure runs a Linux based operating system, over 75% of the worlds phones run a Linux kernel—as Google's Android operating system uses the Linux kernel, and **all** of the worlds top 500 supercomputers run Linux. Linux runs on everything from your router to smartwatch to your car to your bluetooth speaker to the X-ray machines at the hospital. Linux is most commonly packaged into "Linux distributions" or distros for short, which we will get to in a later chapter.
 
