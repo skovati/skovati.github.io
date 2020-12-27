@@ -7,7 +7,7 @@
     - [Pizza from Scratch](/recipes/pizza)
     - [Potato & Lentil Stew](/recipes/stew)
 - Dessert
-    - [Soft Salted Caramels](/recipies/caramel)
+    - [Soft Salted Caramels](/recipes/caramel)
     - [Brownies](/recipes/brownies)
 - Other
     - [Kombucha](/recipes/kombucha)
