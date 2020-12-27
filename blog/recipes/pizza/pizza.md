@@ -21,7 +21,7 @@ Mix the yeast, sugar, and water together in a bowl and let sit for 5-10 minutes.
 
 In a 10 inch cast iron pan, drizzle a little olive oil. You don't need much—the dough is already oiled. Put in some oregano, black pepper, salt, and optionally some cornmeal. Spread that mixture around the pan. Grab the dough and rotate it slowly so it falls into a circular shape. Place and fit into the pan, and let proof another 20 minutes or so as you get the toppings ready.
 
-### The sauce
+### The Sauce
 
 Normally, I'm lazy, and I just end up using some store bought pasta sauce. I think this works totally fine, but if you want to get fancy you can use those purred tomatoes (or blend your own), and combine them with some olive oil and chopped basil leaves. 
 

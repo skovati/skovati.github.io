@@ -11,7 +11,7 @@ Dangerously easy to make soft caramel candies. Read through the whole recipe bef
 - 1 cup (200 grams) sugar
 - 1/2 teaspoon course or flaked sea salt
 
-### Preparing the Pan
+### Preparing the pan
 
 It's important to do this step early, as things will be moving quick down the line. I like to use a bread loaf pan to cool my caramels in. Take a sheet of parchment paper and line the bottom and sides of a loaf pan. Then, take a small amount of vegetable oil and spread it on the parchment paper—gotta make sure they don't stick! Set this pan aside.
 
