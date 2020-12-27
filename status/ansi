@@ -16,7 +16,7 @@ date
 echo -e "${YEL}
 Node-----------------------------------
 ${NC}"
-/home/skovati/code/docker/nginx/status/screenfetch-dev
+/home/skovati/code/docker/nginx/skovati.com/status/screenfetch-dev
 echo -e "${GRE}
 Network--------------------------------
 ${NC}"
@@ -91,4 +91,4 @@ ssh nas docker stats --no-stream
 echo -e "${RED}
 Deluge---------------------------------
 ${NC}"
-bash /home/skovati/code/docker/nginx/status/deluge_stats
+bash /home/skovati/code/docker/nginx/skovati.com/status/deluge_stats
