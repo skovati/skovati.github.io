@@ -42,6 +42,8 @@ Here I will give a small summary of the most popular distros and their derivativ
 
 [Here](https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg) is a ridiculous look at all the different distros of Linux.
 
+---
+
 ### Package Managers
 
 I've been talking about these package managers like apt, dnf, and pacman, but what actually *are* they? I think the best way to explain it is to compare the software installation process in Linux vs Windows. So, you are likely familiar with how to install something on Windows: you open up Microsoft Edge, suffer through a Bing search to find the Google Chrome installation page, download the .exe file, and run it as an administrator, which installs Chrome on your machine for you. It is *way easier* on Linux. Essentially, each distro has what are called repositories, which hold the files for tens of thousands of different packages of software made specifically for that distro. So, to install chrome on something like Ubuntu, you would just type `sudo apt install google-chrome` in the terminal, apt (the package manager on Debian/Ubuntu) would run its magic, and a few seconds later Chrome would be fully installed on your system, no downloading random .exes from the internet and running them blindly. For what it's worth, you can still manually install things if it happens to not be in your distro's repos.
@@ -57,6 +59,8 @@ This style of package management has many pros:
 - Package managers automatically link and install shared dependencies to optimize disk space.
 
 - Because Linux is modular by design and each program does one thing and one things only, system updates are administered through package managers. In contrast, Windows has to release a whole new version and force you to restart just to add a feature to File Manager or Edge. No more "Updating Windows..." screens while you're trying to look something up quick on your laptop. Even the kernel is updated through package managers.
+
+---
 
 ### Desktop Environments and Window Managers
 

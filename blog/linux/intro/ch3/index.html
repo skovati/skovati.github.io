@@ -19,6 +19,8 @@
 	}
 </style>
 <article class="markdown-body">
+<p style="text-align:center"><a href="/">Home</a> | <a href="https://skovati.com">Skovati.com</a> | <a href="mailto:mail@skovati.com">Contact</a></p>
+<hr />
 <h2 id="linux-terminology---distros-package-managers-and-more">Linux Terminology - Distros, Package Managers, and More</h2>
 <p><em>Author: Skovati, Date: 2020-12-26</em></p>
 <h3 id="distros">Distros</h3>
@@ -51,6 +53,7 @@
 <li><p><a href="http://www.slackware.com/">Slackware</a></p></li>
 </ul>
 <p><a href="https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg">Here</a> is a ridiculous look at all the different distros of Linux.</p>
+<hr />
 <h3 id="package-managers">Package Managers</h3>
 <p>I’ve been talking about these package managers like apt, dnf, and pacman, but what actually <em>are</em> they? I think the best way to explain it is to compare the software installation process in Linux vs Windows. So, you are likely familiar with how to install something on Windows: you open up Microsoft Edge, suffer through a Bing search to find the Google Chrome installation page, download the .exe file, and run it as an administrator, which installs Chrome on your machine for you. It is <em>way easier</em> on Linux. Essentially, each distro has what are called repositories, which hold the files for tens of thousands of different packages of software made specifically for that distro. So, to install chrome on something like Ubuntu, you would just type <code>sudo apt install google-chrome</code> in the terminal, apt (the package manager on Debian/Ubuntu) would run its magic, and a few seconds later Chrome would be fully installed on your system, no downloading random .exes from the internet and running them blindly. For what it’s worth, you can still manually install things if it happens to not be in your distro’s repos.</p>
 <p>This style of package management has many pros:</p>
@@ -61,6 +64,7 @@
 <li><p>Package managers automatically link and install shared dependencies to optimize disk space.</p></li>
 <li><p>Because Linux is modular by design and each program does one thing and one things only, system updates are administered through package managers. In contrast, Windows has to release a whole new version and force you to restart just to add a feature to File Manager or Edge. No more “Updating Windows…” screens while you’re trying to look something up quick on your laptop. Even the kernel is updated through package managers.</p></li>
 </ul>
+<hr />
 <h3 id="desktop-environments-and-window-managers">Desktop Environments and Window Managers</h3>
 <p>The most obvious form of customization in Linux is how the desktop looks and feels. This is the responsibility of a desktop environment, which manages windows, the dock, status bar, icons, settings menus, login pages, and more. Some popular options include <a href="https://www.gnome.org/">Gnome</a> and <a href="https://kde.org/plasma-desktop/">KDE Plasma</a>. When you download a distro’s ISO, they will likely give you multiple options for “flavors”, which include different DEs. So you can install Ubuntu with a Gnome DE, or install Ubuntu with KDE Plasma. Both are still Ubuntu, but will look and feel vastly different because the main visual software is by a different organization. I recommend Gnome as a starting place, but it is <em>very</em> easy to install and switch to different ones. A “Window Manager” is essentially <em>just</em> the part of a DE that controls the windows. Personally I just use a WM rather than a full DE, because I don’t need a fancy dock or a settings menu. I use <a href="https://github.com/baskerville/bspwm">bspwm</a> and <a href="https://github.com/polybar/polybar">polybar</a> for a lightweight desktop config.</p>
 <p><img src="https://www.gnome.org/wp-content/uploads/2020/12/wgo-splash-338.png" alt="drawing" width="100%"/></p>
