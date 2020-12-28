@@ -16,7 +16,7 @@ date
 echo -e "${YEL}
 Node-----------------------------------
 ${NC}"
-/home/skovati/code/docker/nginx/skovati.com/status/screenfetch-dev
+/home/skovati/code/docker/nginx/screenfetch-dev
 echo -e "${GRE}
 Network--------------------------------
 ${NC}"
