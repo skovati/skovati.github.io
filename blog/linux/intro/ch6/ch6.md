@@ -1,4 +1,5 @@
 ## Bash && Extensibility
+*Author: Skovati, Date: 2020-12-29*
 
 So what *is* bash? It stands for Bourne Again Shell, and is a rewrite and play on words of the original Bourne shell (sh) written by Stephen Bourne at Bell Labs. It is mainly used as an interactive command line interpreter. When you login to a Unix-based system, or open a terminal, you'll be greeted by a prompt that looks something like `[username@hostname ~]$`. Here you can run any of the GNU system utility commands. Here is a short list of important commands you should know.
 

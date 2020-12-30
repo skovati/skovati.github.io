@@ -22,6 +22,7 @@
 <p style="text-align:center"><a href="/">Home</a> | <a href="https://skovati.com">Skovati.com</a> | <a href="mailto:mail@skovati.com">Contact</a></p>
 <hr />
 <h2 id="chapter-5---server-configuration">Chapter 5 - Server Configuration</h2>
+<p><em>Author: Skovati, Date: 2020-12-29</em></p>
 <p>This chapter is optional if you’re strictly using Linux as a desktop OS, but goes over some useful ideas like user management and security that are still applicable.</p>
 <h3 id="ssh-keys">SSH Keys</h3>
 <p>First of all, what <em>is</em> SSH? It stands for Secure Shell, and is a protocol design to gain remote shell access to Linux servers. All traffic is encrypted by default, and the popular OpenSSH implementation of the protocol is one of the most secure pieces of software that exists. You can authenticate through SSH in a few ways, one of which being just your username and password on the server, like <code>ssh username@server-ip</code>, which will prompt you for your user’s password on that server, and then give you access if it was correct. This is relatively insecure, since lots of cloud based servers will accept SSH requests from any IP, meaning anyone can try and guess your password to gain access to your server. To mitigate this, I recommend the use of SSH public/private key pairs for authentication. If you aren’t familiar with public key cryptography—you should be, here’s a very brief primer.</p>

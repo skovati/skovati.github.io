@@ -1,4 +1,5 @@
 ## Chapter 5 - Server Configuration
+*Author: Skovati, Date: 2020-12-29*
 
 This chapter is optional if you're strictly using Linux as a desktop OS, but goes over some useful ideas like user management and security that are still applicable.
 
