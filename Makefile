@@ -5,7 +5,7 @@ GOCLEAN=$(GOCMD) clean
 GOTEST=$(GOCMD) test
 GOGET=$(GOCMD) get
 BINARY_NAME=kripto
-DIR=/usr/bin/
+DIR=/usr/local/bin
 
 all: test build
 build: 
@@ -23,8 +23,5 @@ install:
 	install -D ./bin/kripto $(DIR)
 uninstall:
 	rm -f $(DIR)kripto
-# Cross compilation
 build-linux:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME) -v ./src/...
-build-windows:
-	CGO_ENABLED=0 GOOS=windows GOARCH=amd64 $(GOBUILD) -o ./bin/$(BINARY_NAME) -v ./src/...
