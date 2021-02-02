@@ -1,2 +1,2 @@
-# skovati.com
-Welcome to my personal portfolio website!
+# skovati.dev
+Welcome to my personal website! Everything on here is for educational purposes.
