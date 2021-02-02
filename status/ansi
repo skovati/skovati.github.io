@@ -100,4 +100,4 @@ ssh nas docker stats --no-stream
 echo -e "${RED}
 Deluge---------------------------------
 ${NC}"
-bash /home/skovati/docker/nginx/skovati.com/status/deluge_stats
+bash /home/skovati/docker/nginx/website/status/deluge_stats
