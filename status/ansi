@@ -8,19 +8,28 @@ MAG='\033[0;35m'
 CYA='\033[0;36m'
 NC='\033[0;37m'
 
-echo -e "${RED}
-Skovati Network Status Report----------
-${NC}"
+
+echo -e "${RED}"
+
+echo " ______     __  __     ______     __   __   ______     ______   __    ";
+echo "/\  ___\   /\ \/ /    /\  __ \   /\ \ / /  /\  __ \   /\__  _\ /\ \   ";
+echo "\ \___  \  \ \  _\"-.  \ \ \/\ \  \ \ \'/   \ \  __ \  \/_/\ \/ \ \ \  ";
+echo " \/\_____\  \ \_\ \_\  \ \_____\  \ \__|    \ \_\ \_\    \ \_\  \ \_\ ";
+echo "  \/_____/   \/_/\/_/   \/_____/   \/_/      \/_/\/_/     \/_/   \/_/ ";
+echo "                                                                      ";
+
+echo -e "${NC}"
+
 date
 
 echo -e "${YEL}
 Node-----------------------------------
 ${NC}"
-/home/skovati/code/docker/nginx/screenfetch-dev
+screenfetch
 echo -e "${GRE}
 Network--------------------------------
 ${NC}"
-vnstat -i br0
+vnstat -i eno1
 
 echo -e "${BLU}
 CPU/Mem--------------------------------
@@ -91,4 +100,4 @@ ssh nas docker stats --no-stream
 echo -e "${RED}
 Deluge---------------------------------
 ${NC}"
-bash /home/skovati/code/docker/nginx/skovati.com/status/deluge_stats
+bash /home/skovati/docker/nginx/skovati.com/status/deluge_stats
