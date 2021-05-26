@@ -19,15 +19,8 @@ body{
     background: var(--bgcolor)
 }
 
-a:link{
-    color: var(--linkcolor)
-}
-
-a:visited{
-    color: var(--linkcolor)
-}
-
-a:active{
+a{
+    text-decoration: none;
     color: var(--linkcolor)
 }
 
