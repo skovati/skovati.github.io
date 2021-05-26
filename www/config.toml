@@ -1,0 +1,50 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "skovati"
+theme = "smol"
+
+# Parameters
+[params]
+    subtitle = "adventures of a digital minimalist"
+    dateFmt = "02.01.2006 15:04"
+
+# Header
+[menu]
+  [[menu.main]]
+        identifier = "about"
+        name = "about"
+        url = "/about/"
+        weight = 1 
+
+  [[menu.main]]
+        identifier = "blog"
+        name = "blog"
+        url = "/blog/"
+        weight = 2 
+
+  [[menu.main]]
+        identifier = "recipies"
+        name = "recipies"
+        url = "/recipies/"
+        weight = 3
+
+# Footer
+  [[menu.footer]]
+        name = "github"
+        url = "https://github.com/skovati"
+        weight = 1 
+
+    [[menu.footer]]
+        name = "gitlab"
+        url = "https://gitlab.com/skovati"
+        weight = 2 
+
+    [[menu.footer]]
+        name = "gpg"
+        url = "https://gpg.skovati.dev"
+        weight = 3 
+
+    [[menu.footer]]
+        name = "email"
+        url = "mailto:skovati@protonmail.com"
+        weight = 3 
