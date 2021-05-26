@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Intro to Linux - Chapter 6</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	=============<br>
+	== <a href="https://skovati.dev/">skovati</a> ==<br>
+	=============
+	<div style="float: right;">adventures of a digital minimalist</div><br>
+	<p>
+	<nav>
+			
+			
+			<a href="/about/"><b>about</b></a>.
+			
+			<a href="/blog/"><b>blog</b></a>.
+			
+			<a href="/recipies/"><b>recipies</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Intro to Linux - Chapter 6</h1>
+			<b><time>25.05.2021 18:00</time></b>
+		       
+
+			<div>
+				<h2 id="bash--extensibility">Bash &amp;&amp; Extensibility</h2>
+<p><em>Author: Skovati, Date: 2020-12-29</em></p>
+<p>So what <em>is</em> bash? It stands for Bourne Again Shell, and is a rewrite and play on words of the original Bourne shell (sh) written by Stephen Bourne at Bell Labs. It is mainly used as an interactive command line interpreter. When you login to a Unix-based system, or open a terminal, you&rsquo;ll be greeted by a prompt that looks something like <code>[username@hostname ~]$</code>. Here you can run any of the GNU system utility commands. Here is a short list of important commands you should know.</p>
+<ul>
+<li><code>ls</code> - LiSts the files and directories in the current directory</li>
+<li><code>cd</code> - Changes the Directory you are in, eg <code>cd downloads</code> would move you to your downloads directory</li>
+<li><code>mkdir</code> - MaKes a DIRectory</li>
+<li><code>man</code> - prefixing this to another command shows the MANual page for that command—this is <em>the</em> best way to learn about a program quickly</li>
+<li><code>touch</code> - TOUCHes a file to update its metadata, or will create an empty file if it doesn&rsquo;t exist</li>
+<li><code>cat</code> - conCATenate the files passed to it and prints them. Commonly used to view the contents of a text file quickly.</li>
+<li><code>mv</code> - MoVes argument 1 to argument 2, eg <code>mv resume_current.pdf resume_old.pdf</code></li>
+<li><code>cp</code> - CoPies argument 1 to argument 2</li>
+<li><code>rm</code> - ReMoves a file or directory</li>
+<li><code>pwd</code> - Prints Working Directory, prints the directory you&rsquo;re currently in</li>
+<li><code>nano</code> - GNU text editor, pass a file to it to edit, perfect for editing configuration files.</li>
+</ul>
+<p>These commands will likely make up the majority of what you run, as they help you move around the filesystem and edit files on the command line. Really the best way to get familiar with these commands and more is to use the terminal as often as you can! Personally, I exclusively use the terminal to edit files—I&rsquo;m currently writing this in Vim, a terminal based text editor.</p>
+<p>Every time you run a command in bash, it&rsquo;s actually calling a pre-compiled C program binary located at /bin or /usr/bin. You can see the path of the executed binary with the <code>which</code> command. For example, running <code>which ls</code> outputs /usr/bin/ls, which is the small executable that bash is calling every time I run that command.</p>
+<p>Bash is more than just a command line interpreter however, it&rsquo;s actually a full scripting language with control flow, variables, and functions. While these features <em>could</em> be used on the command line, they&rsquo;re most commonly used in a <em>shell script</em>, which has a .sh extension, and can be executed by the bash shell. Personally, I have dozens of small bash scripts to do things like update my system, quickly find and edit files, connect to vpns and more. A decent rule of thumb for when something should be converted to a shell script is if you find yourself running a series of commands in a row multiple times a day, turn those commands into a small shell script that bash can execute for you. For example, I&rsquo;m writing this blog in Markdown, and using Pandoc to convert that to html so my web server can host it. Essentially, the output of pandoc has to be concatenated with a template.html file I have, and then I have to concatenate that index.html output with a closing article tag so it&rsquo;s valid html. So, instead of running that set of commands multiple times, I wrote the following shell script to speed things up.</p>
+<pre><code>#!/usr/bin/env bash
+
+cp -v /home/skovati/code/git/skovati.com/blog/template.html ./index.html
+pandoc $1 -f markdown -t html &gt;&gt; ./index.html
+echo &quot;&lt;/article&gt;&quot; &gt;&gt; ./index.html
+</code></pre>
+<p>Each of those lines <em>could</em> just be pasted into a regular bash prompt, and it would work the same, but the script saves you a lot of time. The first line there just tells the bash interpreter to run the script. Then I copy my template html file to the current chapter folder, convert the chapters markdown to html and add it to the end of the template html file, and finally add that closing article tag. Now, I can just run <code>convert ch6.md</code> and it&rsquo;ll output a correctly formatted html file for my server to host.</p>
+<p>Bash scripting should (and probably will be) its own chapter, but I want to show off a few <em>really</em> cool things it can do. First, you should be familiar with standard input and output. Stdin is essentially a stream of text that can be sent to a program, and stdout is a stream of text that a program can output. On Unix-based systems, we can use these in combination with the Unix Philosophy of each program doing one thing and doing it well, to chain together programs. Here&rsquo;s an example.</p>
+<p>Running <code>ls</code> in my current directory prints out three directories: code, documents, and downloads. Say, for example, I wanted to count how many files and directories were output by that <code>ls</code> command. Here, we can use &ldquo;pipes&rdquo; by placing the &ldquo;|&rdquo; symbol in-between <code>ls</code> and another command that counts the number of lines in a text stream, <code>wc -l</code>. So, the full bash command would look like <code>ls | wc -l</code> which would output 3, since there were just those three files. Say now I wanted to check the number of installed binary programs on my system, I could just run <code>ls /usr/bin | wc -l</code> which outputs 3490.</p>
+<p>This introduces the idea of extensibility. Since these GNU system utilities simply take in a text stream and then output a text stream, they can easily communicate with each other, which creates new possibilities that the developers of either program didn&rsquo;t have to explicitly program. Here&rsquo;s a more useful example of this text-based extensibility in action:</p>
+<p>As previously mentioned, I&rsquo;m writing these blog posts in Markdown, which is just a text file with some simple syntax to show <strong>bold</strong> words or <em>italics</em> and stuff like that. Since all the posts are text, I can run cat on all of them to output them all to a big text stream. Then, I could pipe that into another program, like word count, to see more information about all the blog posts. Running <code>cat ch*/*.md | wc -w</code> (the *&rsquo;s just mean to select every .md file) outputs 7288, so that&rsquo;s how many words I&rsquo;ve written in the last 5 blog posts! Going deeper, I could count up how many times I&rsquo;ve said the word &ldquo;Linux&rdquo; with a command like this <code>cat ch*/*.md | grep -wo Linux | wc -l</code> (grep is a tool for searching text streams) which outputs 90. If I was instead writing all of these in something like Microsoft Word, I&rsquo;d have to open up each file manually, Ctrl-f to search for Linux, and then count up and add together all of the instances manually. <em>That&rsquo;s</em> the power of Linux.</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/linux/intro/ch6/">Intro to Linux - Chapter 6</a></li>
+				
+				<li><a href="/blog/linux/intro/ch5/">Intro to Linux - Chapter 5</a></li>
+				
+				<li><a href="/blog/linux/intro/ch4/">Intro to Linux - Chapter 4</a></li>
+				
+				<li><a href="/blog/linux/intro/ch3/">Intro to Linux - Chapter 3</a></li>
+				
+				<li><a href="/blog/linux/intro/ch2/">Intro to Linux - Chapter 2</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<a href="https://github.com/skovati"><b>github</b></a>.
+	<a href="https://gitlab.com/skovati"><b>gitlab</b></a>.
+	<a href="mailto:skovati@protonmail.com"><b>email</b></a>.
+	<a href="https://gpg.skovati.dev"><b>gpg</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

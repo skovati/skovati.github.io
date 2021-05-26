@@ -1,0 +1,78 @@
+html {
+    overflow-y: scroll
+}
+
+:root {
+    --bgcolor: #161616;
+    --fontcolor: #EEEEEE;
+    --linkcolor: #BF360C;
+    --precolor: #212121;
+    --prebgcolor: #DDDDDD;
+}
+
+body{
+    max-width:800px;
+    margin:40px auto;
+    padding:0 10px;
+    font:15px/1.5 monospace;
+    color:var(--fontcolor);
+    background: var(--bgcolor)
+}
+
+a:link{
+    color: var(--linkcolor)
+}
+
+a:visited{
+    color: var(--linkcolor)
+}
+
+a:active{
+    color: var(--linkcolor)
+}
+
+h1,h2,h3{
+    line-height:1.2
+}
+
+p > code{
+    color: var(--precolor);
+    background: var(--prebgcolor);
+    padding:4px;
+    border-radius: 3px;
+}
+
+pre{
+    color: var(--precolor);
+    background: var(--prebgcolor);
+    padding:24px;
+    overflow-x: auto;
+    border: 2px solid var(--linkcolor);
+}
+
+article{
+    padding:24px 0
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+figcaption {
+    color: #888;
+    font: 12px/1.5 monospace;
+    text-align: center;
+}
+
+figure {
+    margin: auto
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>about on skovati</title>
+    <link>https://skovati.dev/tags/about/</link>
+    <description>Recent content in about on skovati</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 May 2021 20:50:16 -0500</lastBuildDate><atom:link href="https://skovati.dev/tags/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://skovati.dev/about/</link>
+      <pubDate>Tue, 25 May 2021 20:50:16 -0500</pubDate>
+      
+      <guid>https://skovati.dev/about/</guid>
+      <description>welcome to skovati.dev I&amp;rsquo;m a computer engineering student and amateur mathematician from the midwest region
+a few things I&amp;rsquo;m passionate about:
+ digital minimalism ethical &amp;amp; sustainable technology free &amp;amp; open source software unix philosophy cryptography/cybersecurity self-hosted infrastructure analog &amp;amp; digital circuits frugality privacy &amp;amp; anonymity  lately, besides schoolwork, I&amp;rsquo;ve been working on small projects like
+ gosh, an extremely simple unix shell written in Go kirpto, a cryptocurrency portfolio tracker that pulls data from the CoinGecko API micro, a collection of scripts for Arduino microcontollers  professionally, I work as a Cloud Engineer, deploying products and applications on cloud platforms like GCP and AWS using Terraform, Kubernetes, and GitLab CI</description>
+    </item>
+    
+  </channel>
+</rss>

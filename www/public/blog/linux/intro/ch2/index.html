@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Intro to Linux - Chapter 2</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	=============<br>
+	== <a href="https://skovati.dev/">skovati</a> ==<br>
+	=============
+	<div style="float: right;">adventures of a digital minimalist</div><br>
+	<p>
+	<nav>
+			
+			
+			<a href="/about/"><b>about</b></a>.
+			
+			<a href="/blog/"><b>blog</b></a>.
+			
+			<a href="/recipies/"><b>recipies</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Intro to Linux - Chapter 2</h1>
+			<b><time>25.05.2021 18:00</time></b>
+		       
+
+			<div>
+				<h2 id="what-is-a-linux-anyways">What is a &ldquo;Linux&rdquo; anyways?</h2>
+<p><em>Author: Skovati, Date: 2020-12-25</em></p>
+<p>This chapter <em>is</em> optional, but highly recommended. To really get a good perspective on Linux as a whole I think some historical context is necessary. It all starts back in the 60s when MIT and AT&amp;T&rsquo;s Bell Labs were developing Multics, a time-sharing operating system for the GE-645 mainframe computer. That baby had dual 435kHz processors, 3 MBs of memory, could connect to 35 terminals simultaneously, and looked like this:</p>
+<p>
+<figure>
+  <img src="/linux/intro/ch2/GE645.jpg" alt="GE-645" />
+  <figcaption>GE-645</figcaption>
+</figure>
+
+
+
+<em>GE-645</em></p>
+<p>While Multics was probably the most influential operating system of all time, it wasn&rsquo;t without its issues, and after a few years working on the project, Ken Thompson, Dennis Ritchie, and a few others decided to start over with something called <em>Uniplexed Information and Computing Service</em> or Unics—later renamed Unix. While originally written in assembly language, it was eventually ported to be the first OS written in <em>C</em>, a new high-level programming language also created at Bell Labs (seriously look at the <a href="https://en.wikipedia.org/wiki/Bell_Labs">Wikipedia</a> page for Bell Labs, they invented everything from Unix to the transistor). Unix was revolutionary, introducing hierarchical file systems, text-based applications, shell scripting, pipelining commands, devices as files, and the so-called &ldquo;Unix Philosophy&rdquo;. This philosophy can be summarized as &ldquo;Each program should just do one thing and do it well&rdquo;—meaning one program should list files in a directory, while an entirely separate program should facilitate changing directories or creating new files. This is in great contrast with a <em>monolithic</em> design style, where one singular <em>File Manager</em> is responsible for <strong>all</strong> the desired behavior for creating, managing, moving, renaming, or deleting files. This increased modularity that Unix got from this philosophy allowed it to be extremely extensible and scale very well. The Unix philosophy is still often referenced today in software design—most commonly Keep It Simple Stupid.</p>
+<p>
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Ken_Thompson_and_Dennis_Ritchie--1973.jpg/300px-Ken_Thompson_and_Dennis_Ritchie--1973.jpg" alt="" />
+</figure>
+
+
+</p>
+<p><em>Ken Thompson and Dennis Ritchie at Bell Labs</em></p>
+<p>Although Unix was revolutionary for its time, a few notable people disagreed with it being the closed-source property of AT&amp;T, and thought an operating system like that should be open-source, transparent, and free for use and redistribution. One of these people was the Richard Stallman, a researcher at MIT&rsquo;s AI Laboratory. Stallman believed that computer users should be free to study the source code of the programs they used, modify the source code, and redistribute their modified versions in a collaborative sense. This philosophy was later published as the <a href="https://www.gnu.org/gnu/manifesto.html">GNU Manifesto</a>. Stallman then went to write his own GNU operating system, inspired by and compatible with the popular proprietary Unix OS. Stallman is credited with inventing the idea of <em>free</em> or <em>libre</em> software. To facilitate this new idea of FOSS software, he created a new &ldquo;copyleft&rdquo; license called the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU Public License</a> or GPL for short. Software published with this license must make its source code accessible and available to modify and redistribute for free; additionally, other software that uses GPL licensed software must itself uphold the license, thus creating a cascading effect of FOSS projects that are contributed to for the greater good by both volunteers <em>and</em> large corporations. He and his team were able to implement all of the system and user utilities needed for a general operating system, but they were still missing a kernel by the time the 90s rolled around.</p>
+<p>So what is a &ldquo;kernel&rdquo; in an operating system? I&rsquo;m no systems programmer, but essentially it does the translation between hardware and software in an OS. So anytime that a program is launched, it requests CPU and memory resources from the kernel; the kernel is the software that actually holds device drivers and sends instructions to the CPU and handles virtual memory for different programs. The Linux kernel also does all the filesystem work, interfaces with block devices, networks, and facilitates communication between system processes. Essentially, when you plug a USB stick into your laptop running Linux, the kernel is the software responsible for communicating with it using the USB drivers, detecting and mounting the filesystem on the drive, and sending all the serial data to and from the block device.</p>
+<p>An operating system kernel is a <em>lot</em> of work to create, so you can understand why it was the last thing for the GNU system to implement. Luckily, a Finnish programmer by the name of Linus Torvalds came to the rescue, as he was working on a Unix-like OS kernel called Linux around the early 90s. So, the GNU system needed a Unix-like kernel, and Linux needed Unix-like userland utilities, so Richard Stallman and Linux Torvalds worked together to create what is now know as the GNU/Linux operating system, which often goes by its nickname &ldquo;Linux&rdquo;.</p>
+<p>
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Unix_history-simple.svg/1200px-Unix_history-simple.svg.png" alt="" />
+</figure>
+
+
+
+<a href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Unix_history-simple.svg/1200px-Unix_history-simple.svg.png"><em>Flowchart</em></a> <em>showing the history of Unix-like systems</em></p>
+<p>Today Linux is everywhere. Over 90% of the world&rsquo;s cloud infrastructure runs a Linux based operating system, over 75% of the worlds phones run a Linux kernel—as Google&rsquo;s Android operating system uses the Linux kernel, and <strong>all</strong> of the worlds top 500 supercomputers run Linux. Linux runs on everything from your router to smartwatch to your car to your bluetooth speaker to the X-ray machines at the hospital. Linux is most commonly packaged into &ldquo;Linux distributions&rdquo; or distros for short, which we will get to in a later chapter.</p>
+<p>So, to recap, what we know as Linux today is actually result of decades of operating system forks, rewrites, and design. Window managers and web browsers inhabit the high-level, the GNU system utilities takes care of the mid-level, and the Linux kernel deals with the low-level.</p>
+<p>I would be remissed if I didn&rsquo;t mention Linux&rsquo;s cousins, the BSDs. I&rsquo;ll keep this short, but back in the 80s when Stallman was developing his own system <em>based</em> on Unix, some genius students and researchers at UC Berkeley were creating a direct <em>copy</em> of the Unix system called Berkeley Software Distribution or BSD for short. The original BSD has seen many forks; today the main BSDs are FreeBSD, OpenBSD, and NetBSD. The BSDs are considered to have been a more direct implementation of the Unix philosophy, which many prefer, and it was licensed with its own BSD style license. This license doesn&rsquo;t require software that uses other BSD licensed software to be licensed itself, so many companies use BSDs in order to keep their code closed source; most notably Sony&rsquo;s PlayStation OS and Apples macOS and iOS are BSD based for this reason.</p>
+<p>Finally, the preamble is over, and we can get into the meat of using Linux.</p>
+<p><a href="/linux/intro/ch3">Chapter 3 - Linux Terminology - Distros, Package Managers, and More.</a></p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/linux/intro/ch6/">Intro to Linux - Chapter 6</a></li>
+				
+				<li><a href="/blog/linux/intro/ch5/">Intro to Linux - Chapter 5</a></li>
+				
+				<li><a href="/blog/linux/intro/ch4/">Intro to Linux - Chapter 4</a></li>
+				
+				<li><a href="/blog/linux/intro/ch3/">Intro to Linux - Chapter 3</a></li>
+				
+				<li><a href="/blog/linux/intro/ch2/">Intro to Linux - Chapter 2</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<a href="https://github.com/skovati"><b>github</b></a>.
+	<a href="https://gitlab.com/skovati"><b>gitlab</b></a>.
+	<a href="mailto:skovati@protonmail.com"><b>email</b></a>.
+	<a href="https://gpg.skovati.dev"><b>gpg</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

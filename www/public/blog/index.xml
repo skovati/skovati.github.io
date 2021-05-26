@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on skovati</title>
+    <link>https://skovati.dev/blog/</link>
+    <description>Recent content in Blogs on skovati</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 May 2021 18:00:53 -0500</lastBuildDate><atom:link href="https://skovati.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Intro to Linux - Chapter 6</title>
+      <link>https://skovati.dev/blog/linux/intro/ch6/</link>
+      <pubDate>Tue, 25 May 2021 18:00:53 -0500</pubDate>
+      
+      <guid>https://skovati.dev/blog/linux/intro/ch6/</guid>
+      <description>Bash &amp;amp;&amp;amp; Extensibility Author: Skovati, Date: 2020-12-29
+So what is bash? It stands for Bourne Again Shell, and is a rewrite and play on words of the original Bourne shell (sh) written by Stephen Bourne at Bell Labs. It is mainly used as an interactive command line interpreter. When you login to a Unix-based system, or open a terminal, you&amp;rsquo;ll be greeted by a prompt that looks something like [username@hostname ~]$.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Linux - Chapter 5</title>
+      <link>https://skovati.dev/blog/linux/intro/ch5/</link>
+      <pubDate>Tue, 25 May 2021 18:00:51 -0500</pubDate>
+      
+      <guid>https://skovati.dev/blog/linux/intro/ch5/</guid>
+      <description>Chapter 5 - Server Configuration Author: Skovati, Date: 2020-12-29
+This chapter is optional if you&amp;rsquo;re strictly using Linux as a desktop OS, but goes over some useful ideas like user management and security that are still applicable.
+SSH Keys First of all, what is SSH? It stands for Secure Shell, and is a protocol design to gain remote shell access to Linux servers. All traffic is encrypted by default, and the popular OpenSSH implementation of the protocol is one of the most secure pieces of software that exists.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Linux - Chapter 4</title>
+      <link>https://skovati.dev/blog/linux/intro/ch4/</link>
+      <pubDate>Tue, 25 May 2021 18:00:50 -0500</pubDate>
+      
+      <guid>https://skovati.dev/blog/linux/intro/ch4/</guid>
+      <description>Installing Linux Author: Skovati, Date: 2020-12-28
+In this chapter, I&amp;rsquo;ll talk about the four main ways I recommend installing and getting started with Linux, in order from most-preferred to least-preferred.
+Option #1 - Installing on your main computer (Most Preferred) This option definitely seems the scariest to newcomers, but installing Linux along side whatever other operating system you have installed on your most used computer is easily the best way to get yourself to actually use Linux on a daily basis, rather than installing a VM that you forget about in a week.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Linux - Chapter 3</title>
+      <link>https://skovati.dev/blog/linux/intro/ch3/</link>
+      <pubDate>Tue, 25 May 2021 18:00:49 -0500</pubDate>
+      
+      <guid>https://skovati.dev/blog/linux/intro/ch3/</guid>
+      <description>Linux Terminology - Distros, Package Managers, and More Author: Skovati, Date: 2020-12-26
+Distros So, say you wanted to install Microsoft Windows on a new computer. You&amp;rsquo;d go to the official Windows download page, download that one specific ISO, burn it to a USB or DVD, and insert it into your computer. The installation process for Linux is quite similar, except instead of there being one official download, there are thousands of different distributions of Linux, know as distros.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Linux - Chapter 2</title>
+      <link>https://skovati.dev/blog/linux/intro/ch2/</link>
+      <pubDate>Tue, 25 May 2021 18:00:48 -0500</pubDate>
+      
+      <guid>https://skovati.dev/blog/linux/intro/ch2/</guid>
+      <description>What is a &amp;ldquo;Linux&amp;rdquo; anyways? Author: Skovati, Date: 2020-12-25
+This chapter is optional, but highly recommended. To really get a good perspective on Linux as a whole I think some historical context is necessary. It all starts back in the 60s when MIT and AT&amp;amp;T&amp;rsquo;s Bell Labs were developing Multics, a time-sharing operating system for the GE-645 mainframe computer. That baby had dual 435kHz processors, 3 MBs of memory, could connect to 35 terminals simultaneously, and looked like this:</description>
+    </item>
+    
+    <item>
+      <title>Intro to Linux - Chapter 1</title>
+      <link>https://skovati.dev/blog/linux/intro/ch1/</link>
+      <pubDate>Tue, 25 May 2021 18:00:47 -0500</pubDate>
+      
+      <guid>https://skovati.dev/blog/linux/intro/ch1/</guid>
+      <description>Chapter 1 - Why should I care? Author: Skovati, Date: 2020-12-24
+If I had to condense why I care about free and open source (FOSS) operating systems like Linux into one word, it would be freedom. Almost everyone values having choice in their daily lives—imagine if there was only one type of car that everyone had to use, or you could only buy one style of house. Hell, the US launched a whole revolution because we wanted freedom of religion, so why don&amp;rsquo;t people care about freedom in software?</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://skovati.dev/"
 languageCode = "en-us"
 title = "skovati"
 theme = "smol"
