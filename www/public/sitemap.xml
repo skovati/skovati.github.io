@@ -2,22 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://skovati.dev/about/</loc>
-    <lastmod>2021-05-25T20:50:16-05:00</lastmod>
-  </url><url>
-    <loc>https://skovati.dev/tags/about/</loc>
-    <lastmod>2021-05-25T20:50:16-05:00</lastmod>
-  </url><url>
-    <loc>https://skovati.dev/</loc>
-    <lastmod>2021-05-25T20:50:16-05:00</lastmod>
-  </url><url>
-    <loc>https://skovati.dev/tags/</loc>
-    <lastmod>2021-05-25T20:50:16-05:00</lastmod>
-  </url><url>
     <loc>https://skovati.dev/blog/</loc>
     <lastmod>2021-05-25T18:00:53-05:00</lastmod>
   </url><url>
     <loc>https://skovati.dev/blog/linux/intro/ch6/</loc>
+    <lastmod>2021-05-25T18:00:53-05:00</lastmod>
+  </url><url>
+    <loc>https://skovati.dev/</loc>
     <lastmod>2021-05-25T18:00:53-05:00</lastmod>
   </url><url>
     <loc>https://skovati.dev/blog/linux/intro/ch5/</loc>
@@ -47,6 +38,10 @@
     <loc>https://skovati.dev/recipies/pancakes/</loc>
     <lastmod>2021-05-25T17:59:56-05:00</lastmod>
   </url><url>
+    <loc>https://skovati.dev/about/</loc>
+  </url><url>
     <loc>https://skovati.dev/categories/</loc>
+  </url><url>
+    <loc>https://skovati.dev/tags/</loc>
   </url>
 </urlset>

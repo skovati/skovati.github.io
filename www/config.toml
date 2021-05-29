@@ -23,6 +23,12 @@ theme = "smol"
         weight = 2 
 
   [[menu.main]]
+        identifier = "tags"
+        name = "tags"
+        url = "/tags/"
+        weight = 2 
+
+  [[menu.main]]
         identifier = "recipies"
         name = "recipies"
         url = "/recipies/"

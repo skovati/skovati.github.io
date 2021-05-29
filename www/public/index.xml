@@ -6,19 +6,7 @@
     <description>Recent content on skovati</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 May 2021 20:50:16 -0500</lastBuildDate><atom:link href="https://skovati.dev/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>About</title>
-      <link>https://skovati.dev/about/</link>
-      <pubDate>Tue, 25 May 2021 20:50:16 -0500</pubDate>
-      
-      <guid>https://skovati.dev/about/</guid>
-      <description>welcome to skovati.dev I&amp;rsquo;m a computer engineering student and amateur mathematician from the midwest region
-a few things I&amp;rsquo;m passionate about:
- digital minimalism ethical &amp;amp; sustainable technology free &amp;amp; open source software unix philosophy cryptography/cybersecurity self-hosted infrastructure analog &amp;amp; digital circuits frugality privacy &amp;amp; anonymity  lately, besides schoolwork, I&amp;rsquo;ve been working on small projects like
- gosh, an extremely simple unix shell written in Go kirpto, a cryptocurrency portfolio tracker that pulls data from the CoinGecko API micro, a collection of scripts for Arduino microcontollers  professionally, I work as a Cloud Engineer, deploying products and applications on cloud platforms like GCP and AWS using Terraform, Kubernetes, and GitLab CI</description>
-    </item>
-    
+    <lastBuildDate>Tue, 25 May 2021 18:00:53 -0500</lastBuildDate><atom:link href="https://skovati.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Intro to Linux - Chapter 6</title>
       <link>https://skovati.dev/blog/linux/intro/ch6/</link>
@@ -108,6 +96,18 @@ Ingredients  1/2 cup (113 g) unsalted butter 1/2 cup (120 ml) heavy whipping cre
       <guid>https://skovati.dev/recipies/pancakes/</guid>
       <description>Simple Pancake Recipe This is a simple, effective recipe for a simple, effective food.
 Ingredients  28 g butter (2 tbsp) 25 g sugar (2 tbsp) 1 egg 5 ml vanilla extract (2 tsp) 400 ml milk (1 &amp;amp; 3/4 cup) 6 g salt (1 tsp) 16 g baking powder (1.25 tbsp) 200-300 g flour (1.5-2.5 cups)  The Batter Melt the butter without it getting too hot, I like to use a microwave safe glass measuring cup.</description>
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>https://skovati.dev/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://skovati.dev/about/</guid>
+      <description>welcome to skovati.dev I&amp;rsquo;m a computer engineering student and amateur mathematician from the midwest region
+a few things I&amp;rsquo;m passionate about:
+ digital minimalism ethical &amp;amp; sustainable technology free &amp;amp; open source software unix philosophy cryptography/cybersecurity self-hosted infrastructure analog &amp;amp; digital circuits frugality privacy &amp;amp; anonymity  lately, besides schoolwork, I&amp;rsquo;ve been working on small projects like
+ gosh, an extremely simple unix shell written in Go kirpto, a cryptocurrency portfolio tracker that pulls data from the CoinGecko API micro, a collection of scripts for Arduino microcontollers  professionally, I work as a Cloud Engineer, deploying products and applications on cloud platforms like GCP and AWS using Terraform, Kubernetes, and GitLab CI</description>
     </item>
     
   </channel>

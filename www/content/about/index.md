@@ -1,9 +1,6 @@
 ---
-title: "About"
-date: 2021-05-25T20:50:16-05:00
-draft: true
-tags:
-  - about
+title: "about"
+draft: false
 ---
 
 ## welcome to skovati.dev
