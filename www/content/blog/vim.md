@@ -7,8 +7,9 @@ tags:
   - unix
   - programming
 ---
-*Disclaimer: This blog post is not meant to teach Vim, (that might come later) just to act as inspiration to start the learning journey
-if you've been convinced by this post and want to learn Vim, here are a few fantastic tutorials that helped me get started*:
+*Disclaimer: This blog post is not meant to teach Vim, (that might come later) just to act as inspiration to start the learning journey.*
+
+*If you've been convinced by this post and want to learn Vim, here are a few fantastic tutorials that helped me get started:*
 
 - `vimtutor`, Vim's built in tutorial, if Vim is installed on your system, just run `vimtutor` for an interactive tutorial
 - [Ben Awad's Tutorial](https://www.youtube.com/watch?v=IiwGbcd8S7I) - watch this first, no BS, beginner to advanced

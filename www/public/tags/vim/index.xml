@@ -13,7 +13,8 @@
       <pubDate>Thu, 03 Jun 2021 20:04:39 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/vim/</guid>
-      <description>Disclaimer: This blog post is not meant to teach Vim, (that might come later) just to act as inspiration to start the learning journey if you&amp;rsquo;ve been convinced by this post and want to learn Vim, here are a few fantastic tutorials that helped me get started:
+      <description>Disclaimer: This blog post is not meant to teach Vim, (that might come later) just to act as inspiration to start the learning journey.
+If you&amp;rsquo;ve been convinced by this post and want to learn Vim, here are a few fantastic tutorials that helped me get started:
  vimtutor, Vim&amp;rsquo;s built in tutorial, if Vim is installed on your system, just run vimtutor for an interactive tutorial Ben Awad&amp;rsquo;s Tutorial - watch this first, no BS, beginner to advanced DistroTube&amp;rsquo;s Vim series - moderate BS, takes it slow And for Vim-god inspiration, check out a few Luke Smith videos - dude himself is BS, but rocks at Vim And these Vim meetup talks are a good rabbit hole  Anyways&amp;hellip; the post&amp;hellip;</description>
     </item>
     
