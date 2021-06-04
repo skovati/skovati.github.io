@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Vim: The World&#39;s Greatest Text Editor</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	=============<br>
+	== <a href="https://skovati.dev/">skovati</a> ==<br>
+	=============
+	<div style="float: right;">adventures of a digital minimalist</div><br>
+	<p>
+	<nav>
+			
+			
+			<a href="/about/"><b>about</b></a>.
+			
+			<a href="/blog/"><b>blog</b></a>.
+			
+			<a href="/tags/"><b>tags</b></a>.
+			
+			<a href="/recipies/"><b>recipies</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Vim: The World&#39;s Greatest Text Editor</h1>
+			<b><time>03.06.2021 20:04</time></b>
+		       
+		           <a href="/tags/vim">vim</a>
+        	       
+		           <a href="/tags/unix">unix</a>
+        	       
+		           <a href="/tags/programming">programming</a>
+        	       
+
+			<div>
+				<p><em>Disclaimer: This blog post is not meant to teach Vim, (that might come later) just to act as inspiration to start the learning journey
+if you&rsquo;ve been convinced by this post and want to learn Vim, here are a few fantastic tutorials that helped me get started</em>:</p>
+<ul>
+<li><code>vimtutor</code>, Vim&rsquo;s built in tutorial, if Vim is installed on your system, just run <code>vimtutor</code> for an interactive tutorial</li>
+<li><a href="https://www.youtube.com/watch?v=IiwGbcd8S7I">Ben Awad&rsquo;s Tutorial</a> - watch this first, no BS, beginner to advanced</li>
+<li><a href="https://www.youtube.com/watch?v=ER5JYFKkYDg">DistroTube&rsquo;s Vim series</a> - moderate BS, takes it slow</li>
+<li>And for Vim-god inspiration, check out a few <a href="https://www.youtube.com/watch?v=hraHAZ1-RaM">Luke Smith videos</a> - dude himself is BS, but rocks at Vim</li>
+<li>And these <a href="https://www.youtube.com/watch?v=wlR5gYd6um0">Vim meetup talks</a> are a good rabbit hole</li>
+</ul>
+<p>Anyways&hellip; the post&hellip;</p>
+<h2 id="what-is-a-vim-anyways">What is a Vim anyways?</h2>
+<p>Vim stands for vi-improved. It builds off of the ideas of a previous text editor known as vi, which was created by <a href="https://en.wikipedia.org/wiki/Bill_Joy">Bill Joy</a> (yeah <em>that</em> Bill Joy that worked on Unix, BSD, TCP/IP, Java, and NFS) back in 1976. Lots of programs back then were iterated on by others, since the source code was often available for modification. Vi is no exception.</p>
+<h2 id="why-use-vim">Why use Vim?</h2>
+<p>One of the main groundbreaking ideas behind vi, and therefore Vim, is the idea of <em>modal editing</em>, where you switch between modes and keys do different things in each of those modes. This is in stark contrast to editors a lot of people are familiar with like Microsoft Word or the Google Docs editor, where every qwerty key simply inputs the corresponding character into the document. In Vim, this <strong>only</strong> happens when in &lsquo;insert&rsquo; mode. When in the other modes, like &lsquo;normal&rsquo; or &lsquo;visual&rsquo; these same keys you use to input characters are instead used as keybinds for movement, editing, saving, quitting, etc. The most obvious advantage to this is that you can have significantly more keybinds than non-modal editors, since you simply have more keys to work with. Microsoft Word needs to use some hand-cramp-inducing combination of keys like <code>Ctr-Shift-t</code> for simple commands like cut or paste, when in Vim this can just be one key, right by the asdfjkl; homerow. This offers more specific keybinds that can significantly increase productivity, as well as reduce hand fatigue when typing for 8+ hours a day.</p>
+<p>The other groundbreaking idea behind Vim (and vi) is <em>command composition</em>. We&rsquo;ll dive into this in the next section, but essentially Vim has different types of commands like movement, editing, and repetition, which can be composed to increase their functionality. So you can apply any editing command to a movement command to apply it to that whole chunk of text (again, we&rsquo;ll see examples shortly). This means that you can rapidly gain new functionality by learning just a few of the commands Vim has to offer; say you know 5 editing commands and 6 movement commands, since you can compose these by placing the editing command before the movement command, you now know 5 x 6 = 30 commands while only memorizing 5 + 6 = 11 keybinds! Having that same amount of editing power in MS Word would require learning <em>all</em> 30 keybinds.</p>
+<p>Finally, Vim has a rich editing philosophy. A lot of the design decisions were made due to technical limitations at the time (no mouse, terminal screens only, slow computers that benefited from chaining sequential commands), but these decisions turn out to have modern day benefits as well (no back and forth between keyboard and mouse, easier on the hands and faster, composable commands allow for verbose, flexible expression of editing desires, commands offer easy automation for repetitive tasks, integrates with Unix Philosophy, etc), since good design is still good design, even 50 years later.</p>
+<h2 id="vim-is-an-editing-language-with-syntax-and-grammar">Vim is an editing language, with syntax and grammar</h2>
+<p>Okay so, what are these different commands I keep talking about and why are they so powerful? Again, this isn&rsquo;t a tutorial, but I&rsquo;ll list the basics here so I can use them in examples.</p>
+<h3 id="editing-commands">Editing commands</h3>
+<ul>
+<li><code>i</code>   - enter insert mode</li>
+<li><code>Esc</code> - return to normal mode</li>
+<li><code>d</code>   - delete</li>
+<li><code>c</code>   - change</li>
+<li><code>y</code>   - copy</li>
+<li><code>p</code>   - paste</li>
+</ul>
+<h3 id="movement-commands">Movement commands</h3>
+<ul>
+<li><code>h, j, k, l</code>  - move left, down, up, right</li>
+<li><code>w</code>           - move to next work</li>
+<li><code>0</code>           - move to beginning of line</li>
+<li><code>$</code>           - move to end of line</li>
+</ul>
+<h3 id="text-objects">Text Objects</h3>
+<ul>
+<li><code>w</code>   - word</li>
+</ul>
+<h2 id="who-is-vim-for">Who is Vim for?</h2>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/vim/">Vim: The World&#39;s Greatest Text Editor</a></li>
+				
+				<li><a href="/blog/privacy/">Privacy &amp; Security in the Modern Digital Age</a></li>
+				
+				<li><a href="/blog/linux/intro/ch6/">Intro to Linux - Chapter 6</a></li>
+				
+				<li><a href="/blog/linux/intro/ch5/">Intro to Linux - Chapter 5</a></li>
+				
+				<li><a href="/blog/linux/intro/ch4/">Intro to Linux - Chapter 4</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<a href="https://github.com/skovati"><b>github</b></a>.
+	<a href="https://gitlab.com/skovati"><b>gitlab</b></a>.
+	<a href="mailto:skovati@protonmail.com"><b>email</b></a>.
+	<a href="https://gpg.skovati.dev"><b>gpg</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

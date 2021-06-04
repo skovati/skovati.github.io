@@ -3,12 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://skovati.dev/blog/</loc>
-    <lastmod>2021-05-25T18:00:53-05:00</lastmod>
+    <lastmod>2021-06-03T20:04:39-05:00</lastmod>
   </url><url>
-    <loc>https://skovati.dev/blog/linux/intro/ch6/</loc>
-    <lastmod>2021-05-25T18:00:53-05:00</lastmod>
+    <loc>https://skovati.dev/tags/programming/</loc>
+    <lastmod>2021-06-03T20:04:39-05:00</lastmod>
   </url><url>
     <loc>https://skovati.dev/</loc>
+    <lastmod>2021-06-03T20:04:39-05:00</lastmod>
+  </url><url>
+    <loc>https://skovati.dev/tags/</loc>
+    <lastmod>2021-06-03T20:04:39-05:00</lastmod>
+  </url><url>
+    <loc>https://skovati.dev/tags/unix/</loc>
+    <lastmod>2021-06-03T20:04:39-05:00</lastmod>
+  </url><url>
+    <loc>https://skovati.dev/tags/vim/</loc>
+    <lastmod>2021-06-03T20:04:39-05:00</lastmod>
+  </url><url>
+    <loc>https://skovati.dev/blog/vim/</loc>
+    <lastmod>2021-06-03T20:04:39-05:00</lastmod>
+  </url><url>
+    <loc>https://skovati.dev/tags/internet/</loc>
+    <lastmod>2021-05-29T17:32:45-05:00</lastmod>
+  </url><url>
+    <loc>https://skovati.dev/tags/minimalism/</loc>
+    <lastmod>2021-05-29T17:32:45-05:00</lastmod>
+  </url><url>
+    <loc>https://skovati.dev/tags/privacy/</loc>
+    <lastmod>2021-05-29T17:32:45-05:00</lastmod>
+  </url><url>
+    <loc>https://skovati.dev/blog/privacy/</loc>
+    <lastmod>2021-05-29T17:32:45-05:00</lastmod>
+  </url><url>
+    <loc>https://skovati.dev/tags/security/</loc>
+    <lastmod>2021-05-29T17:32:45-05:00</lastmod>
+  </url><url>
+    <loc>https://skovati.dev/blog/linux/intro/ch6/</loc>
     <lastmod>2021-05-25T18:00:53-05:00</lastmod>
   </url><url>
     <loc>https://skovati.dev/blog/linux/intro/ch5/</loc>
@@ -41,7 +71,5 @@
     <loc>https://skovati.dev/about/</loc>
   </url><url>
     <loc>https://skovati.dev/categories/</loc>
-  </url><url>
-    <loc>https://skovati.dev/tags/</loc>
   </url>
 </urlset>

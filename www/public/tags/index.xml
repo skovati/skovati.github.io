@@ -5,6 +5,70 @@
     <link>https://skovati.dev/tags/</link>
     <description>Recent content in Tags on skovati</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://skovati.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Jun 2021 20:04:39 -0500</lastBuildDate><atom:link href="https://skovati.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>programming</title>
+      <link>https://skovati.dev/tags/programming/</link>
+      <pubDate>Thu, 03 Jun 2021 20:04:39 -0500</pubDate>
+      
+      <guid>https://skovati.dev/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unix</title>
+      <link>https://skovati.dev/tags/unix/</link>
+      <pubDate>Thu, 03 Jun 2021 20:04:39 -0500</pubDate>
+      
+      <guid>https://skovati.dev/tags/unix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://skovati.dev/tags/vim/</link>
+      <pubDate>Thu, 03 Jun 2021 20:04:39 -0500</pubDate>
+      
+      <guid>https://skovati.dev/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>internet</title>
+      <link>https://skovati.dev/tags/internet/</link>
+      <pubDate>Sat, 29 May 2021 17:32:45 -0500</pubDate>
+      
+      <guid>https://skovati.dev/tags/internet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>minimalism</title>
+      <link>https://skovati.dev/tags/minimalism/</link>
+      <pubDate>Sat, 29 May 2021 17:32:45 -0500</pubDate>
+      
+      <guid>https://skovati.dev/tags/minimalism/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>privacy</title>
+      <link>https://skovati.dev/tags/privacy/</link>
+      <pubDate>Sat, 29 May 2021 17:32:45 -0500</pubDate>
+      
+      <guid>https://skovati.dev/tags/privacy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://skovati.dev/tags/security/</link>
+      <pubDate>Sat, 29 May 2021 17:32:45 -0500</pubDate>
+      
+      <guid>https://skovati.dev/tags/security/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
