@@ -70,5 +70,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>intro</title>
+      <link>https://skovati.dev/tags/intro/</link>
+      <pubDate>Tue, 25 May 2021 18:00:53 -0500</pubDate>
+      
+      <guid>https://skovati.dev/tags/intro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://skovati.dev/tags/linux/</link>
+      <pubDate>Tue, 25 May 2021 18:00:53 -0500</pubDate>
+      
+      <guid>https://skovati.dev/tags/linux/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

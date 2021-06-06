@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Vim: The World&#39;s Greatest Text Editor</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	=============<br>
+	== <a href="https://skovati.dev/">skovati</a> ==<br>
+	=============
+	<div style="float: right;">adventures of a digital minimalist</div><br>
+	<p>
+	<nav>
+			
+			
+			<a href="/about/"><b>about</b></a>.
+			
+			<a href="/blog/"><b>blog</b></a>.
+			
+			<a href="/tags/"><b>tags</b></a>.
+			
+			<a href="/recipies/"><b>recipies</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Vim: The World&#39;s Greatest Text Editor</h1>
+			<b><time>03.06.2021 20:04</time></b>
+		       
+		           <a href="/tags/vim">vim</a>
+        	       
+		           <a href="/tags/unix">unix</a>
+        	       
+		           <a href="/tags/programming">programming</a>
+        	       
+
+			<div>
+				<p><em>Disclaimer: This blog post is not meant to teach Vim, (that might come later) just to act as inspiration to start the learning journey.</em></p>
+<p><em>If you&rsquo;ve been convinced by this post and want to learn Vim, here are a few fantastic tutorials that helped me get started:</em></p>
+<ul>
+<li><code>vimtutor</code>, Vim&rsquo;s built in tutorial, if Vim is installed on your system, just run <code>vimtutor</code> for an interactive tutorial</li>
+<li><a href="https://www.youtube.com/watch?v=IiwGbcd8S7I">Ben Awad&rsquo;s Tutorial</a> - watch this first, no BS, beginner to advanced</li>
+<li><a href="https://www.youtube.com/watch?v=ER5JYFKkYDg">DistroTube&rsquo;s Vim series</a> - moderate BS, takes it slow</li>
+<li>And for Vim-god inspiration, check out a few <a href="https://www.youtube.com/watch?v=hraHAZ1-RaM">Luke Smith videos</a> - dude himself is BS, but rocks at Vim</li>
+<li>And these <a href="https://www.youtube.com/watch?v=wlR5gYd6um0">Vim meetup talks</a> are a good rabbit hole</li>
+</ul>
+<p>Anyways&hellip; the post&hellip;</p>
+<h1 id="what-is-a-vim-anyways">What is a Vim anyways?</h1>
+<p>Vim stands for vi-improved. It builds off of the ideas of a previous text editor known as vi, which was created by <a href="https://en.wikipedia.org/wiki/Bill_Joy">Bill Joy</a> (yeah <em>that</em> Bill Joy that worked on Unix, BSD, TCP/IP, Java, and NFS) back in 1976. Lots of programs back then were iterated on by others, since the source code was often available for modification. Vi is no exception.</p>
+<h1 id="why-use-vim">Why use Vim?</h1>
+<p>One of the main groundbreaking ideas behind vi, and therefore Vim, is the idea of <em>modal editing</em>, where you switch between modes and keys do different things in each of those modes. This is in stark contrast to editors a lot of people are familiar with like Microsoft Word or the Google Docs editor, where every qwerty key simply inputs the corresponding character into the document. In Vim, this <strong>only</strong> happens when in &lsquo;insert&rsquo; mode. When in the other modes, like &lsquo;normal&rsquo; or &lsquo;visual&rsquo; these same keys you use to input characters are instead used as keybinds for movement, editing, saving, quitting, etc. The most obvious advantage to this is that you can have significantly more keybinds than non-modal editors, since you simply have more keys to work with. Microsoft Word needs to use some hand-cramp-inducing combination of keys like <code>Ctr-Shift-t</code> for simple commands like cut or paste, when in Vim this can just be one key, right by the asdfjkl; homerow. This offers more specific keybinds that can significantly increase productivity, as well as reduce hand fatigue when typing for 8+ hours a day.</p>
+<p>The other groundbreaking idea behind Vim (and vi) is <em>command composition</em>. We&rsquo;ll dive into this in the next section, but essentially Vim has different types of commands like movement, editing, and repetition, which can be composed to increase their functionality. So you can apply any editing command to a movement command to apply it to that whole chunk of text (again, we&rsquo;ll see examples shortly). This means that you can rapidly gain new functionality by learning just a few of the commands Vim has to offer; say you know 5 editing commands and 6 movement commands, since you can compose these by placing the editing command before the movement command, you now know 5 x 6 = 30 commands while only memorizing 5 + 6 = 11 keybinds! Having that same amount of editing power in MS Word would require learning <em>all</em> 30 keybinds.</p>
+<p>Finally, Vim has a rich editing philosophy. A lot of the design decisions were made due to technical limitations at the time (no mouse, terminal screens only, slow computers that benefited from chaining sequential commands), but these decisions turn out to have modern day benefits as well (no back and forth between keyboard and mouse, easier on the hands and faster, composable commands allow for verbose, flexible expression of editing desires, commands offer easy automation for repetitive tasks, integrates with Unix Philosophy, etc), since good design is still good design, even 50 years later.</p>
+<p>I think this photo sums it up well. Vim&rsquo;s learning curve really is more like a learning wall, but once you&rsquo;ve over that you will become exponentially faster as you learn more, and will soon overtake and far surpass editing capabilities in other text editors.
+
+<figure>
+  <img src="https://miro.medium.com/max/1568/1*EoHV8AHhzZcP-nM1EQUKIg.jpeg" alt="" />
+</figure>
+
+
+</p>
+<p>Also, Vim is free and open-source, like all good software is. No more VSCode sending telemetry data to Microsoft or Sublime prompting you to pay for a license.</p>
+<h1 id="vim-is-an-editing-language-with-syntax-and-grammar">Vim is an editing language, with syntax and grammar</h1>
+<p>Okay so, what are these different commands I keep talking about and why are they so powerful? Again, this isn&rsquo;t a tutorial, but I&rsquo;ll list the basics here so I can use them in examples.</p>
+<h3 id="some-editing-commands">Some Editing Commands</h3>
+<ul>
+<li><code>i</code>   - enter insert mode</li>
+<li><code>Esc</code> - return to normal mode</li>
+<li><code>d</code>   - delete</li>
+<li><code>c</code>   - change</li>
+<li><code>y</code>   - copy</li>
+<li><code>p</code>   - paste</li>
+<li><code>u</code>   - undo</li>
+<li><code>Ctrl-r</code> - redo</li>
+</ul>
+<h3 id="some-movement-commands">Some Movement Commands</h3>
+<ul>
+<li><code>h, j, k, l</code>  - move left, down, up, right</li>
+<li><code>w</code>           - move to next work</li>
+<li><code>0</code>           - move to beginning of line</li>
+<li><code>$</code>           - move to end of line</li>
+<li><code>}</code>           - move to end of code block / paragraph</li>
+<li><code>gg</code>          - move to beginning of document</li>
+<li><code>G</code>           - move to end of document</li>
+<li><code>t&lt;char&gt;</code>     - move to next instance of <!-- raw HTML omitted --></li>
+</ul>
+<h3 id="some-text-objects">Some Text Objects</h3>
+<ul>
+<li><code>w</code>   - word</li>
+<li><code>i&quot;</code>  - inside quotes</li>
+<li><code>i{</code>  - inside brackets</li>
+<li><code>as</code>  - sentence</li>
+<li><code>ip</code>  - inside paragraph</li>
+</ul>
+<h2 id="using-these-commands-objects-and-movements-together">Using these commands, objects, and movements together</h2>
+<p>So, the real power behind Vim is that these keybinds actually form a sort of editing language, with grammar and syntax like verbs, nouns, and adverbs. The general syntax for a &ldquo;sentence&rdquo; in Vim is <code>&lt;number&gt;&lt;command&gt;&lt;object or motion&gt;</code>. The numbers here act as an adverb, the commands act as a verb, and the objects and motions act as the noun to which the verb is applied.</p>
+<h3 id="prose-example">Prose Example</h3>
+<p>As an example, we can run <code>diw</code> which runs the delete command on the inner word text object. So say the line we&rsquo;re editing is as follows (with █ representing where the cursor is):</p>
+<p>The quick brown fox ju█ps over the lazy dog.</p>
+<p>If <code>diw</code> is run, the delete operation will run on the inner word object, and delete the entire word &ldquo;jumps&rdquo;, leaving just:</p>
+<p>The quick brown fox █over the lazy dog.</p>
+<p>This same delete command can be run on any motion or object. Here is an example of deleting the entire sentence with <code>das</code> (delete around sentence):</p>
+<p>The quick brown fox jumps over the lazy dog. The quick b█own fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
+<p>Leaving just:</p>
+<p>The quick brown fox jumps over the lazy dog. █he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
+<p>Or you could delete the entire paragraph with <code>dap</code> (delete around paragraph).</p>
+<h3 id="code-example">Code Example</h3>
+<p>These ideas extend extremely well to source code. Consider the following example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">greeting</span> <span style="color:#66d9ef">string</span> = <span style="color:#e6db74">&#34;He█lo, Reader&#34;</span>
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">greeting</span>)
+}
+</code></pre></div><p>Here, say we wanted to change the value of the greeting variable. Of course, we could take a hand off the keyboard, move it over to the mouse, move the cursor to the desired spot on the screen, click and drag to select the desired text, and then finally hit backspace and start typing our new greeting&hellip; or, we could do it the Vim way, by simple hitting <code>ci&quot;</code> (change inside double quotes) which will delete everything inside the quotes, and place us in insert mode ready to type.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">greeting</span> <span style="color:#66d9ef">string</span> = <span style="color:#e6db74">&#34;█&#34;</span>
+</code></pre></div><p>Or, we could change the entire function body by typing <code>cip</code> (change inside paragraph), leaving us in insert mode with the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span> {<span style="color:#960050;background-color:#1e0010">█</span>}
+</code></pre></div><p>And finally, say we had a really annoying function call that we wanted to change out. Something like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#960050;background-color:#1e0010">█</span><span style="color:#a6e22e">MyReallyLong_Annoyingly_NamedFunction</span>(<span style="color:#a6e22e">SomeotherInnerFunction</span>(<span style="color:#a6e22e">greeting</span>)).<span style="color:#a6e22e">Print</span>()
+</code></pre></div><p>And we want to change this entire function up until the .Print() call. No real combination of text objects or movements could delete this strangely worded function call. Is this finally a situation where the good &lsquo;ol click and drag to select and delete wins over Vim? Of course not, we can use <code>ct.</code>, which will Change To the next instance of a &ldquo;.&rdquo;, leaving us in insert mode with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#960050;background-color:#1e0010">█</span>.<span style="color:#a6e22e">Print</span>()
+</code></pre></div><h3 id="numerical-repetition">Numerical repetition</h3>
+<p>These commands can also take a numeric prefix, which represents the amount of time the command should run. A classic example is <code>dd</code>, which deletes the current line of text. By prefixing this with a number (say 5 <code>5dd</code>), Vim will delete the next 5 lines of text. Or <code>3cw</code> will delete the next 3 words, and place you in insert mode to replace them. Essentially, this repetition allows you to work on many sections of text that don&rsquo;t precisely correspond to a Vim keybind, which offers a lot of power.</p>
+<p>In my opinion, these are really powerful movements, especially when editing source code. I find myself using <code>ci&quot;</code> to change strings or <code>}</code> to jump between functions extremely often. And, like stated before, these command compositions work with any command and object/movement, so once you get the hang of targeting specific objects or movements, you can apply any of the commands we&rsquo;ve learned so far to them, like delete, change, or copy.</p>
+<h2 id="okay-cool-but-that-seems-like-a-lot-of-work-just-to-replicate-the-things-i-already-know-how-to-do-in-vscode-why-would-i-switch">Okay cool, but that seems like a lot of work just to replicate the things I already know how to do in VSCode, why would I switch?</h2>
+<p>Yes, there is a somewhat steep learning curve with Vim, and it&rsquo;s not something I&rsquo;d recommend to my parents who only type to search Google, but when your profession requires editing text for eight hours a day (developer editing source code, SysAdmin editing config files, DevOps engineer editing YAML, writer editing prose scripts or stories), the time spent learning the bread and butter of Vim will end up saving you a <em>lot</em> of time.</p>
+<p>Furthermore, Vim commands like these let the computer do the hard work for you (like searching for the next parentheses), rather than making the human visually inspect where exactly to highlight and delete. This makes editing text, especially when these commands are ingrained in muscle memory, significantly faster, since the editor no longer needs to reach over to the mouse every time they want to make a simple change.</p>
+<h2 id="who-is-vim-for">Who is Vim for?</h2>
+<p>Vim, in my opinion, is best geared towards developers or operations people who edit source code or configuration files for most hours in a day. However, Vim can be as simple as, press <code>i</code> to enter insert mode, type your text, hit <code>Esc</code> to return to normal mode, and then <code>:wq</code> to save and quit. Noobs can use the mouse and arrow keys to navigate around while they learn the more efficient native Vim keybinds. Once a beginner has learned these few basic commands, they are likely just as fast in Vim as another text editor, with plenty of room to grow and speed up their editing. Vim is also extremely powerful for prose editing—I edit all my blog posts in Vim, using commands like <code>(</code>, <code>{</code>, <code>cas</code>, and <code>cw</code> to quickly jump around sentences, paragraphs, and reword sentences and change word choice.</p>
+<h2 id="where-to-now">Where to now?</h2>
+<p>Again, I don&rsquo;t plan on making a Vim tutorial for the basics, I think other creators can do a much better job with that. Check out the videos linked at the top of this post if you want to dive into some more basic movement and editing commands of Vim. Later, I may post about more advanced Vim ideas like macros, buffers, plugins, or global commands. We&rsquo;ve only scratched the very surface of Vim, but I hope this has been enough to convince you to give it a try. Live in Vim for a week or two, learn the basic commands and focus on efficient movement and editing, and I bet you&rsquo;ll be hooked and it&rsquo;ll feel sluggish to return to your old text editor.</p>
+<p>The most fun part of Vim is learning, which I want to leave to you. I never thought I&rsquo;d have fun and even look forward to editing text before I came across Vim. Some topics to look into after watching the basic tutorials linked above.</p>
+<ul>
+<li>vimrc file</li>
+<li>plugins (NerdTree, Tagbar, CoC)</li>
+<li>macros</li>
+<li>buffers, splits, and tabs</li>
+<li>regex based search and replace</li>
+<li>global commands</li>
+</ul>
+<p>For those interested, <a href="https://github.com/skovati/dotfiles/blob/master/vim/.vimrc">here is my vimrc</a>, which contains all the configuration, custom keybinds, plugins, and more that I use for my custom Vim editing experience.</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/whyvim/">Vim: The World&#39;s Greatest Text Editor</a></li>
+				
+				<li><a href="/blog/privacy/">Privacy &amp; Security in the Modern Digital Age</a></li>
+				
+				<li><a href="/blog/linux/intro/ch6/">Intro to Linux - Chapter 6</a></li>
+				
+				<li><a href="/blog/linux/intro/ch5/">Intro to Linux - Chapter 5</a></li>
+				
+				<li><a href="/blog/linux/intro/ch4/">Intro to Linux - Chapter 4</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<a href="https://github.com/skovati"><b>github</b></a>.
+	<a href="https://gitlab.com/skovati"><b>gitlab</b></a>.
+	<a href="mailto:skovati@protonmail.com"><b>email</b></a>.
+	<a href="https://gpg.skovati.dev"><b>gpg</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

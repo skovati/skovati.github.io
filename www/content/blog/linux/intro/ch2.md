@@ -2,6 +2,9 @@
 title: "Intro to Linux - Chapter 2"
 date: 2021-05-25T18:00:48-05:00
 draft: true
+tags:
+  - linux
+  - intro
 ---
 
 ## What is a "Linux" anyways?
@@ -9,7 +12,7 @@ draft: true
 
 This chapter *is* optional, but highly recommended. To really get a good perspective on Linux as a whole I think some historical context is necessary. It all starts back in the 60s when MIT and AT&T's Bell Labs were developing Multics, a time-sharing operating system for the GE-645 mainframe computer. That baby had dual 435kHz processors, 3 MBs of memory, could connect to 35 terminals simultaneously, and looked like this: 
 
-![GE-645](/linux/intro/ch2/GE645.jpg "GE-645")
+![GE-645](/GE645.jpg "GE-645")
 *GE-645*
 
 While Multics was probably the most influential operating system of all time, it wasn't without its issues, and after a few years working on the project, Ken Thompson, Dennis Ritchie, and a few others decided to start over with something called *Uniplexed Information and Computing Service* or Unics—later renamed Unix. While originally written in assembly language, it was eventually ported to be the first OS written in *C*, a new high-level programming language also created at Bell Labs (seriously look at the [Wikipedia](https://en.wikipedia.org/wiki/Bell_Labs) page for Bell Labs, they invented everything from Unix to the transistor). Unix was revolutionary, introducing hierarchical file systems, text-based applications, shell scripting, pipelining commands, devices as files, and the so-called "Unix Philosophy". This philosophy can be summarized as "Each program should just do one thing and do it well"—meaning one program should list files in a directory, while an entirely separate program should facilitate changing directories or creating new files. This is in great contrast with a *monolithic* design style, where one singular *File Manager* is responsible for **all** the desired behavior for creating, managing, moving, renaming, or deleting files. This increased modularity that Unix got from this philosophy allowed it to be extremely extensible and scale very well. The Unix philosophy is still often referenced today in software design—most commonly Keep It Simple Stupid.
@@ -35,4 +38,4 @@ I would be remissed if I didn't mention Linux's cousins, the BSDs. I'll keep thi
 
 Finally, the preamble is over, and we can get into the meat of using Linux.
 
-[Chapter 3 - Linux Terminology - Distros, Package Managers, and More.](/linux/intro/ch3)
+[Chapter 3 - Linux Terminology - Distros, Package Managers, and More.](/blog/linux/intro/ch3)

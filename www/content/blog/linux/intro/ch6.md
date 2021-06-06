@@ -2,6 +2,9 @@
 title: "Intro to Linux - Chapter 6"
 date: 2021-05-25T18:00:53-05:00
 draft: true
+tags:
+  - linux
+  - intro
 ---
 
 ## Bash && Extensibility
@@ -42,4 +45,3 @@ Running `ls` in my current directory prints out three directories: code, documen
 This introduces the idea of extensibility. Since these GNU system utilities simply take in a text stream and then output a text stream, they can easily communicate with each other, which creates new possibilities that the developers of either program didn't have to explicitly program. Here's a more useful example of this text-based extensibility in action:
 
 As previously mentioned, I'm writing these blog posts in Markdown, which is just a text file with some simple syntax to show **bold** words or *italics* and stuff like that. Since all the posts are text, I can run cat on all of them to output them all to a big text stream. Then, I could pipe that into another program, like word count, to see more information about all the blog posts. Running `cat ch*/*.md | wc -w` (the \*'s just mean to select every .md file) outputs 7288, so that's how many words I've written in the last 5 blog posts! Going deeper, I could count up how many times I've said the word "Linux" with a command like this `cat ch*/*.md | grep -wo Linux | wc -l` (grep is a tool for searching text streams) which outputs 90. If I was instead writing all of these in something like Microsoft Word, I'd have to open up each file manually, Ctrl-f to search for Linux, and then count up and add together all of the instances manually. *That's* the power of Linux. 
-

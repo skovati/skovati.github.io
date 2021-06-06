@@ -2,6 +2,9 @@
 title: "Intro to Linux - Chapter 5"
 date: 2021-05-25T18:00:51-05:00
 draft: true
+tags:
+  - linux
+  - intro
 ---
 
 ## Chapter 5 - Server Configuration
@@ -41,5 +44,5 @@ A lot of that might've gone over your head, but that's fine. We secured your sys
 
 Congratulations though! If you've been following Chapters 4-5, you've set up a remote Linux virtual machine or bare metal install, given yourself encrypted access, locked down the traffic with a firewall, and now you have a perfect environment set up to learn the ins and outs of the command line. The next few chapters will likely be about specific topics, like the bash programming language or how to set up a web server, so feel free to skip around to the stuff that interests you!
 
-[Chapter 6 - Bash && "Extensibilty"](/linux/intro/ch6)
+[Chapter 6 - Bash && "Extensibilty"](/blog/linux/intro/ch6)
 

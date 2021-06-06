@@ -1,33 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on skovati</title>
-    <link>https://skovati.dev/blog/</link>
-    <description>Recent content in Blogs on skovati</description>
+    <title>linux on skovati</title>
+    <link>https://skovati.dev/tags/linux/</link>
+    <description>Recent content in linux on skovati</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Jun 2021 20:04:39 -0500</lastBuildDate><atom:link href="https://skovati.dev/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Vim: The World&#39;s Greatest Text Editor</title>
-      <link>https://skovati.dev/blog/whyvim/</link>
-      <pubDate>Thu, 03 Jun 2021 20:04:39 -0500</pubDate>
-      
-      <guid>https://skovati.dev/blog/whyvim/</guid>
-      <description>Disclaimer: This blog post is not meant to teach Vim, (that might come later) just to act as inspiration to start the learning journey.
-If you&amp;rsquo;ve been convinced by this post and want to learn Vim, here are a few fantastic tutorials that helped me get started:
- vimtutor, Vim&amp;rsquo;s built in tutorial, if Vim is installed on your system, just run vimtutor for an interactive tutorial Ben Awad&amp;rsquo;s Tutorial - watch this first, no BS, beginner to advanced DistroTube&amp;rsquo;s Vim series - moderate BS, takes it slow And for Vim-god inspiration, check out a few Luke Smith videos - dude himself is BS, but rocks at Vim And these Vim meetup talks are a good rabbit hole  Anyways&amp;hellip; the post&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>Privacy &amp; Security in the Modern Digital Age</title>
-      <link>https://skovati.dev/blog/privacy/</link>
-      <pubDate>Sat, 29 May 2021 17:32:45 -0500</pubDate>
-      
-      <guid>https://skovati.dev/blog/privacy/</guid>
-      <description>Author: skovati Date: 2021-05-29
-The modern web is plagued by data mining, cross site tracking, intrusive ads, analytics, cookies, etc. How does one escape? It&amp;rsquo;s easy enough to say, &amp;ldquo;oh I wish it were like the 90s again with a simple internet&amp;rdquo;, but then we&amp;rsquo;d be missing out on some fantastic things from the modern web, like instant video chatting with loved ones, or having the world&amp;rsquo;s wealth of information at your fingertips with sites like Wikipedia and Youtube.</description>
-    </item>
-    
+    <lastBuildDate>Tue, 25 May 2021 18:00:53 -0500</lastBuildDate><atom:link href="https://skovati.dev/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Intro to Linux - Chapter 6</title>
       <link>https://skovati.dev/blog/linux/intro/ch6/</link>

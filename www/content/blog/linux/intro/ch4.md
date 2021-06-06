@@ -2,6 +2,9 @@
 title: "Intro to Linux - Chapter 4"
 date: 2021-05-25T18:00:50-05:00
 draft: true
+tags:
+  - linux
+  - intro
 ---
 
 ## Installing Linux
@@ -19,7 +22,7 @@ This option definitely *seems* the scariest to newcomers, but installing Linux a
 
 - Choose your Linux distro you want to use. Ubuntu is the de facto starting place for beginners, although Linux Mint is another good recommendation.
 
-Assuming you picked Ubuntu, go to the [download](https://ubuntu.com/download/desktop) page and grab the latest ISO for your system architecture (which is probably amd64). Alternatively, if you want to try a different *desktop environment* (read [Chapter 3](/linux/intro/ch3) if you haven't already), you can check out the different [Ubuntu flavors](https://ubuntu.com/download/flavours), that include DEs like KDE Plasma, LXDE, and Budgie.
+Assuming you picked Ubuntu, go to the [download](https://ubuntu.com/download/desktop) page and grab the latest ISO for your system architecture (which is probably amd64). Alternatively, if you want to try a different *desktop environment* (read [Chapter 3](/blog/linux/intro/ch3) if you haven't already), you can check out the different [Ubuntu flavors](https://ubuntu.com/download/flavours), that include DEs like KDE Plasma, LXDE, and Budgie.
 
 Next, you'll need a USB drive. I'd recommend at least 8 gigs, as some of these Ubuntu images can get pretty big (current release is 2.7 gigs). Make sure there isn't anything important on it, and then download my preferred flashing utility, [Balena Etcher](https://www.balena.io/etcher/). Download and run that .exe (hopefully that's the last time you have to do *that*), and insert your USB stick. Open Etcher, choose your USB (be careful to choose the right one), select your Ubuntu ISO, and hit flash. Once that's done, you'll need to make sure your computer's BIOS is configured to boot from a USB stick before it boots from an installed hard drive; search around if you aren't sure how to do this. Once the BIOS is configured, insert your USB and reboot. You'll be greeted with the Ubuntu installer, which will walk you through the process. I won't go into detail here, just make to click the "install along side existing OS" option when you're choosing the hard drive to install to. This will partition your disks, and add your Windows install to the bootloader, so you can choose which OS to boot every time you turn your computer on. I recommend watching [this video](https://www.youtube.com/watch?v=G7ffzC4S0A4) to get a feel for the installation. Once the installer is done, just reboot your computer and choose Ubuntu on the GRUB bootloader screen!
 
@@ -39,13 +42,13 @@ I'll walk through the steps to set up this VM on Google Cloud:
 
 First, either sign in with your existing account, or make a new account [here](https://console.cloud.google.com/). Make a new project at the top, called something memorable like "Linux VM" and select it. Then, on the left side, select Compute Engine. Select your project, add your payment information (you won't be billed anything though), and the hit create VM. Under machine configuration, choose generation N1, and under Machine type, choose f1-micro. GCP gives everyone 744 free hours of f1-micro usage per month, which is exactly 24 hours a day * 31 days in a month—so this VM is indefinitely free for you to use. You also get $300 free credit towards other GCP services if you want more horsepower. Next, under Boot Disk, I recommend choosing either Ubuntu Server or Debian 10. Ubuntu Server is going to be easier for newcomers, while Debian has less configured out of the box. Then, hit create and wait a few seconds. Soon your could VM will be up and running. 
 
-<img src="/linux/intro/ch4/vm.png" alt="drawing" width="100%"/>
+![](/vm.png)
 
 Go back to your VM instances page, and you should see your new server. There are a handful of ways to connect to this server: SSH through the GCP interface, using the gcloud command line tool, or SSHing manually through a program of your choice. I recommend learning how to access it from a ssh client, but you should use the GCP ssh interface at least once to see what your username is on the VM. Both Linux and Windows have an SSH client built into the terminal and PowerShell respectively. If you're familiar with SSH, generate a key pair and continue reading, if not, skip ahead to the first part of [Chapter 5](/linux/intro/ch5) where I talk about what SSH is and why you should use SSH keys.
 
 Once you have an ssh key pair generated, you'll have to add your public key to the GCP VMs whitelist. This is done by clicking on your VM in the VM instance list, and hitting edit on the top bar. Scroll down to the SSH key section, hit view and edit, and paste your ssh public key in here. Now, you should be able to access your VM by typing `ssh your-google-username@the-vms-ip-listed-on-the-instances-page` and boom! Remote secure shell access. Once you have this working, move onto the other parts of [Chapter 5](/linux/intro/ch5) where I talk about other server configuration.
 
-<img src="/linux/intro/ch4/ssh.png" alt="drawing" width="100%"/>
+![](/ssh.png)
 
 ---
 
@@ -53,4 +56,4 @@ Once you have an ssh key pair generated, you'll have to add your public key to t
 
 I have nothing against running a VM, I just think it's far too easy to install it once and forget about it after a week compared to installing it on your own machine or buying a Raspberry Pi. That being said, using a VM service like Oracle's [VirtualBox](https://www.virtualbox.org/) is a fool-proof way to quickly get a Linux environment up and running. This is perfect if you want to try out different distros or desktop environments, or just want to see what Linux is about before installing it on a personal machine. I won't go into detail about how to setup a VM here, there are many other tutorials online. 
 
-[Chapter 5 - Configuring Your Linux Server](/linux/intro/ch5)
+[Chapter 5 - Configuring Your Linux Server](/blog/linux/intro/ch5)

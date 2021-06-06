@@ -2,6 +2,9 @@
 title: "Intro to Linux - Chapter 3"
 date: 2021-05-25T18:00:49-05:00
 draft: true
+tags:
+  - linux
+  - intro
 ---
 
 ## Linux Terminology - Distros, Package Managers, and More
@@ -84,4 +87,4 @@ The most obvious form of customization in Linux is how the desktop looks and fee
 
 Another fantastic feature of Linux distros is that all of the configuration is held in so-called "configuration files". Often these files reside in the users home directory (we'll talk about filesystem organization in a later chapter) and are prefixed with a "." like ".vimrc", hence the nickname "dotfiles". You can see examples of some dotfiles in my [GitHub repo](https://github.com/skovati/dotfiles). These hold all of the config for my window manager, text editor, pdf and image viewer, terminal, and more. Because this config is stored in text files, I can back-up and version control them with git, and if I want to reinstall my OS or switch distros, all I have to do it clone that repo and 95% of my configuration is done already—including automatically installing important packages. Try doing that in windows where you have to manually install every piece of software and change each setting by hand with a new install. This makes Linux very portable and replaceable; my laptop's SSD could get wiped and I wouldn't break a sweat, because I didn't really lose anything. You will spend a lot of time customizing these files, but it's time well spent, as they can stay with you during your whole career.
 
-[Chapter 4 - Installing Linux](/linux/intro/ch4)
+[Chapter 4 - Installing Linux](/blog/linux/intro/ch4)
