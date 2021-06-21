@@ -6,7 +6,16 @@
     <description>Recent content in vim on skovati</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Jun 2021 20:04:39 -0500</lastBuildDate><atom:link href="https://skovati.dev/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Jun 2021 21:40:31 -0500</lastBuildDate><atom:link href="https://skovati.dev/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A minimal Vim, Markdown, and GPG powered wiki</title>
+      <link>https://skovati.dev/blog/wiki/</link>
+      <pubDate>Sun, 20 Jun 2021 21:40:31 -0500</pubDate>
+      
+      <guid>https://skovati.dev/blog/wiki/</guid>
+      <description>Motivation and Vimwiki Lately, I&amp;rsquo;ve been keeping notes, ideas, to-do lists, and journal entries in a test based wiki, thanks to the fantastic plugin vimwiki. If you&amp;rsquo;re not familiar, vimwiki enables easy hyperlinking between text files marked up with either Markdown or a feature rich vimwiki syntax. This can be a collection of programming language snippets, notes from CS class, project to-do lists, a personal diary—whatever you want. You can navigate between linked files with and and even convert to HTML to view in a browser.</description>
+    </item>
+    
     <item>
       <title>Vim: The World&#39;s Greatest Text Editor</title>
       <link>https://skovati.dev/blog/whyvim/</link>

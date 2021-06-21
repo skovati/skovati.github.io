@@ -2,31 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://skovati.dev/blog/</loc>
-    <lastmod>2021-06-03T20:04:39-05:00</lastmod>
+    <loc>https://skovati.dev/blog/wiki/</loc>
+    <lastmod>2021-06-20T21:40:31-05:00</lastmod>
   </url><url>
-    <loc>https://skovati.dev/tags/programming/</loc>
-    <lastmod>2021-06-03T20:04:39-05:00</lastmod>
+    <loc>https://skovati.dev/blog/</loc>
+    <lastmod>2021-06-20T21:40:31-05:00</lastmod>
+  </url><url>
+    <loc>https://skovati.dev/tags/minimalism/</loc>
+    <lastmod>2021-06-20T21:40:31-05:00</lastmod>
   </url><url>
     <loc>https://skovati.dev/</loc>
-    <lastmod>2021-06-03T20:04:39-05:00</lastmod>
+    <lastmod>2021-06-20T21:40:31-05:00</lastmod>
   </url><url>
     <loc>https://skovati.dev/tags/</loc>
-    <lastmod>2021-06-03T20:04:39-05:00</lastmod>
+    <lastmod>2021-06-20T21:40:31-05:00</lastmod>
   </url><url>
     <loc>https://skovati.dev/tags/unix/</loc>
-    <lastmod>2021-06-03T20:04:39-05:00</lastmod>
+    <lastmod>2021-06-20T21:40:31-05:00</lastmod>
   </url><url>
     <loc>https://skovati.dev/tags/vim/</loc>
+    <lastmod>2021-06-20T21:40:31-05:00</lastmod>
+  </url><url>
+    <loc>https://skovati.dev/tags/programming/</loc>
     <lastmod>2021-06-03T20:04:39-05:00</lastmod>
   </url><url>
     <loc>https://skovati.dev/blog/whyvim/</loc>
     <lastmod>2021-06-03T20:04:39-05:00</lastmod>
   </url><url>
     <loc>https://skovati.dev/tags/internet/</loc>
-    <lastmod>2021-05-29T17:32:45-05:00</lastmod>
-  </url><url>
-    <loc>https://skovati.dev/tags/minimalism/</loc>
     <lastmod>2021-05-29T17:32:45-05:00</lastmod>
   </url><url>
     <loc>https://skovati.dev/tags/privacy/</loc>

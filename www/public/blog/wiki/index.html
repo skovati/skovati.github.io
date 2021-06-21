@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>A minimal Vim, Markdown, and GPG powered wiki</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	=============<br>
+	== <a href="https://skovati.dev/">skovati</a> ==<br>
+	=============
+	<div style="float: right;">adventures of a digital minimalist</div><br>
+	<p>
+	<nav>
+			
+			
+			<a href="/about/"><b>about</b></a>.
+			
+			<a href="/blog/"><b>blog</b></a>.
+			
+			<a href="/tags/"><b>tags</b></a>.
+			
+			<a href="/recipies/"><b>recipies</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>A minimal Vim, Markdown, and GPG powered wiki</h1>
+			<b><time>20.06.2021 21:40</time></b>
+		       
+		           <a href="/tags/vim">vim</a>
+        	       
+		           <a href="/tags/unix">unix</a>
+        	       
+		           <a href="/tags/minimalism">minimalism</a>
+        	       
+
+			<div>
+				<h2 id="motivation-and-vimwiki">Motivation and Vimwiki</h2>
+<p>Lately, I&rsquo;ve been keeping notes, ideas, to-do lists, and journal entries in a test based wiki, thanks to the fantastic plugin <a href="https://github.com/vimwiki/vimwiki">vimwiki</a>. If you&rsquo;re not familiar, vimwiki enables easy hyperlinking between text files marked up with either Markdown or a feature rich vimwiki syntax. This can be a collection of programming language snippets, notes from CS class, project to-do lists, a personal diary—whatever you want. You can navigate between linked files with <!-- raw HTML omitted --> and <!-- raw HTML omitted --> and even convert to HTML to view in a browser. I&rsquo;m actually in the process of creating my own minimal plugin with a subset of the vimwiki features I actually use, along with some other customizations, since a lot of the behavior I desire can be emulated within vanilla vim with <code>./relative/paths</code> and <code>gf</code>. Either way, a markdown/plain text based wiki offers many advantages, as it can be version controlled with git, takes up kBs of space, can be efficiently synced across computers, and encrypted for privacy. I tried other note taking apps like <a href="https://joplinapp.org/">Joplin</a>, <a href="https://standardnotes.org/">Standard Notes</a>, but why install an Electron app when we can use some Vimscript?</p>
+<h2 id="markdown">Markdown</h2>
+<p>Markdown has become my go-to markup language for notes and lists. It offers the essential features of a simple markup language, while staying easy to use with its syntax. I often make use of the checkboxes and tables to keep track of lists and information, which are nice additions alongside the basics of making text <strong>bold</strong> or <em>italicized</em> and organizing sections and lists. Plus, since it&rsquo;s just plain text, unlike a Microsoft Word document, I can edit it in vim (with the help of <a href="https://github.com/plasticboy/vim-markdown">vim-markdown</a>), interact with it via unix command line tools,</p>
+<p>An example markdown wiki</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="color:#75715e">## to-do
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">- [ ]</span> wash the dishes
+<span style="color:#66d9ef">- [ ]</span> take out the trash
+<span style="color:#66d9ef">- [X]</span> study
+
+<span style="color:#75715e">## projects
+</span><span style="color:#75715e">### games
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">-</span> [<span style="color:#f92672">pong</span>](<span style="color:#a6e22e">./projects/pong.md</span>)
+<span style="color:#66d9ef">-</span> [<span style="color:#f92672">space invaders</span>](<span style="color:#a6e22e">./projects/invaders.md</span>)
+
+<span style="color:#75715e">### other
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">-</span> [<span style="color:#f92672">garden</span>](<span style="color:#a6e22e">./projects/garden.md</span>)
+<span style="color:#66d9ef">-</span> [<span style="color:#f92672">blog</span>](<span style="color:#a6e22e">./projects/blog.md</span>)
+
+<span style="color:#75715e">## university classes
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">-</span> Algorithms
+<span style="color:#66d9ef">-</span> Number Theory
+<span style="color:#66d9ef">-</span> Electrodynamics
+<span style="color:#66d9ef">-</span> Metaphysics
+<span style="color:#66d9ef">-</span> Statistics
+</code></pre></div><h2 id="vim">Vim</h2>
+<h2 id="gpg">GPG</h2>
+<h2 id="posix-shell">POSIX shell</h2>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/blog/wiki/">A minimal Vim, Markdown, and GPG powered wiki</a></li>
+				
+				<li><a href="/blog/whyvim/">Vim: The World&#39;s Greatest Text Editor</a></li>
+				
+				<li><a href="/blog/privacy/">Privacy &amp; Security in the Modern Digital Age</a></li>
+				
+				<li><a href="/blog/linux/intro/ch6/">Intro to Linux - Chapter 6</a></li>
+				
+				<li><a href="/blog/linux/intro/ch5/">Intro to Linux - Chapter 5</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<a href="https://github.com/skovati"><b>github</b></a>.
+	<a href="https://gitlab.com/skovati"><b>gitlab</b></a>.
+	<a href="mailto:skovati@protonmail.com"><b>email</b></a>.
+	<a href="https://gpg.skovati.dev"><b>gpg</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>
