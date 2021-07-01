@@ -1,7 +1,7 @@
 ---
 title: "Intro to Linux - Chapter 5"
 date: 2021-05-25T18:00:51-05:00
-draft: true
+draft: false
 tags:
   - linux
   - intro

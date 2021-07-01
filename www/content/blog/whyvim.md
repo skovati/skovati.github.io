@@ -1,7 +1,7 @@
 ---
 title: "Vim: The World's Greatest Text Editor"
 date: 2021-06-03T20:04:39-05:00
-draft: true
+draft: false
 tags:
   - vim
   - unix

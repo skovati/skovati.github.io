@@ -1,7 +1,7 @@
 ---
 title: "A minimal Vim, Markdown, and GPG powered wiki"
 date: 2021-06-20T21:40:31-05:00
-draft: true
+draft: false
 tags:
   - vim
   - unix

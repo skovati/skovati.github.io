@@ -18,7 +18,7 @@ a few things I'm passionate about:
 - frugality
 - privacy & anonymity
 
-on this site, check out my [blog](https://skovati.dev/blog/)([rss](https://skovati.dev/blog/index.xml)), the [books](https://books.skovati.dev/) I'm reading, or the [status](https://status.skovati.dev/) of my servers
+on this site, check out my [blog](https://skovati.dev/blog/)([rss](https://skovati.dev/blog/index.xml)), my [gitea](https://git.skovati.dev/) instance, the [books](https://books.skovati.dev/) I'm reading, or the [status](https://status.skovati.dev/) of my servers
 
 lately, besides schoolwork, I've been working on small projects like
 - [gosh](https://github.com/skovati/gosh), an extremely simple unix shell written in Go

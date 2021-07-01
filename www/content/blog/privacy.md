@@ -1,7 +1,7 @@
 ---
 title: "Privacy & Security in the Modern Digital Age"
 date: 2021-05-29T17:32:45-05:00
-draft: true
+draft: false
 tags:
   - privacy
   - security
