@@ -573,6 +573,7 @@ echo &amp;quot;&amp;lt;/article&amp;gt;&amp;quot; &amp;gt;&amp;gt; ./index.html
 &lt;li&gt;frugality&lt;/li&gt;
 &lt;li&gt;privacy &amp;amp; anonymity&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;on this site, check out my &lt;a href=&#34;https://skovati.dev/blog/&#34;&gt;blog&lt;/a&gt;(&lt;a href=&#34;https://skovati.dev/blog/index.xml&#34;&gt;rss&lt;/a&gt;), the &lt;a href=&#34;https://books.skovati.dev/&#34;&gt;books&lt;/a&gt; I&amp;rsquo;m reading, or the &lt;a href=&#34;https://status.skovati.dev/&#34;&gt;status&lt;/a&gt; of my servers&lt;/p&gt;
 &lt;p&gt;lately, besides schoolwork, I&amp;rsquo;ve been working on small projects like&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/skovati/gosh&#34;&gt;gosh&lt;/a&gt;, an extremely simple unix shell written in Go&lt;/li&gt;

@@ -18,6 +18,8 @@ a few things I'm passionate about:
 - frugality
 - privacy & anonymity
 
+on this site, check out my [blog](https://skovati.dev/blog/)([rss](https://skovati.dev/blog/index.xml)), the [books](https://books.skovati.dev/) I'm reading, or the [status](https://status.skovati.dev/) of my servers
+
 lately, besides schoolwork, I've been working on small projects like
 - [gosh](https://github.com/skovati/gosh), an extremely simple unix shell written in Go
 - [kirpto](https://github.com/skovati/kripto), a cryptocurrency portfolio tracker that pulls data from the [CoinGecko API](https://www.coingecko.com/en/api)
@@ -28,4 +30,3 @@ professionally, I work as a Cloud Engineer, deploying products and applications 
 encrypt a message with my gpg key [here](https://gpg.skovati.dev), and email me at skovati@protonmail.com, include your public key if you want my response encrypted
 
 this website was written in [markdown](https://en.wikipedia.org/wiki/Markdown), compiled by [hugo](https://github.com/gohugoio/hugo), and served by a [nginx](https://nginx.org/en/) container on [debian](https://www.debian.org/) gnu/linux
-
