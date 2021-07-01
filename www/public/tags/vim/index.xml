@@ -6,14 +6,46 @@
     <description>Recent content in vim on skovati</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Jun 2021 21:40:31 -0500</lastBuildDate><atom:link href="https://skovati.dev/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Jun 2021 21:40:31 -0500</lastBuildDate>
+    
+	<atom:link href="https://skovati.dev/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>A minimal Vim, Markdown, and GPG powered wiki</title>
       <link>https://skovati.dev/blog/wiki/</link>
       <pubDate>Sun, 20 Jun 2021 21:40:31 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/wiki/</guid>
-      <description>Motivation and Vimwiki Lately, I&amp;rsquo;ve been keeping notes, ideas, to-do lists, and journal entries in a test based wiki, thanks to the fantastic plugin vimwiki. If you&amp;rsquo;re not familiar, vimwiki enables easy hyperlinking between text files marked up with either Markdown or a feature rich vimwiki syntax. This can be a collection of programming language snippets, notes from CS class, project to-do lists, a personal diary—whatever you want. You can navigate between linked files with and and even convert to HTML to view in a browser.</description>
+      <description>&lt;h2 id=&#34;motivation-and-vimwiki&#34;&gt;Motivation and Vimwiki&lt;/h2&gt;
+&lt;p&gt;Lately, I&amp;rsquo;ve been keeping notes, ideas, to-do lists, and journal entries in a test based wiki, thanks to the fantastic plugin &lt;a href=&#34;https://github.com/vimwiki/vimwiki&#34;&gt;vimwiki&lt;/a&gt;. If you&amp;rsquo;re not familiar, vimwiki enables easy hyperlinking between text files marked up with either Markdown or a feature rich vimwiki syntax. This can be a collection of programming language snippets, notes from CS class, project to-do lists, a personal diary—whatever you want. You can navigate between linked files with &lt;!-- raw HTML omitted --&gt; and &lt;!-- raw HTML omitted --&gt; and even convert to HTML to view in a browser. I&amp;rsquo;m actually in the process of creating my own minimal plugin with a subset of the vimwiki features I actually use, along with some other customizations, since a lot of the behavior I desire can be emulated within vanilla vim with &lt;code&gt;./relative/paths&lt;/code&gt; and &lt;code&gt;gf&lt;/code&gt;. Either way, a markdown/plain text based wiki offers many advantages, as it can be version controlled with git, takes up kBs of space, can be efficiently synced across computers, and encrypted for privacy. I tried other note taking apps like &lt;a href=&#34;https://joplinapp.org/&#34;&gt;Joplin&lt;/a&gt;, &lt;a href=&#34;https://standardnotes.org/&#34;&gt;Standard Notes&lt;/a&gt;, but why install an Electron app when we can use some Vimscript?&lt;/p&gt;
+&lt;h2 id=&#34;markdown&#34;&gt;Markdown&lt;/h2&gt;
+&lt;p&gt;Markdown has become my go-to markup language for notes and lists. It offers the essential features of a simple markup language, while staying easy to use with its syntax. I often make use of the checkboxes and tables to keep track of lists and information, which are nice additions alongside the basics of making text &lt;strong&gt;bold&lt;/strong&gt; or &lt;em&gt;italicized&lt;/em&gt; and organizing sections and lists. Plus, since it&amp;rsquo;s just plain text, unlike a Microsoft Word document, I can edit it in vim (with the help of &lt;a href=&#34;https://github.com/plasticboy/vim-markdown&#34;&gt;vim-markdown&lt;/a&gt;), interact with it via unix command line tools,&lt;/p&gt;
+&lt;p&gt;An example markdown wiki&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## to-do
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;- [ ]&lt;/span&gt; wash the dishes
+&lt;span style=&#34;color:#66d9ef&#34;&gt;- [ ]&lt;/span&gt; take out the trash
+&lt;span style=&#34;color:#66d9ef&#34;&gt;- [X]&lt;/span&gt; study
+
+&lt;span style=&#34;color:#75715e&#34;&gt;## projects
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;### games
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; [&lt;span style=&#34;color:#f92672&#34;&gt;pong&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;./projects/pong.md&lt;/span&gt;)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; [&lt;span style=&#34;color:#f92672&#34;&gt;space invaders&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;./projects/invaders.md&lt;/span&gt;)
+
+&lt;span style=&#34;color:#75715e&#34;&gt;### other
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; [&lt;span style=&#34;color:#f92672&#34;&gt;garden&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;./projects/garden.md&lt;/span&gt;)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; [&lt;span style=&#34;color:#f92672&#34;&gt;blog&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;./projects/blog.md&lt;/span&gt;)
+
+&lt;span style=&#34;color:#75715e&#34;&gt;## university classes
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Algorithms
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Number Theory
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Electrodynamics
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Metaphysics
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Statistics
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;vim&#34;&gt;Vim&lt;/h2&gt;
+&lt;h2 id=&#34;gpg&#34;&gt;GPG&lt;/h2&gt;
+&lt;h2 id=&#34;posix-shell&#34;&gt;POSIX shell&lt;/h2&gt;
+</description> 
     </item>
     
     <item>
@@ -22,9 +54,114 @@
       <pubDate>Thu, 03 Jun 2021 20:04:39 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/whyvim/</guid>
-      <description>Disclaimer: This blog post is not meant to teach Vim, (that might come later) just to act as inspiration to start the learning journey.
-If you&amp;rsquo;ve been convinced by this post and want to learn Vim, here are a few fantastic tutorials that helped me get started:
- vimtutor, Vim&amp;rsquo;s built in tutorial, if Vim is installed on your system, just run vimtutor for an interactive tutorial Ben Awad&amp;rsquo;s Tutorial - watch this first, no BS, beginner to advanced DistroTube&amp;rsquo;s Vim series - moderate BS, takes it slow And for Vim-god inspiration, check out a few Luke Smith videos - dude himself is BS, but rocks at Vim And these Vim meetup talks are a good rabbit hole  Anyways&amp;hellip; the post&amp;hellip;</description>
+      <description>&lt;p&gt;&lt;em&gt;Disclaimer: This blog post is not meant to teach Vim, (that might come later) just to act as inspiration to start the learning journey.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If you&amp;rsquo;ve been convinced by this post and want to learn Vim, here are a few fantastic tutorials that helped me get started:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;vimtutor&lt;/code&gt;, Vim&amp;rsquo;s built in tutorial, if Vim is installed on your system, just run &lt;code&gt;vimtutor&lt;/code&gt; for an interactive tutorial&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=IiwGbcd8S7I&#34;&gt;Ben Awad&amp;rsquo;s Tutorial&lt;/a&gt; - watch this first, no BS, beginner to advanced&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=ER5JYFKkYDg&#34;&gt;DistroTube&amp;rsquo;s Vim series&lt;/a&gt; - moderate BS, takes it slow&lt;/li&gt;
+&lt;li&gt;And for Vim-god inspiration, check out a few &lt;a href=&#34;https://www.youtube.com/watch?v=hraHAZ1-RaM&#34;&gt;Luke Smith videos&lt;/a&gt; - dude himself is BS, but rocks at Vim&lt;/li&gt;
+&lt;li&gt;And these &lt;a href=&#34;https://www.youtube.com/watch?v=wlR5gYd6um0&#34;&gt;Vim meetup talks&lt;/a&gt; are a good rabbit hole&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Anyways&amp;hellip; the post&amp;hellip;&lt;/p&gt;
+&lt;h1 id=&#34;what-is-a-vim-anyways&#34;&gt;What is a Vim anyways?&lt;/h1&gt;
+&lt;p&gt;Vim stands for vi-improved. It builds off of the ideas of a previous text editor known as vi, which was created by &lt;a href=&#34;https://en.wikipedia.org/wiki/Bill_Joy&#34;&gt;Bill Joy&lt;/a&gt; (yeah &lt;em&gt;that&lt;/em&gt; Bill Joy that worked on Unix, BSD, TCP/IP, Java, and NFS) back in 1976. Lots of programs back then were iterated on by others, since the source code was often available for modification. Vi is no exception.&lt;/p&gt;
+&lt;h1 id=&#34;why-use-vim&#34;&gt;Why use Vim?&lt;/h1&gt;
+&lt;p&gt;One of the main groundbreaking ideas behind vi, and therefore Vim, is the idea of &lt;em&gt;modal editing&lt;/em&gt;, where you switch between modes and keys do different things in each of those modes. This is in stark contrast to editors a lot of people are familiar with like Microsoft Word or the Google Docs editor, where every qwerty key simply inputs the corresponding character into the document. In Vim, this &lt;strong&gt;only&lt;/strong&gt; happens when in &amp;lsquo;insert&amp;rsquo; mode. When in the other modes, like &amp;lsquo;normal&amp;rsquo; or &amp;lsquo;visual&amp;rsquo; these same keys you use to input characters are instead used as keybinds for movement, editing, saving, quitting, etc. The most obvious advantage to this is that you can have significantly more keybinds than non-modal editors, since you simply have more keys to work with. Microsoft Word needs to use some hand-cramp-inducing combination of keys like &lt;code&gt;Ctr-Shift-t&lt;/code&gt; for simple commands like cut or paste, when in Vim this can just be one key, right by the asdfjkl; homerow. This offers more specific keybinds that can significantly increase productivity, as well as reduce hand fatigue when typing for 8+ hours a day.&lt;/p&gt;
+&lt;p&gt;The other groundbreaking idea behind Vim (and vi) is &lt;em&gt;command composition&lt;/em&gt;. We&amp;rsquo;ll dive into this in the next section, but essentially Vim has different types of commands like movement, editing, and repetition, which can be composed to increase their functionality. So you can apply any editing command to a movement command to apply it to that whole chunk of text (again, we&amp;rsquo;ll see examples shortly). This means that you can rapidly gain new functionality by learning just a few of the commands Vim has to offer; say you know 5 editing commands and 6 movement commands, since you can compose these by placing the editing command before the movement command, you now know 5 x 6 = 30 commands while only memorizing 5 + 6 = 11 keybinds! Having that same amount of editing power in MS Word would require learning &lt;em&gt;all&lt;/em&gt; 30 keybinds.&lt;/p&gt;
+&lt;p&gt;Finally, Vim has a rich editing philosophy. A lot of the design decisions were made due to technical limitations at the time (no mouse, terminal screens only, slow computers that benefited from chaining sequential commands), but these decisions turn out to have modern day benefits as well (no back and forth between keyboard and mouse, easier on the hands and faster, composable commands allow for verbose, flexible expression of editing desires, commands offer easy automation for repetitive tasks, integrates with Unix Philosophy, etc), since good design is still good design, even 50 years later.&lt;/p&gt;
+&lt;p&gt;I think this photo sums it up well. Vim&amp;rsquo;s learning curve really is more like a learning wall, but once you&amp;rsquo;ve over that you will become exponentially faster as you learn more, and will soon overtake and far surpass editing capabilities in other text editors.
+
+&lt;figure&gt;
+  &lt;img src=&#34;https://miro.medium.com/max/1568/1*EoHV8AHhzZcP-nM1EQUKIg.jpeg&#34; alt=&#34;&#34; /&gt;
+&lt;/figure&gt;
+
+
+&lt;/p&gt;
+&lt;p&gt;Also, Vim is free and open-source, like all good software is. No more VSCode sending telemetry data to Microsoft or Sublime prompting you to pay for a license.&lt;/p&gt;
+&lt;h1 id=&#34;vim-is-an-editing-language-with-syntax-and-grammar&#34;&gt;Vim is an editing language, with syntax and grammar&lt;/h1&gt;
+&lt;p&gt;Okay so, what are these different commands I keep talking about and why are they so powerful? Again, this isn&amp;rsquo;t a tutorial, but I&amp;rsquo;ll list the basics here so I can use them in examples.&lt;/p&gt;
+&lt;h3 id=&#34;some-editing-commands&#34;&gt;Some Editing Commands&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;i&lt;/code&gt;   - enter insert mode&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Esc&lt;/code&gt; - return to normal mode&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;d&lt;/code&gt;   - delete&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;c&lt;/code&gt;   - change&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;y&lt;/code&gt;   - copy&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p&lt;/code&gt;   - paste&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;u&lt;/code&gt;   - undo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl-r&lt;/code&gt; - redo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-movement-commands&#34;&gt;Some Movement Commands&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;h, j, k, l&lt;/code&gt;  - move left, down, up, right&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;w&lt;/code&gt;           - move to next work&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0&lt;/code&gt;           - move to beginning of line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$&lt;/code&gt;           - move to end of line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;}&lt;/code&gt;           - move to end of code block / paragraph&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gg&lt;/code&gt;          - move to beginning of document&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;G&lt;/code&gt;           - move to end of document&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;t&amp;lt;char&amp;gt;&lt;/code&gt;     - move to next instance of &lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-text-objects&#34;&gt;Some Text Objects&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;w&lt;/code&gt;   - word&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;i&amp;quot;&lt;/code&gt;  - inside quotes&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;i{&lt;/code&gt;  - inside brackets&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;as&lt;/code&gt;  - sentence&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ip&lt;/code&gt;  - inside paragraph&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;using-these-commands-objects-and-movements-together&#34;&gt;Using these commands, objects, and movements together&lt;/h2&gt;
+&lt;p&gt;So, the real power behind Vim is that these keybinds actually form a sort of editing language, with grammar and syntax like verbs, nouns, and adverbs. The general syntax for a &amp;ldquo;sentence&amp;rdquo; in Vim is &lt;code&gt;&amp;lt;number&amp;gt;&amp;lt;command&amp;gt;&amp;lt;object or motion&amp;gt;&lt;/code&gt;. The numbers here act as an adverb, the commands act as a verb, and the objects and motions act as the noun to which the verb is applied.&lt;/p&gt;
+&lt;h3 id=&#34;prose-example&#34;&gt;Prose Example&lt;/h3&gt;
+&lt;p&gt;As an example, we can run &lt;code&gt;diw&lt;/code&gt; which runs the delete command on the inner word text object. So say the line we&amp;rsquo;re editing is as follows (with █ representing where the cursor is):&lt;/p&gt;
+&lt;p&gt;The quick brown fox ju█ps over the lazy dog.&lt;/p&gt;
+&lt;p&gt;If &lt;code&gt;diw&lt;/code&gt; is run, the delete operation will run on the inner word object, and delete the entire word &amp;ldquo;jumps&amp;rdquo;, leaving just:&lt;/p&gt;
+&lt;p&gt;The quick brown fox █over the lazy dog.&lt;/p&gt;
+&lt;p&gt;This same delete command can be run on any motion or object. Here is an example of deleting the entire sentence with &lt;code&gt;das&lt;/code&gt; (delete around sentence):&lt;/p&gt;
+&lt;p&gt;The quick brown fox jumps over the lazy dog. The quick b█own fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.&lt;/p&gt;
+&lt;p&gt;Leaving just:&lt;/p&gt;
+&lt;p&gt;The quick brown fox jumps over the lazy dog. █he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.&lt;/p&gt;
+&lt;p&gt;Or you could delete the entire paragraph with &lt;code&gt;dap&lt;/code&gt; (delete around paragraph).&lt;/p&gt;
+&lt;h3 id=&#34;code-example&#34;&gt;Code Example&lt;/h3&gt;
+&lt;p&gt;These ideas extend extremely well to source code. Consider the following example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;greeting&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;He█lo, Reader&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;greeting&lt;/span&gt;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here, say we wanted to change the value of the greeting variable. Of course, we could take a hand off the keyboard, move it over to the mouse, move the cursor to the desired spot on the screen, click and drag to select the desired text, and then finally hit backspace and start typing our new greeting&amp;hellip; or, we could do it the Vim way, by simple hitting &lt;code&gt;ci&amp;quot;&lt;/code&gt; (change inside double quotes) which will delete everything inside the quotes, and place us in insert mode ready to type.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;greeting&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;█&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or, we could change the entire function body by typing &lt;code&gt;cip&lt;/code&gt; (change inside paragraph), leaving us in insert mode with the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt; {&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;█&lt;/span&gt;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And finally, say we had a really annoying function call that we wanted to change out. Something like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;█&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;MyReallyLong_Annoyingly_NamedFunction&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;SomeotherInnerFunction&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;greeting&lt;/span&gt;)).&lt;span style=&#34;color:#a6e22e&#34;&gt;Print&lt;/span&gt;()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And we want to change this entire function up until the .Print() call. No real combination of text objects or movements could delete this strangely worded function call. Is this finally a situation where the good &amp;lsquo;ol click and drag to select and delete wins over Vim? Of course not, we can use &lt;code&gt;ct.&lt;/code&gt;, which will Change To the next instance of a &amp;ldquo;.&amp;rdquo;, leaving us in insert mode with:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;█&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Print&lt;/span&gt;()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;numerical-repetition&#34;&gt;Numerical repetition&lt;/h3&gt;
+&lt;p&gt;These commands can also take a numeric prefix, which represents the amount of time the command should run. A classic example is &lt;code&gt;dd&lt;/code&gt;, which deletes the current line of text. By prefixing this with a number (say 5 &lt;code&gt;5dd&lt;/code&gt;), Vim will delete the next 5 lines of text. Or &lt;code&gt;3cw&lt;/code&gt; will delete the next 3 words, and place you in insert mode to replace them. Essentially, this repetition allows you to work on many sections of text that don&amp;rsquo;t precisely correspond to a Vim keybind, which offers a lot of power.&lt;/p&gt;
+&lt;p&gt;In my opinion, these are really powerful movements, especially when editing source code. I find myself using &lt;code&gt;ci&amp;quot;&lt;/code&gt; to change strings or &lt;code&gt;}&lt;/code&gt; to jump between functions extremely often. And, like stated before, these command compositions work with any command and object/movement, so once you get the hang of targeting specific objects or movements, you can apply any of the commands we&amp;rsquo;ve learned so far to them, like delete, change, or copy.&lt;/p&gt;
+&lt;h2 id=&#34;okay-cool-but-that-seems-like-a-lot-of-work-just-to-replicate-the-things-i-already-know-how-to-do-in-vscode-why-would-i-switch&#34;&gt;Okay cool, but that seems like a lot of work just to replicate the things I already know how to do in VSCode, why would I switch?&lt;/h2&gt;
+&lt;p&gt;Yes, there is a somewhat steep learning curve with Vim, and it&amp;rsquo;s not something I&amp;rsquo;d recommend to my parents who only type to search Google, but when your profession requires editing text for eight hours a day (developer editing source code, SysAdmin editing config files, DevOps engineer editing YAML, writer editing prose scripts or stories), the time spent learning the bread and butter of Vim will end up saving you a &lt;em&gt;lot&lt;/em&gt; of time.&lt;/p&gt;
+&lt;p&gt;Furthermore, Vim commands like these let the computer do the hard work for you (like searching for the next parentheses), rather than making the human visually inspect where exactly to highlight and delete. This makes editing text, especially when these commands are ingrained in muscle memory, significantly faster, since the editor no longer needs to reach over to the mouse every time they want to make a simple change.&lt;/p&gt;
+&lt;h2 id=&#34;who-is-vim-for&#34;&gt;Who is Vim for?&lt;/h2&gt;
+&lt;p&gt;Vim, in my opinion, is best geared towards developers or operations people who edit source code or configuration files for most hours in a day. However, Vim can be as simple as, press &lt;code&gt;i&lt;/code&gt; to enter insert mode, type your text, hit &lt;code&gt;Esc&lt;/code&gt; to return to normal mode, and then &lt;code&gt;:wq&lt;/code&gt; to save and quit. Noobs can use the mouse and arrow keys to navigate around while they learn the more efficient native Vim keybinds. Once a beginner has learned these few basic commands, they are likely just as fast in Vim as another text editor, with plenty of room to grow and speed up their editing. Vim is also extremely powerful for prose editing—I edit all my blog posts in Vim, using commands like &lt;code&gt;(&lt;/code&gt;, &lt;code&gt;{&lt;/code&gt;, &lt;code&gt;cas&lt;/code&gt;, and &lt;code&gt;cw&lt;/code&gt; to quickly jump around sentences, paragraphs, and reword sentences and change word choice.&lt;/p&gt;
+&lt;h2 id=&#34;where-to-now&#34;&gt;Where to now?&lt;/h2&gt;
+&lt;p&gt;Again, I don&amp;rsquo;t plan on making a Vim tutorial for the basics, I think other creators can do a much better job with that. Check out the videos linked at the top of this post if you want to dive into some more basic movement and editing commands of Vim. Later, I may post about more advanced Vim ideas like macros, buffers, plugins, or global commands. We&amp;rsquo;ve only scratched the very surface of Vim, but I hope this has been enough to convince you to give it a try. Live in Vim for a week or two, learn the basic commands and focus on efficient movement and editing, and I bet you&amp;rsquo;ll be hooked and it&amp;rsquo;ll feel sluggish to return to your old text editor.&lt;/p&gt;
+&lt;p&gt;The most fun part of Vim is learning, which I want to leave to you. I never thought I&amp;rsquo;d have fun and even look forward to editing text before I came across Vim. Some topics to look into after watching the basic tutorials linked above.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;vimrc file&lt;/li&gt;
+&lt;li&gt;plugins (NerdTree, Tagbar, CoC)&lt;/li&gt;
+&lt;li&gt;macros&lt;/li&gt;
+&lt;li&gt;buffers, splits, and tabs&lt;/li&gt;
+&lt;li&gt;regex based search and replace&lt;/li&gt;
+&lt;li&gt;global commands&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For those interested, &lt;a href=&#34;https://github.com/skovati/dotfiles/blob/master/vim/.vimrc&#34;&gt;here is my vimrc&lt;/a&gt;, which contains all the configuration, custom keybinds, plugins, and more that I use for my custom Vim editing experience.&lt;/p&gt;
+</description> 
     </item>
     
   </channel>

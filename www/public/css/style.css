@@ -16,14 +16,20 @@ body{
     padding:0 10px;
     font:15px/1.5 monospace;
     color:var(--fontcolor);
-    background: var(--bgcolor);
+    background: var(--bgcolor)
 }
 
-a{
-    text-decoration: none;
-    color: var(--linkcolor);
+a:link{
+    color: var(--linkcolor)
 }
 
+a:visited{
+    color: var(--linkcolor)
+}
+
+a:active{
+    color: var(--linkcolor)
+}
 
 h1,h2,h3{
     line-height:1.2

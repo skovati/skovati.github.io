@@ -6,14 +6,46 @@
     <description>Recent content on skovati</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Jun 2021 21:40:31 -0500</lastBuildDate><atom:link href="https://skovati.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Jun 2021 21:40:31 -0500</lastBuildDate>
+    
+	<atom:link href="https://skovati.dev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>A minimal Vim, Markdown, and GPG powered wiki</title>
       <link>https://skovati.dev/blog/wiki/</link>
       <pubDate>Sun, 20 Jun 2021 21:40:31 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/wiki/</guid>
-      <description>Motivation and Vimwiki Lately, I&amp;rsquo;ve been keeping notes, ideas, to-do lists, and journal entries in a test based wiki, thanks to the fantastic plugin vimwiki. If you&amp;rsquo;re not familiar, vimwiki enables easy hyperlinking between text files marked up with either Markdown or a feature rich vimwiki syntax. This can be a collection of programming language snippets, notes from CS class, project to-do lists, a personal diary—whatever you want. You can navigate between linked files with and and even convert to HTML to view in a browser.</description>
+      <description>&lt;h2 id=&#34;motivation-and-vimwiki&#34;&gt;Motivation and Vimwiki&lt;/h2&gt;
+&lt;p&gt;Lately, I&amp;rsquo;ve been keeping notes, ideas, to-do lists, and journal entries in a test based wiki, thanks to the fantastic plugin &lt;a href=&#34;https://github.com/vimwiki/vimwiki&#34;&gt;vimwiki&lt;/a&gt;. If you&amp;rsquo;re not familiar, vimwiki enables easy hyperlinking between text files marked up with either Markdown or a feature rich vimwiki syntax. This can be a collection of programming language snippets, notes from CS class, project to-do lists, a personal diary—whatever you want. You can navigate between linked files with &lt;!-- raw HTML omitted --&gt; and &lt;!-- raw HTML omitted --&gt; and even convert to HTML to view in a browser. I&amp;rsquo;m actually in the process of creating my own minimal plugin with a subset of the vimwiki features I actually use, along with some other customizations, since a lot of the behavior I desire can be emulated within vanilla vim with &lt;code&gt;./relative/paths&lt;/code&gt; and &lt;code&gt;gf&lt;/code&gt;. Either way, a markdown/plain text based wiki offers many advantages, as it can be version controlled with git, takes up kBs of space, can be efficiently synced across computers, and encrypted for privacy. I tried other note taking apps like &lt;a href=&#34;https://joplinapp.org/&#34;&gt;Joplin&lt;/a&gt;, &lt;a href=&#34;https://standardnotes.org/&#34;&gt;Standard Notes&lt;/a&gt;, but why install an Electron app when we can use some Vimscript?&lt;/p&gt;
+&lt;h2 id=&#34;markdown&#34;&gt;Markdown&lt;/h2&gt;
+&lt;p&gt;Markdown has become my go-to markup language for notes and lists. It offers the essential features of a simple markup language, while staying easy to use with its syntax. I often make use of the checkboxes and tables to keep track of lists and information, which are nice additions alongside the basics of making text &lt;strong&gt;bold&lt;/strong&gt; or &lt;em&gt;italicized&lt;/em&gt; and organizing sections and lists. Plus, since it&amp;rsquo;s just plain text, unlike a Microsoft Word document, I can edit it in vim (with the help of &lt;a href=&#34;https://github.com/plasticboy/vim-markdown&#34;&gt;vim-markdown&lt;/a&gt;), interact with it via unix command line tools,&lt;/p&gt;
+&lt;p&gt;An example markdown wiki&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## to-do
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;- [ ]&lt;/span&gt; wash the dishes
+&lt;span style=&#34;color:#66d9ef&#34;&gt;- [ ]&lt;/span&gt; take out the trash
+&lt;span style=&#34;color:#66d9ef&#34;&gt;- [X]&lt;/span&gt; study
+
+&lt;span style=&#34;color:#75715e&#34;&gt;## projects
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;### games
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; [&lt;span style=&#34;color:#f92672&#34;&gt;pong&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;./projects/pong.md&lt;/span&gt;)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; [&lt;span style=&#34;color:#f92672&#34;&gt;space invaders&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;./projects/invaders.md&lt;/span&gt;)
+
+&lt;span style=&#34;color:#75715e&#34;&gt;### other
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; [&lt;span style=&#34;color:#f92672&#34;&gt;garden&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;./projects/garden.md&lt;/span&gt;)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; [&lt;span style=&#34;color:#f92672&#34;&gt;blog&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;./projects/blog.md&lt;/span&gt;)
+
+&lt;span style=&#34;color:#75715e&#34;&gt;## university classes
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Algorithms
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Number Theory
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Electrodynamics
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Metaphysics
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Statistics
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;vim&#34;&gt;Vim&lt;/h2&gt;
+&lt;h2 id=&#34;gpg&#34;&gt;GPG&lt;/h2&gt;
+&lt;h2 id=&#34;posix-shell&#34;&gt;POSIX shell&lt;/h2&gt;
+</description> 
     </item>
     
     <item>
@@ -22,9 +54,114 @@
       <pubDate>Thu, 03 Jun 2021 20:04:39 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/whyvim/</guid>
-      <description>Disclaimer: This blog post is not meant to teach Vim, (that might come later) just to act as inspiration to start the learning journey.
-If you&amp;rsquo;ve been convinced by this post and want to learn Vim, here are a few fantastic tutorials that helped me get started:
- vimtutor, Vim&amp;rsquo;s built in tutorial, if Vim is installed on your system, just run vimtutor for an interactive tutorial Ben Awad&amp;rsquo;s Tutorial - watch this first, no BS, beginner to advanced DistroTube&amp;rsquo;s Vim series - moderate BS, takes it slow And for Vim-god inspiration, check out a few Luke Smith videos - dude himself is BS, but rocks at Vim And these Vim meetup talks are a good rabbit hole  Anyways&amp;hellip; the post&amp;hellip;</description>
+      <description>&lt;p&gt;&lt;em&gt;Disclaimer: This blog post is not meant to teach Vim, (that might come later) just to act as inspiration to start the learning journey.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If you&amp;rsquo;ve been convinced by this post and want to learn Vim, here are a few fantastic tutorials that helped me get started:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;vimtutor&lt;/code&gt;, Vim&amp;rsquo;s built in tutorial, if Vim is installed on your system, just run &lt;code&gt;vimtutor&lt;/code&gt; for an interactive tutorial&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=IiwGbcd8S7I&#34;&gt;Ben Awad&amp;rsquo;s Tutorial&lt;/a&gt; - watch this first, no BS, beginner to advanced&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=ER5JYFKkYDg&#34;&gt;DistroTube&amp;rsquo;s Vim series&lt;/a&gt; - moderate BS, takes it slow&lt;/li&gt;
+&lt;li&gt;And for Vim-god inspiration, check out a few &lt;a href=&#34;https://www.youtube.com/watch?v=hraHAZ1-RaM&#34;&gt;Luke Smith videos&lt;/a&gt; - dude himself is BS, but rocks at Vim&lt;/li&gt;
+&lt;li&gt;And these &lt;a href=&#34;https://www.youtube.com/watch?v=wlR5gYd6um0&#34;&gt;Vim meetup talks&lt;/a&gt; are a good rabbit hole&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Anyways&amp;hellip; the post&amp;hellip;&lt;/p&gt;
+&lt;h1 id=&#34;what-is-a-vim-anyways&#34;&gt;What is a Vim anyways?&lt;/h1&gt;
+&lt;p&gt;Vim stands for vi-improved. It builds off of the ideas of a previous text editor known as vi, which was created by &lt;a href=&#34;https://en.wikipedia.org/wiki/Bill_Joy&#34;&gt;Bill Joy&lt;/a&gt; (yeah &lt;em&gt;that&lt;/em&gt; Bill Joy that worked on Unix, BSD, TCP/IP, Java, and NFS) back in 1976. Lots of programs back then were iterated on by others, since the source code was often available for modification. Vi is no exception.&lt;/p&gt;
+&lt;h1 id=&#34;why-use-vim&#34;&gt;Why use Vim?&lt;/h1&gt;
+&lt;p&gt;One of the main groundbreaking ideas behind vi, and therefore Vim, is the idea of &lt;em&gt;modal editing&lt;/em&gt;, where you switch between modes and keys do different things in each of those modes. This is in stark contrast to editors a lot of people are familiar with like Microsoft Word or the Google Docs editor, where every qwerty key simply inputs the corresponding character into the document. In Vim, this &lt;strong&gt;only&lt;/strong&gt; happens when in &amp;lsquo;insert&amp;rsquo; mode. When in the other modes, like &amp;lsquo;normal&amp;rsquo; or &amp;lsquo;visual&amp;rsquo; these same keys you use to input characters are instead used as keybinds for movement, editing, saving, quitting, etc. The most obvious advantage to this is that you can have significantly more keybinds than non-modal editors, since you simply have more keys to work with. Microsoft Word needs to use some hand-cramp-inducing combination of keys like &lt;code&gt;Ctr-Shift-t&lt;/code&gt; for simple commands like cut or paste, when in Vim this can just be one key, right by the asdfjkl; homerow. This offers more specific keybinds that can significantly increase productivity, as well as reduce hand fatigue when typing for 8+ hours a day.&lt;/p&gt;
+&lt;p&gt;The other groundbreaking idea behind Vim (and vi) is &lt;em&gt;command composition&lt;/em&gt;. We&amp;rsquo;ll dive into this in the next section, but essentially Vim has different types of commands like movement, editing, and repetition, which can be composed to increase their functionality. So you can apply any editing command to a movement command to apply it to that whole chunk of text (again, we&amp;rsquo;ll see examples shortly). This means that you can rapidly gain new functionality by learning just a few of the commands Vim has to offer; say you know 5 editing commands and 6 movement commands, since you can compose these by placing the editing command before the movement command, you now know 5 x 6 = 30 commands while only memorizing 5 + 6 = 11 keybinds! Having that same amount of editing power in MS Word would require learning &lt;em&gt;all&lt;/em&gt; 30 keybinds.&lt;/p&gt;
+&lt;p&gt;Finally, Vim has a rich editing philosophy. A lot of the design decisions were made due to technical limitations at the time (no mouse, terminal screens only, slow computers that benefited from chaining sequential commands), but these decisions turn out to have modern day benefits as well (no back and forth between keyboard and mouse, easier on the hands and faster, composable commands allow for verbose, flexible expression of editing desires, commands offer easy automation for repetitive tasks, integrates with Unix Philosophy, etc), since good design is still good design, even 50 years later.&lt;/p&gt;
+&lt;p&gt;I think this photo sums it up well. Vim&amp;rsquo;s learning curve really is more like a learning wall, but once you&amp;rsquo;ve over that you will become exponentially faster as you learn more, and will soon overtake and far surpass editing capabilities in other text editors.
+
+&lt;figure&gt;
+  &lt;img src=&#34;https://miro.medium.com/max/1568/1*EoHV8AHhzZcP-nM1EQUKIg.jpeg&#34; alt=&#34;&#34; /&gt;
+&lt;/figure&gt;
+
+
+&lt;/p&gt;
+&lt;p&gt;Also, Vim is free and open-source, like all good software is. No more VSCode sending telemetry data to Microsoft or Sublime prompting you to pay for a license.&lt;/p&gt;
+&lt;h1 id=&#34;vim-is-an-editing-language-with-syntax-and-grammar&#34;&gt;Vim is an editing language, with syntax and grammar&lt;/h1&gt;
+&lt;p&gt;Okay so, what are these different commands I keep talking about and why are they so powerful? Again, this isn&amp;rsquo;t a tutorial, but I&amp;rsquo;ll list the basics here so I can use them in examples.&lt;/p&gt;
+&lt;h3 id=&#34;some-editing-commands&#34;&gt;Some Editing Commands&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;i&lt;/code&gt;   - enter insert mode&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Esc&lt;/code&gt; - return to normal mode&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;d&lt;/code&gt;   - delete&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;c&lt;/code&gt;   - change&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;y&lt;/code&gt;   - copy&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p&lt;/code&gt;   - paste&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;u&lt;/code&gt;   - undo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl-r&lt;/code&gt; - redo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-movement-commands&#34;&gt;Some Movement Commands&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;h, j, k, l&lt;/code&gt;  - move left, down, up, right&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;w&lt;/code&gt;           - move to next work&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0&lt;/code&gt;           - move to beginning of line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$&lt;/code&gt;           - move to end of line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;}&lt;/code&gt;           - move to end of code block / paragraph&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gg&lt;/code&gt;          - move to beginning of document&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;G&lt;/code&gt;           - move to end of document&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;t&amp;lt;char&amp;gt;&lt;/code&gt;     - move to next instance of &lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-text-objects&#34;&gt;Some Text Objects&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;w&lt;/code&gt;   - word&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;i&amp;quot;&lt;/code&gt;  - inside quotes&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;i{&lt;/code&gt;  - inside brackets&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;as&lt;/code&gt;  - sentence&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ip&lt;/code&gt;  - inside paragraph&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;using-these-commands-objects-and-movements-together&#34;&gt;Using these commands, objects, and movements together&lt;/h2&gt;
+&lt;p&gt;So, the real power behind Vim is that these keybinds actually form a sort of editing language, with grammar and syntax like verbs, nouns, and adverbs. The general syntax for a &amp;ldquo;sentence&amp;rdquo; in Vim is &lt;code&gt;&amp;lt;number&amp;gt;&amp;lt;command&amp;gt;&amp;lt;object or motion&amp;gt;&lt;/code&gt;. The numbers here act as an adverb, the commands act as a verb, and the objects and motions act as the noun to which the verb is applied.&lt;/p&gt;
+&lt;h3 id=&#34;prose-example&#34;&gt;Prose Example&lt;/h3&gt;
+&lt;p&gt;As an example, we can run &lt;code&gt;diw&lt;/code&gt; which runs the delete command on the inner word text object. So say the line we&amp;rsquo;re editing is as follows (with █ representing where the cursor is):&lt;/p&gt;
+&lt;p&gt;The quick brown fox ju█ps over the lazy dog.&lt;/p&gt;
+&lt;p&gt;If &lt;code&gt;diw&lt;/code&gt; is run, the delete operation will run on the inner word object, and delete the entire word &amp;ldquo;jumps&amp;rdquo;, leaving just:&lt;/p&gt;
+&lt;p&gt;The quick brown fox █over the lazy dog.&lt;/p&gt;
+&lt;p&gt;This same delete command can be run on any motion or object. Here is an example of deleting the entire sentence with &lt;code&gt;das&lt;/code&gt; (delete around sentence):&lt;/p&gt;
+&lt;p&gt;The quick brown fox jumps over the lazy dog. The quick b█own fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.&lt;/p&gt;
+&lt;p&gt;Leaving just:&lt;/p&gt;
+&lt;p&gt;The quick brown fox jumps over the lazy dog. █he quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.&lt;/p&gt;
+&lt;p&gt;Or you could delete the entire paragraph with &lt;code&gt;dap&lt;/code&gt; (delete around paragraph).&lt;/p&gt;
+&lt;h3 id=&#34;code-example&#34;&gt;Code Example&lt;/h3&gt;
+&lt;p&gt;These ideas extend extremely well to source code. Consider the following example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;greeting&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;He█lo, Reader&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;greeting&lt;/span&gt;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here, say we wanted to change the value of the greeting variable. Of course, we could take a hand off the keyboard, move it over to the mouse, move the cursor to the desired spot on the screen, click and drag to select the desired text, and then finally hit backspace and start typing our new greeting&amp;hellip; or, we could do it the Vim way, by simple hitting &lt;code&gt;ci&amp;quot;&lt;/code&gt; (change inside double quotes) which will delete everything inside the quotes, and place us in insert mode ready to type.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;greeting&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;█&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or, we could change the entire function body by typing &lt;code&gt;cip&lt;/code&gt; (change inside paragraph), leaving us in insert mode with the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt; {&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;█&lt;/span&gt;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And finally, say we had a really annoying function call that we wanted to change out. Something like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;█&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;MyReallyLong_Annoyingly_NamedFunction&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;SomeotherInnerFunction&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;greeting&lt;/span&gt;)).&lt;span style=&#34;color:#a6e22e&#34;&gt;Print&lt;/span&gt;()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And we want to change this entire function up until the .Print() call. No real combination of text objects or movements could delete this strangely worded function call. Is this finally a situation where the good &amp;lsquo;ol click and drag to select and delete wins over Vim? Of course not, we can use &lt;code&gt;ct.&lt;/code&gt;, which will Change To the next instance of a &amp;ldquo;.&amp;rdquo;, leaving us in insert mode with:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;█&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Print&lt;/span&gt;()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;numerical-repetition&#34;&gt;Numerical repetition&lt;/h3&gt;
+&lt;p&gt;These commands can also take a numeric prefix, which represents the amount of time the command should run. A classic example is &lt;code&gt;dd&lt;/code&gt;, which deletes the current line of text. By prefixing this with a number (say 5 &lt;code&gt;5dd&lt;/code&gt;), Vim will delete the next 5 lines of text. Or &lt;code&gt;3cw&lt;/code&gt; will delete the next 3 words, and place you in insert mode to replace them. Essentially, this repetition allows you to work on many sections of text that don&amp;rsquo;t precisely correspond to a Vim keybind, which offers a lot of power.&lt;/p&gt;
+&lt;p&gt;In my opinion, these are really powerful movements, especially when editing source code. I find myself using &lt;code&gt;ci&amp;quot;&lt;/code&gt; to change strings or &lt;code&gt;}&lt;/code&gt; to jump between functions extremely often. And, like stated before, these command compositions work with any command and object/movement, so once you get the hang of targeting specific objects or movements, you can apply any of the commands we&amp;rsquo;ve learned so far to them, like delete, change, or copy.&lt;/p&gt;
+&lt;h2 id=&#34;okay-cool-but-that-seems-like-a-lot-of-work-just-to-replicate-the-things-i-already-know-how-to-do-in-vscode-why-would-i-switch&#34;&gt;Okay cool, but that seems like a lot of work just to replicate the things I already know how to do in VSCode, why would I switch?&lt;/h2&gt;
+&lt;p&gt;Yes, there is a somewhat steep learning curve with Vim, and it&amp;rsquo;s not something I&amp;rsquo;d recommend to my parents who only type to search Google, but when your profession requires editing text for eight hours a day (developer editing source code, SysAdmin editing config files, DevOps engineer editing YAML, writer editing prose scripts or stories), the time spent learning the bread and butter of Vim will end up saving you a &lt;em&gt;lot&lt;/em&gt; of time.&lt;/p&gt;
+&lt;p&gt;Furthermore, Vim commands like these let the computer do the hard work for you (like searching for the next parentheses), rather than making the human visually inspect where exactly to highlight and delete. This makes editing text, especially when these commands are ingrained in muscle memory, significantly faster, since the editor no longer needs to reach over to the mouse every time they want to make a simple change.&lt;/p&gt;
+&lt;h2 id=&#34;who-is-vim-for&#34;&gt;Who is Vim for?&lt;/h2&gt;
+&lt;p&gt;Vim, in my opinion, is best geared towards developers or operations people who edit source code or configuration files for most hours in a day. However, Vim can be as simple as, press &lt;code&gt;i&lt;/code&gt; to enter insert mode, type your text, hit &lt;code&gt;Esc&lt;/code&gt; to return to normal mode, and then &lt;code&gt;:wq&lt;/code&gt; to save and quit. Noobs can use the mouse and arrow keys to navigate around while they learn the more efficient native Vim keybinds. Once a beginner has learned these few basic commands, they are likely just as fast in Vim as another text editor, with plenty of room to grow and speed up their editing. Vim is also extremely powerful for prose editing—I edit all my blog posts in Vim, using commands like &lt;code&gt;(&lt;/code&gt;, &lt;code&gt;{&lt;/code&gt;, &lt;code&gt;cas&lt;/code&gt;, and &lt;code&gt;cw&lt;/code&gt; to quickly jump around sentences, paragraphs, and reword sentences and change word choice.&lt;/p&gt;
+&lt;h2 id=&#34;where-to-now&#34;&gt;Where to now?&lt;/h2&gt;
+&lt;p&gt;Again, I don&amp;rsquo;t plan on making a Vim tutorial for the basics, I think other creators can do a much better job with that. Check out the videos linked at the top of this post if you want to dive into some more basic movement and editing commands of Vim. Later, I may post about more advanced Vim ideas like macros, buffers, plugins, or global commands. We&amp;rsquo;ve only scratched the very surface of Vim, but I hope this has been enough to convince you to give it a try. Live in Vim for a week or two, learn the basic commands and focus on efficient movement and editing, and I bet you&amp;rsquo;ll be hooked and it&amp;rsquo;ll feel sluggish to return to your old text editor.&lt;/p&gt;
+&lt;p&gt;The most fun part of Vim is learning, which I want to leave to you. I never thought I&amp;rsquo;d have fun and even look forward to editing text before I came across Vim. Some topics to look into after watching the basic tutorials linked above.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;vimrc file&lt;/li&gt;
+&lt;li&gt;plugins (NerdTree, Tagbar, CoC)&lt;/li&gt;
+&lt;li&gt;macros&lt;/li&gt;
+&lt;li&gt;buffers, splits, and tabs&lt;/li&gt;
+&lt;li&gt;regex based search and replace&lt;/li&gt;
+&lt;li&gt;global commands&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For those interested, &lt;a href=&#34;https://github.com/skovati/dotfiles/blob/master/vim/.vimrc&#34;&gt;here is my vimrc&lt;/a&gt;, which contains all the configuration, custom keybinds, plugins, and more that I use for my custom Vim editing experience.&lt;/p&gt;
+</description> 
     </item>
     
     <item>
@@ -33,8 +170,9 @@ If you&amp;rsquo;ve been convinced by this post and want to learn Vim, here are 
       <pubDate>Sat, 29 May 2021 17:32:45 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/privacy/</guid>
-      <description>Author: skovati Date: 2021-05-29
-The modern web is plagued by data mining, cross site tracking, intrusive ads, analytics, cookies, etc. How does one escape? It&amp;rsquo;s easy enough to say, &amp;ldquo;oh I wish it were like the 90s again with a simple internet&amp;rdquo;, but then we&amp;rsquo;d be missing out on some fantastic things from the modern web, like instant video chatting with loved ones, or having the world&amp;rsquo;s wealth of information at your fingertips with sites like Wikipedia and Youtube.</description>
+      <description>&lt;p&gt;&lt;em&gt;Author:&lt;/em&gt; skovati   &lt;em&gt;Date:&lt;/em&gt; 2021-05-29&lt;/p&gt;
+&lt;p&gt;The modern web is plagued by data mining, cross site tracking, intrusive ads, analytics, cookies, etc. How does one escape? It&amp;rsquo;s easy enough to say, &amp;ldquo;oh I wish it were like the 90s again with a simple internet&amp;rdquo;, but then we&amp;rsquo;d be missing out on some fantastic things from the modern web, like instant video chatting with loved ones, or having the world&amp;rsquo;s wealth of information at your fingertips with sites like Wikipedia and Youtube.&lt;/p&gt;
+</description> 
     </item>
     
     <item>
@@ -43,8 +181,37 @@ The modern web is plagued by data mining, cross site tracking, intrusive ads, an
       <pubDate>Tue, 25 May 2021 18:00:53 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/linux/intro/ch6/</guid>
-      <description>Bash &amp;amp;&amp;amp; Extensibility Author: Skovati, Date: 2020-12-29
-So what is bash? It stands for Bourne Again Shell, and is a rewrite and play on words of the original Bourne shell (sh) written by Stephen Bourne at Bell Labs. It is mainly used as an interactive command line interpreter. When you login to a Unix-based system, or open a terminal, you&amp;rsquo;ll be greeted by a prompt that looks something like [username@hostname ~]$.</description>
+      <description>&lt;h2 id=&#34;bash--extensibility&#34;&gt;Bash &amp;amp;&amp;amp; Extensibility&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Author: Skovati, Date: 2020-12-29&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;So what &lt;em&gt;is&lt;/em&gt; bash? It stands for Bourne Again Shell, and is a rewrite and play on words of the original Bourne shell (sh) written by Stephen Bourne at Bell Labs. It is mainly used as an interactive command line interpreter. When you login to a Unix-based system, or open a terminal, you&amp;rsquo;ll be greeted by a prompt that looks something like &lt;code&gt;[username@hostname ~]$&lt;/code&gt;. Here you can run any of the GNU system utility commands. Here is a short list of important commands you should know.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ls&lt;/code&gt; - LiSts the files and directories in the current directory&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cd&lt;/code&gt; - Changes the Directory you are in, eg &lt;code&gt;cd downloads&lt;/code&gt; would move you to your downloads directory&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mkdir&lt;/code&gt; - MaKes a DIRectory&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;man&lt;/code&gt; - prefixing this to another command shows the MANual page for that command—this is &lt;em&gt;the&lt;/em&gt; best way to learn about a program quickly&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;touch&lt;/code&gt; - TOUCHes a file to update its metadata, or will create an empty file if it doesn&amp;rsquo;t exist&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cat&lt;/code&gt; - conCATenate the files passed to it and prints them. Commonly used to view the contents of a text file quickly.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mv&lt;/code&gt; - MoVes argument 1 to argument 2, eg &lt;code&gt;mv resume_current.pdf resume_old.pdf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cp&lt;/code&gt; - CoPies argument 1 to argument 2&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rm&lt;/code&gt; - ReMoves a file or directory&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pwd&lt;/code&gt; - Prints Working Directory, prints the directory you&amp;rsquo;re currently in&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nano&lt;/code&gt; - GNU text editor, pass a file to it to edit, perfect for editing configuration files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These commands will likely make up the majority of what you run, as they help you move around the filesystem and edit files on the command line. Really the best way to get familiar with these commands and more is to use the terminal as often as you can! Personally, I exclusively use the terminal to edit files—I&amp;rsquo;m currently writing this in Vim, a terminal based text editor.&lt;/p&gt;
+&lt;p&gt;Every time you run a command in bash, it&amp;rsquo;s actually calling a pre-compiled C program binary located at /bin or /usr/bin. You can see the path of the executed binary with the &lt;code&gt;which&lt;/code&gt; command. For example, running &lt;code&gt;which ls&lt;/code&gt; outputs /usr/bin/ls, which is the small executable that bash is calling every time I run that command.&lt;/p&gt;
+&lt;p&gt;Bash is more than just a command line interpreter however, it&amp;rsquo;s actually a full scripting language with control flow, variables, and functions. While these features &lt;em&gt;could&lt;/em&gt; be used on the command line, they&amp;rsquo;re most commonly used in a &lt;em&gt;shell script&lt;/em&gt;, which has a .sh extension, and can be executed by the bash shell. Personally, I have dozens of small bash scripts to do things like update my system, quickly find and edit files, connect to vpns and more. A decent rule of thumb for when something should be converted to a shell script is if you find yourself running a series of commands in a row multiple times a day, turn those commands into a small shell script that bash can execute for you. For example, I&amp;rsquo;m writing this blog in Markdown, and using Pandoc to convert that to html so my web server can host it. Essentially, the output of pandoc has to be concatenated with a template.html file I have, and then I have to concatenate that index.html output with a closing article tag so it&amp;rsquo;s valid html. So, instead of running that set of commands multiple times, I wrote the following shell script to speed things up.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env bash
+
+cp -v /home/skovati/code/git/skovati.com/blog/template.html ./index.html
+pandoc $1 -f markdown -t html &amp;gt;&amp;gt; ./index.html
+echo &amp;quot;&amp;lt;/article&amp;gt;&amp;quot; &amp;gt;&amp;gt; ./index.html
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Each of those lines &lt;em&gt;could&lt;/em&gt; just be pasted into a regular bash prompt, and it would work the same, but the script saves you a lot of time. The first line there just tells the bash interpreter to run the script. Then I copy my template html file to the current chapter folder, convert the chapters markdown to html and add it to the end of the template html file, and finally add that closing article tag. Now, I can just run &lt;code&gt;convert ch6.md&lt;/code&gt; and it&amp;rsquo;ll output a correctly formatted html file for my server to host.&lt;/p&gt;
+&lt;p&gt;Bash scripting should (and probably will be) its own chapter, but I want to show off a few &lt;em&gt;really&lt;/em&gt; cool things it can do. First, you should be familiar with standard input and output. Stdin is essentially a stream of text that can be sent to a program, and stdout is a stream of text that a program can output. On Unix-based systems, we can use these in combination with the Unix Philosophy of each program doing one thing and doing it well, to chain together programs. Here&amp;rsquo;s an example.&lt;/p&gt;
+&lt;p&gt;Running &lt;code&gt;ls&lt;/code&gt; in my current directory prints out three directories: code, documents, and downloads. Say, for example, I wanted to count how many files and directories were output by that &lt;code&gt;ls&lt;/code&gt; command. Here, we can use &amp;ldquo;pipes&amp;rdquo; by placing the &amp;ldquo;|&amp;rdquo; symbol in-between &lt;code&gt;ls&lt;/code&gt; and another command that counts the number of lines in a text stream, &lt;code&gt;wc -l&lt;/code&gt;. So, the full bash command would look like &lt;code&gt;ls | wc -l&lt;/code&gt; which would output 3, since there were just those three files. Say now I wanted to check the number of installed binary programs on my system, I could just run &lt;code&gt;ls /usr/bin | wc -l&lt;/code&gt; which outputs 3490.&lt;/p&gt;
+&lt;p&gt;This introduces the idea of extensibility. Since these GNU system utilities simply take in a text stream and then output a text stream, they can easily communicate with each other, which creates new possibilities that the developers of either program didn&amp;rsquo;t have to explicitly program. Here&amp;rsquo;s a more useful example of this text-based extensibility in action:&lt;/p&gt;
+&lt;p&gt;As previously mentioned, I&amp;rsquo;m writing these blog posts in Markdown, which is just a text file with some simple syntax to show &lt;strong&gt;bold&lt;/strong&gt; words or &lt;em&gt;italics&lt;/em&gt; and stuff like that. Since all the posts are text, I can run cat on all of them to output them all to a big text stream. Then, I could pipe that into another program, like word count, to see more information about all the blog posts. Running &lt;code&gt;cat ch*/*.md | wc -w&lt;/code&gt; (the *&amp;rsquo;s just mean to select every .md file) outputs 7288, so that&amp;rsquo;s how many words I&amp;rsquo;ve written in the last 5 blog posts! Going deeper, I could count up how many times I&amp;rsquo;ve said the word &amp;ldquo;Linux&amp;rdquo; with a command like this &lt;code&gt;cat ch*/*.md | grep -wo Linux | wc -l&lt;/code&gt; (grep is a tool for searching text streams) which outputs 90. If I was instead writing all of these in something like Microsoft Word, I&amp;rsquo;d have to open up each file manually, Ctrl-f to search for Linux, and then count up and add together all of the instances manually. &lt;em&gt;That&amp;rsquo;s&lt;/em&gt; the power of Linux.&lt;/p&gt;
+</description> 
     </item>
     
     <item>
@@ -53,9 +220,27 @@ So what is bash? It stands for Bourne Again Shell, and is a rewrite and play on 
       <pubDate>Tue, 25 May 2021 18:00:51 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/linux/intro/ch5/</guid>
-      <description>Chapter 5 - Server Configuration Author: Skovati, Date: 2020-12-29
-This chapter is optional if you&amp;rsquo;re strictly using Linux as a desktop OS, but goes over some useful ideas like user management and security that are still applicable.
-SSH Keys First of all, what is SSH? It stands for Secure Shell, and is a protocol design to gain remote shell access to Linux servers. All traffic is encrypted by default, and the popular OpenSSH implementation of the protocol is one of the most secure pieces of software that exists.</description>
+      <description>&lt;h2 id=&#34;chapter-5---server-configuration&#34;&gt;Chapter 5 - Server Configuration&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Author: Skovati, Date: 2020-12-29&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This chapter is optional if you&amp;rsquo;re strictly using Linux as a desktop OS, but goes over some useful ideas like user management and security that are still applicable.&lt;/p&gt;
+&lt;h3 id=&#34;ssh-keys&#34;&gt;SSH Keys&lt;/h3&gt;
+&lt;p&gt;First of all, what &lt;em&gt;is&lt;/em&gt; SSH? It stands for Secure Shell, and is a protocol design to gain remote shell access to Linux servers. All traffic is encrypted by default, and the popular OpenSSH implementation of the protocol is one of the most secure pieces of software that exists. You can authenticate through SSH in a few ways, one of which being just your username and password on the server, like &lt;code&gt;ssh username@server-ip&lt;/code&gt;, which will prompt you for your user&amp;rsquo;s password on that server, and then give you access if it was correct. This is relatively insecure, since lots of cloud based servers will accept SSH requests from any IP, meaning anyone can try and guess your password to gain access to your server. To mitigate this, I recommend the use of SSH public/private key pairs for authentication. If you aren&amp;rsquo;t familiar with public key cryptography—you should be, here&amp;rsquo;s a very brief primer.&lt;/p&gt;
+&lt;p&gt;Using advanced number theory, an algorithm generates two keys—one public and one private—that are cryptographically linked, such that using your private key to login to a server that has your public key on a whitelist with authenticate you and essentially guarantee you are who you say you are—that is, if you&amp;rsquo;re responsible with your private key and keep it &lt;em&gt;private&lt;/em&gt;. Guessing someone else&amp;rsquo;s private key takes somewhere on the order of 2^256 guesses, which is significantly more secure than using an 8 digit password to authenticate. I recommend &lt;a href=&#34;https://www.cloudflare.com/learning/ssl/how-does-public-key-encryption-work/&#34;&gt;reading&lt;/a&gt; and &lt;a href=&#34;https://www.youtube.com/watch?v=GSIDS_lvRv4&#34;&gt;watching&lt;/a&gt; some more resources to get a good understanding. Essentially all you need to know to use SSH keys, is that a really long, really secure password is generated for you and stored in a file, and you&amp;rsquo;ll use that &amp;ldquo;password&amp;rdquo; (private key) to login to your server. The server, which will have your public key in an &amp;ldquo;authorized keys&amp;rdquo; list, will then check for a cryptographic match between SSH requests with different private keys to see if it matches a key in this authorized list. If it does, you are given access.&lt;/p&gt;
+&lt;p&gt;Because of this vastly increased security, myself, and cloud VM providers like Google Cloud, &lt;em&gt;only&lt;/em&gt; recommend the use of SSH keys for authentication, and encourage disabling password authentication entirely to increase security. We&amp;rsquo;ll learn how to do that after we generate some SSH keys.&lt;/p&gt;
+&lt;p&gt;On both Linux and Windows, to generate SSH key pairs, run the command &lt;code&gt;ssh-keygen&lt;/code&gt;, which will launch an interactive generation program. Selecting the defaults here is alright until you learn a little more, but I&amp;rsquo;d recommend using a 4096 bit RSA key for increased security, as shorter keys like 1024 bit have shown weaknesses. Once generated, your public key will live at either /home/&lt;em&gt;username&lt;/em&gt;/.ssh/id_rsa.pub or C:\Users\&lt;em&gt;username&lt;/em&gt;\.ssh\id_rsa.pub on Linux and Windows respectively. Your private key will be the file there without the .pub extension. If you&amp;rsquo;re following the GCP guide from Chapter 4, go back and read the next part to add it to your VMs whitelist. If you&amp;rsquo;re setting up a Linux server manually, edit your users ~/.ssh/authorized_keys file and paste your public key there.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;user-management-and-the-root-user&#34;&gt;User Management and the Root User&lt;/h3&gt;
+&lt;p&gt;User management on Linux is fantastically simple. Each user has a home directory located at /home/&lt;em&gt;username&lt;/em&gt;/ (the first / refers to the root of the filesystem, similar to C:/ in Windows), where all of the user-specific configuration files, media, downloads, cached Spotify music, and much more. Users can belong to groups too; each user is automatically a member of a group with the same name as the username. Files and directories can be &amp;ldquo;owned&amp;rdquo; by one user, and one group at a time, and each file and directory has certain permissions that say which user or group can read, edit, or execute the given file or directory. We&amp;rsquo;ll learn about filesystems and permissions more in a later chapter. The most important group is the sudo group (also known as the wheel group), which allows any user in the sudo group to use the sudo command.&lt;/p&gt;
+&lt;p&gt;For those who aren&amp;rsquo;t familiar, the root user on Linux is like the Administrator. The root user runs all the low level services, installs system-wide packages, makes important configuration changes, and can access any information on the system. Because of this extreme power, it isn&amp;rsquo;t recommended to login and use the system as the root user for long periods of time, as you can easily break things since you have no limitations. But, often a regular user will need root access in order to say, install a new package like Firefox, or add a new VPN connection. To remedy this, we use the &lt;code&gt;sudo&lt;/code&gt; command, which when prefixed to another command, will run that other command as the root user. This is the reason you must run &lt;code&gt;sudo apt install firefox&lt;/code&gt; rather than just &lt;code&gt;apt install firefox&lt;/code&gt;, since you are installing a system-wide package that can affect other users. Only certain users, which could be considered administrators, will have the ability to use this &lt;code&gt;sudo&lt;/code&gt; command. These administrator users are put in the sudo group, so that they can run commands as root.&lt;/p&gt;
+&lt;p&gt;This whole user system will make more sense as you gain experience using Linux, but make sure your user is in the sudo group and is able to run commands as root. On GCP, I believe your user is automatically in the sudo group, but doesn&amp;rsquo;t have a password. If you want to add a password, run the command &lt;code&gt;sudo su&lt;/code&gt; (su is a command that lets you switch to be a different user, when run with no arguments it switches you to the root user) and then run &lt;code&gt;passwd your-username&lt;/code&gt;, which will prompt you for a new password. Then  type &lt;code&gt;exit&lt;/code&gt; to stop being the root user. Test your sudo access by running something like &lt;code&gt;sudo apt update&lt;/code&gt;. If your root access checks out, we can move onto the next steps of configuration.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;hardening-your-server-with-ssh-configurations-and-a-firewall&#34;&gt;Hardening your server with SSH configurations and a Firewall&lt;/h3&gt;
+&lt;p&gt;Time to edit our first configuration file! Once you&amp;rsquo;re sure your SSH key auth is working, it&amp;rsquo;s time to disable password-based logins and remote root login in order to secure our server. The configuration file for the SSH daemon (a daemon is like a background service) is located at /etc/ssh/sshd_config. Open this with &lt;code&gt;sudo nano /etc/ssh/sshd_config&lt;/code&gt;. Scroll down using the arrow keys and find the commented option called PermitRootLogin, uncomment this, and set it to &amp;ldquo;no&amp;rdquo;. Next find the option PubkeyAuthentication and set it to yes. Finally find the option, PasswordAuthentication and set it to no. Then, exit and save the file by pressing Ctrl-X, Y, and then enter. Finally, we must restart the SSH daemon with the command &lt;code&gt;sudo systemctl restart sshd&lt;/code&gt; (systemctl is the command used to interact with system processes and daemons). Congrats! You just edited your first system configuration file and applied it. I know that was kind of a lot, but taking these few steps just made your system significantly more secure.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re running a server with a public IP address, I recommend running a firewall on it. Normally, a networks router or dedicated firewall will block unauthorized packets, but having a per-server firewall is recommended. If you&amp;rsquo;re running a GCP VM, the firewall can be found under VPC Network and firewall in the nav bar to the left. I recommend ufw as a firewall—it&amp;rsquo;s super simple to setup. Run &lt;code&gt;sudo apt install ufw&lt;/code&gt; to install the firewall, and then run &lt;code&gt;sudo ufw allow ssh&lt;/code&gt; to allow our ssh requests through the firewall. Then, run &lt;code&gt;sudo ufw default deny&lt;/code&gt; so that the firewall denies any traffic we don&amp;rsquo;t explicitly allow. Finally, run &lt;code&gt;sudo ufw enable&lt;/code&gt; to start the firewall.&lt;/p&gt;
+&lt;p&gt;A lot of that might&amp;rsquo;ve gone over your head, but that&amp;rsquo;s fine. We secured your system and made it essentially impenetrable while you learn the ropes. Keep in mind that you&amp;rsquo;ll have to change these things if you want to, say, give a new user ssh or sudo access, or let certain traffic through the firewall if you want to run a web server.&lt;/p&gt;
+&lt;p&gt;Congratulations though! If you&amp;rsquo;ve been following Chapters 4-5, you&amp;rsquo;ve set up a remote Linux virtual machine or bare metal install, given yourself encrypted access, locked down the traffic with a firewall, and now you have a perfect environment set up to learn the ins and outs of the command line. The next few chapters will likely be about specific topics, like the bash programming language or how to set up a web server, so feel free to skip around to the stuff that interests you!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://skovati.dev/blog/linux/intro/ch6&#34;&gt;Chapter 6 - Bash &amp;amp;&amp;amp; &amp;ldquo;Extensibilty&amp;rdquo;&lt;/a&gt;&lt;/p&gt;
+</description> 
     </item>
     
     <item>
@@ -64,9 +249,53 @@ SSH Keys First of all, what is SSH? It stands for Secure Shell, and is a protoco
       <pubDate>Tue, 25 May 2021 18:00:50 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/linux/intro/ch4/</guid>
-      <description>Installing Linux Author: Skovati, Date: 2020-12-28
-In this chapter, I&amp;rsquo;ll talk about the four main ways I recommend installing and getting started with Linux, in order from most-preferred to least-preferred.
-Option #1 - Installing on your main computer (Most Preferred) This option definitely seems the scariest to newcomers, but installing Linux along side whatever other operating system you have installed on your most used computer is easily the best way to get yourself to actually use Linux on a daily basis, rather than installing a VM that you forget about in a week.</description>
+      <description>&lt;h2 id=&#34;installing-linux&#34;&gt;Installing Linux&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Author: Skovati, Date: 2020-12-28&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In this chapter, I&amp;rsquo;ll talk about the four main ways I recommend installing and getting started with Linux, in order from most-preferred to least-preferred.&lt;/p&gt;
+&lt;h3 id=&#34;option-1---installing-on-your-main-computer-most-preferred&#34;&gt;Option #1 - Installing on your main computer (Most Preferred)&lt;/h3&gt;
+&lt;p&gt;This option definitely &lt;em&gt;seems&lt;/em&gt; the scariest to newcomers, but installing Linux along side whatever other operating system you have installed on your most used computer is easily the best way to get yourself to &lt;em&gt;actually&lt;/em&gt; use Linux on a daily basis, rather than installing a VM that you forget about in a week. A few things before we get started:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Backup any important information on the hard drive you want to install on―you won&amp;rsquo;t lose any data if you follow these steps, but you can never be too safe.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make sure you have enough free space on that hard drive. A Linux install like Ubuntu or Linux Mint will take up around 10 gigs, but it&amp;rsquo;s nice to have some extra space for installing packages and keeping media downloaded. I recommend having around 32-64 gigs free.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Choose your Linux distro you want to use. Ubuntu is the de facto starting place for beginners, although Linux Mint is another good recommendation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Assuming you picked Ubuntu, go to the &lt;a href=&#34;https://ubuntu.com/download/desktop&#34;&gt;download&lt;/a&gt; page and grab the latest ISO for your system architecture (which is probably amd64). Alternatively, if you want to try a different &lt;em&gt;desktop environment&lt;/em&gt; (read &lt;a href=&#34;https://skovati.dev/blog/linux/intro/ch3&#34;&gt;Chapter 3&lt;/a&gt; if you haven&amp;rsquo;t already), you can check out the different &lt;a href=&#34;https://ubuntu.com/download/flavours&#34;&gt;Ubuntu flavors&lt;/a&gt;, that include DEs like KDE Plasma, LXDE, and Budgie.&lt;/p&gt;
+&lt;p&gt;Next, you&amp;rsquo;ll need a USB drive. I&amp;rsquo;d recommend at least 8 gigs, as some of these Ubuntu images can get pretty big (current release is 2.7 gigs). Make sure there isn&amp;rsquo;t anything important on it, and then download my preferred flashing utility, &lt;a href=&#34;https://www.balena.io/etcher/&#34;&gt;Balena Etcher&lt;/a&gt;. Download and run that .exe (hopefully that&amp;rsquo;s the last time you have to do &lt;em&gt;that&lt;/em&gt;), and insert your USB stick. Open Etcher, choose your USB (be careful to choose the right one), select your Ubuntu ISO, and hit flash. Once that&amp;rsquo;s done, you&amp;rsquo;ll need to make sure your computer&amp;rsquo;s BIOS is configured to boot from a USB stick before it boots from an installed hard drive; search around if you aren&amp;rsquo;t sure how to do this. Once the BIOS is configured, insert your USB and reboot. You&amp;rsquo;ll be greeted with the Ubuntu installer, which will walk you through the process. I won&amp;rsquo;t go into detail here, just make to click the &amp;ldquo;install along side existing OS&amp;rdquo; option when you&amp;rsquo;re choosing the hard drive to install to. This will partition your disks, and add your Windows install to the bootloader, so you can choose which OS to boot every time you turn your computer on. I recommend watching &lt;a href=&#34;https://www.youtube.com/watch?v=G7ffzC4S0A4&#34;&gt;this video&lt;/a&gt; to get a feel for the installation. Once the installer is done, just reboot your computer and choose Ubuntu on the GRUB bootloader screen!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;option-2---installing-on-another-personal-machine-as-a-server&#34;&gt;Option #2 - Installing on another personal machine as a server&lt;/h3&gt;
+&lt;p&gt;This option is perfect for those looking to run any server applications. Grabbing a $35 &lt;a href=&#34;https://www.raspberrypi.org/products/raspberry-pi-4-model-b/&#34;&gt;Raspberry Pi&lt;/a&gt; is a perfect way to learn about Linux servers, networking, security, SSH, hosting a website, and more. If you&amp;rsquo;re looking for a more powerful option—maybe to run a Minecraft or &lt;a href=&#34;https://www.plex.tv/&#34;&gt;Plex&lt;/a&gt; server—I highly recommend looking at used old Dell business computers like the &lt;a href=&#34;https://www.ebay.com/sch/i.html?_nkw=optiplex+7010&amp;amp;_sacat=0&#34;&gt;Optiplex&lt;/a&gt;, which is what I&amp;rsquo;m currently using for my server applications, including hosting this very blog. Once you have acquired some hardware, follow the steps above, but use a server oriented distro, like &lt;a href=&#34;https://ubuntu.com/download/server&#34;&gt;Ubuntu Server&lt;/a&gt; or &lt;a href=&#34;https://www.debian.org/&#34;&gt;Debian&lt;/a&gt;. We will cover securing a Linux server in a later chapter.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;option-3---using-a-cloud-vm-provider&#34;&gt;Option #3 - Using a cloud VM provider&lt;/h3&gt;
+&lt;p&gt;This option is available for &lt;em&gt;anyone&lt;/em&gt;, no additional hardware is needed. Many companies like &lt;a href=&#34;https://www.digitalocean.com/&#34;&gt;Digital Ocean&lt;/a&gt; or Google&amp;rsquo;s &lt;a href=&#34;https://cloud.google.com/&#34;&gt;Cloud Platform&lt;/a&gt; offer free to use, small Linux VMs. These VMs really are tiny—the one I recommend is the &amp;ldquo;f1-micro&amp;rdquo;, which has one shared CPU core and 500 megs of RAM. While this isn&amp;rsquo;t much, it&amp;rsquo;s plenty to learn the basics of the Linux command line, and enough to run a simple website or VPN from.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ll walk through the steps to set up this VM on Google Cloud:&lt;/p&gt;
+&lt;p&gt;First, either sign in with your existing account, or make a new account &lt;a href=&#34;https://console.cloud.google.com/&#34;&gt;here&lt;/a&gt;. Make a new project at the top, called something memorable like &amp;ldquo;Linux VM&amp;rdquo; and select it. Then, on the left side, select Compute Engine. Select your project, add your payment information (you won&amp;rsquo;t be billed anything though), and the hit create VM. Under machine configuration, choose generation N1, and under Machine type, choose f1-micro. GCP gives everyone 744 free hours of f1-micro usage per month, which is exactly 24 hours a day * 31 days in a month—so this VM is indefinitely free for you to use. You also get $300 free credit towards other GCP services if you want more horsepower. Next, under Boot Disk, I recommend choosing either Ubuntu Server or Debian 10. Ubuntu Server is going to be easier for newcomers, while Debian has less configured out of the box. Then, hit create and wait a few seconds. Soon your could VM will be up and running.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;https://skovati.dev/vm.png&#34; alt=&#34;&#34; /&gt;
+&lt;/figure&gt;
+
+
+&lt;/p&gt;
+&lt;p&gt;Go back to your VM instances page, and you should see your new server. There are a handful of ways to connect to this server: SSH through the GCP interface, using the gcloud command line tool, or SSHing manually through a program of your choice. I recommend learning how to access it from a ssh client, but you should use the GCP ssh interface at least once to see what your username is on the VM. Both Linux and Windows have an SSH client built into the terminal and PowerShell respectively. If you&amp;rsquo;re familiar with SSH, generate a key pair and continue reading, if not, skip ahead to the first part of &lt;a href=&#34;https://skovati.dev/linux/intro/ch5&#34;&gt;Chapter 5&lt;/a&gt; where I talk about what SSH is and why you should use SSH keys.&lt;/p&gt;
+&lt;p&gt;Once you have an ssh key pair generated, you&amp;rsquo;ll have to add your public key to the GCP VMs whitelist. This is done by clicking on your VM in the VM instance list, and hitting edit on the top bar. Scroll down to the SSH key section, hit view and edit, and paste your ssh public key in here. Now, you should be able to access your VM by typing &lt;code&gt;ssh your-google-username@the-vms-ip-listed-on-the-instances-page&lt;/code&gt; and boom! Remote secure shell access. Once you have this working, move onto the other parts of &lt;a href=&#34;https://skovati.dev/linux/intro/ch5&#34;&gt;Chapter 5&lt;/a&gt; where I talk about other server configuration.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;https://skovati.dev/ssh.png&#34; alt=&#34;&#34; /&gt;
+&lt;/figure&gt;
+
+
+&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;option-4---running-a-linux-vm-least-preferred&#34;&gt;Option #4 - Running a Linux VM (Least Preferred)&lt;/h3&gt;
+&lt;p&gt;I have nothing against running a VM, I just think it&amp;rsquo;s far too easy to install it once and forget about it after a week compared to installing it on your own machine or buying a Raspberry Pi. That being said, using a VM service like Oracle&amp;rsquo;s &lt;a href=&#34;https://www.virtualbox.org/&#34;&gt;VirtualBox&lt;/a&gt; is a fool-proof way to quickly get a Linux environment up and running. This is perfect if you want to try out different distros or desktop environments, or just want to see what Linux is about before installing it on a personal machine. I won&amp;rsquo;t go into detail about how to setup a VM here, there are many other tutorials online.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://skovati.dev/blog/linux/intro/ch5&#34;&gt;Chapter 5 - Configuring Your Linux Server&lt;/a&gt;&lt;/p&gt;
+</description> 
     </item>
     
     <item>
@@ -75,8 +304,98 @@ Option #1 - Installing on your main computer (Most Preferred) This option defini
       <pubDate>Tue, 25 May 2021 18:00:49 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/linux/intro/ch3/</guid>
-      <description>Linux Terminology - Distros, Package Managers, and More Author: Skovati, Date: 2020-12-26
-Distros So, say you wanted to install Microsoft Windows on a new computer. You&amp;rsquo;d go to the official Windows download page, download that one specific ISO, burn it to a USB or DVD, and insert it into your computer. The installation process for Linux is quite similar, except instead of there being one official download, there are thousands of different distributions of Linux, know as distros.</description>
+      <description>&lt;h2 id=&#34;linux-terminology---distros-package-managers-and-more&#34;&gt;Linux Terminology - Distros, Package Managers, and More&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Author: Skovati, Date: 2020-12-26&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;distros&#34;&gt;Distros&lt;/h3&gt;
+&lt;p&gt;So, say you wanted to install Microsoft Windows on a new computer. You&amp;rsquo;d go to the official &lt;a href=&#34;https://www.microsoft.com/en-us/software-download/windows10ISO&#34;&gt;Windows download&lt;/a&gt; page, download that &lt;em&gt;one&lt;/em&gt; specific ISO, burn it to a USB or DVD, and insert it into your computer. The installation process for Linux is quite similar, except instead of there being one official download, there are &lt;em&gt;thousands&lt;/em&gt; of different distributions of Linux, know as distros. The only thing each of these distros have in common is that they all use some form of the Linux kernel. Some have different package managers (which we&amp;rsquo;ll get to shortly), different versions of the kernel, different core utilities (like the GNU system I talked about last chapter), different release schedules, or different initialization systems. A common behavior with these distros, since all the code is free and open source, is &amp;ldquo;forking&amp;rdquo;, where a new distro uses an existing distro as a base. An example of this is the relationship between Debian and Ubuntu, two very popular distros. Since Ubuntu is based on Debian, anything written for Debian will also work out of the box on Ubuntu. This relationship means that you can have interoperability between distros, and it limits fragmentation within the ecosystem, but still offers thousands of choices for the user on which flavor of Linux they want to install.&lt;/p&gt;
+&lt;p&gt;Here I will give a small summary of the most popular distros and their derivatives. As previously mentioned, there are thousands of distros, but a dozen or so hold the vast majority of the user base.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.debian.org/&#34;&gt;Debian&lt;/a&gt;: The grand-daddy of distros. Debian 0.01, the first release, came out all the way back in 1993, &lt;em&gt;before&lt;/em&gt; the first 1.0 Linux kernel release. Because of this long history, Debian is likely the most forked distro of all time. It uses the apt package manager, and has stable releases about every 2 years which use a Long Term Support (LTS) version of the Linux kernel, meaning it&amp;rsquo;s perfect for server applications. This is my personal server distro choice, and is what this blog is hosted on.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;: The most popular Debian based distro, as well as the most popular Linux distro &lt;em&gt;period&lt;/em&gt;. Since it is based on Debian, it also uses the apt package manager, but releases a new image every 6 months, and is more lenient with updating new packages, meaning it&amp;rsquo;s a more &amp;ldquo;fresh&amp;rdquo; version of Debian. For example, Debian, since it&amp;rsquo;s focused on stability and security, might only have version 80 of Firefox in the repositories with security updates only, but Ubuntu would have the latest Firefox version 84.2, with all new features, meaning it is more sutible for desktop users. Every two years, Ubuntu releases a LTS version, just like Debian. The current LTS is Ubuntu 20.04 LTS, which runs on my Raspberry Pi. Ubuntu is perfect for newcomers as they make it a design goal to be easy to download, install, and use.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://linuxmint.com/&#34;&gt;Linux Mint&lt;/a&gt;: Based on Ubuntu, Linux Mint aims to be even &lt;em&gt;more&lt;/em&gt; user-friendly than Ubuntu, by removing some of Ubuntu&amp;rsquo;s questionable decisions and offering many different desktop environment flavors. This is the distro I recommend for beginners.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.raspberrypi.org/software/&#34;&gt;Raspberry Pi OS&lt;/a&gt;: Debian based distro meant specifically for Raspberry Pis.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://tails.boum.org/&#34;&gt;Tails OS&lt;/a&gt;: Debian based, security and privacy focused distro. Mainly used live on USB sticks to anonymously access the Internet through the &lt;a href=&#34;https://www.torproject.org/&#34;&gt;Tor&lt;/a&gt; Network. Perfect for journalists, those with government-restricted Internet access, or those who wish to access the Dark Web. Not recommended for daily use or for beginners.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux&#34;&gt;Red Hat Enterprise Linux&lt;/a&gt;: Red Hat, an IBM subsidiary, makes an enterprise focused Linux distro known as RHEL. Uses the dnf package manager. Perfect for servers and mission critical software deployments, RHEL is open-source, but you can pay an optional fee for on-demand enterprise-grade tech support.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://getfedora.org/&#34;&gt;Fedora&lt;/a&gt;: Technically, RHEL is based on Fedora, but they share most of the same source code. When Red Hat wants to add a new feature, it first enters the Fedora distro as a sort of testing ground for the feature. Because of this, Fedora carries very up to date software and is perfect for desktop use. If a feature is deemed ready for the super stable and security focused RHEL, it gets added to a new version of RHEL a few months down the line. This is my recommended desktop distro for people who are familiar with Linux, but don&amp;rsquo;t want to mess around with configuring some of the more advanced distros below.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.centos.org/&#34;&gt;CentOS&lt;/a&gt;: Before December 2020, CentOS used to be an exact clone of RHEL, with the branding and paywalls removed, making it perfect for enthusiast home servers. Unfortunately, Red Hat bought out the CentOS project, and has recently turned it into more of a testing ground like Fedora, making it useless for many who wanted a stable server OS without the RHEL license subscription. Currently, one of my home servers runs CentOS 8, but I will be moving it to a different platform because of this news.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://rockylinux.org/&#34;&gt;Rocky Linux&lt;/a&gt;: Essentially a clone of the CentOS project since Red Hat shut that one down. Currently has no stable release but I will be transitioning to this platform once they release a 1.0.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://archlinux.org/&#34;&gt;Arch Linux&lt;/a&gt;: Arch is a rolling release distro, which means as soon as a new version of software is available, like Firefox 85 or Bash 5.1, it will be added to the Arch repositories. Uses the pacman package manager. Arch is considered &amp;ldquo;bleeding-edge&amp;rdquo; because of this; you always have the latest version of software on Arch. This is in contrast with the distros above, as those software packages are only updated based on the release schedule of the distro, meaning Ubuntu won&amp;rsquo;t get the latest version of Bash for a few months, and Debian won&amp;rsquo;t get it for years. Arch also doesn&amp;rsquo;t have an installer, meaning the user has to partition disks, make filesystems, bootstrap the package manager, and install all of their desired software manually, making it a much more advanced distro. This is what I currently use on desktop, and I recommend it to any advanced Linux user who craves the ability to customize any and every part of their system.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://manjaro.org/&#34;&gt;Manjaro&lt;/a&gt;: Essentially a pre-configured version of Arch, so you don&amp;rsquo;t have to worry about manually installing and getting things configured. Perfect for those who want bleeding-edge software like developers or enthusiasts without the hassle of installing Arch.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Other more obscure distros worth mentioning&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.gentoo.org/&#34;&gt;Gentoo&lt;/a&gt;: Sourced based distro, meaning every piece of software you install must be manually compiled. A pain in the ass to install and configure, but offers near infinite customizability because of this.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.alpinelinux.org/&#34;&gt;Alpine&lt;/a&gt;: Linux as small and lightweight as possible, only takes up ~100MB when installed, perfect for embedded systems or old hardware.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.opensuse.org/&#34;&gt;OpenSUSE&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.slackware.com/&#34;&gt;Slackware&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg&#34;&gt;Here&lt;/a&gt; is a ridiculous look at all the different distros of Linux.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;package-managers&#34;&gt;Package Managers&lt;/h3&gt;
+&lt;p&gt;I&amp;rsquo;ve been talking about these package managers like apt, dnf, and pacman, but what actually &lt;em&gt;are&lt;/em&gt; they? I think the best way to explain it is to compare the software installation process in Linux vs Windows. So, you are likely familiar with how to install something on Windows: you open up Microsoft Edge, suffer through a Bing search to find the Google Chrome installation page, download the .exe file, and run it as an administrator, which installs Chrome on your machine for you. It is &lt;em&gt;way easier&lt;/em&gt; on Linux. Essentially, each distro has what are called repositories, which hold the files for tens of thousands of different packages of software made specifically for that distro. So, to install chrome on something like Ubuntu, you would just type &lt;code&gt;sudo apt install google-chrome&lt;/code&gt; in the terminal, apt (the package manager on Debian/Ubuntu) would run its magic, and a few seconds later Chrome would be fully installed on your system, no downloading random .exes from the internet and running them blindly. For what it&amp;rsquo;s worth, you can still manually install things if it happens to not be in your distro&amp;rsquo;s repos.&lt;/p&gt;
+&lt;p&gt;This style of package management has many pros:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;No downloading random installers from the internet and running them with admin privileges, packages are instead scrutinized and validated by package managers for the distro.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;No wasting time searching the internet and clicking around in a downloads folder for an installer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;All installed packages can be checked for updates simultaneously with a command like &lt;code&gt;sudo apt update&lt;/code&gt;, rather than relying on the software itself to have a built in updater, or just running out of date software since you&amp;rsquo;re too lazy to download a new exe.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Package managers automatically link and install shared dependencies to optimize disk space.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Because Linux is modular by design and each program does one thing and one things only, system updates are administered through package managers. In contrast, Windows has to release a whole new version and force you to restart just to add a feature to File Manager or Edge. No more &amp;ldquo;Updating Windows&amp;hellip;&amp;rdquo; screens while you&amp;rsquo;re trying to look something up quick on your laptop. Even the kernel is updated through package managers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;desktop-environments-and-window-managers&#34;&gt;Desktop Environments and Window Managers&lt;/h3&gt;
+&lt;p&gt;The most obvious form of customization in Linux is how the desktop looks and feels. This is the responsibility of a desktop environment, which manages windows, the dock, status bar, icons, settings menus, login pages, and more. Some popular options include &lt;a href=&#34;https://www.gnome.org/&#34;&gt;Gnome&lt;/a&gt; and &lt;a href=&#34;https://kde.org/plasma-desktop/&#34;&gt;KDE Plasma&lt;/a&gt;. When you download a distro&amp;rsquo;s ISO, they will likely give you multiple options for &amp;ldquo;flavors&amp;rdquo;, which include different DEs. So you can install Ubuntu with a Gnome DE, or install Ubuntu with KDE Plasma. Both are still Ubuntu, but will look and feel vastly different because the main visual software is by a different organization. I recommend Gnome as a starting place, but it is &lt;em&gt;very&lt;/em&gt; easy to install and switch to different ones. A &amp;ldquo;Window Manager&amp;rdquo; is essentially &lt;em&gt;just&lt;/em&gt; the part of a DE that controls the windows. Personally I just use a WM rather than a full DE, because I don&amp;rsquo;t need a fancy dock or a settings menu. I use &lt;a href=&#34;https://github.com/baskerville/bspwm&#34;&gt;bspwm&lt;/a&gt; and &lt;a href=&#34;https://github.com/polybar/polybar&#34;&gt;polybar&lt;/a&gt; for a lightweight desktop config.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;em&gt;Gnome Desktop&lt;/em&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;em&gt;My bspwm and polybar config&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;configuration-files-aka-dotfiles&#34;&gt;Configuration Files aka &amp;ldquo;Dotfiles&amp;rdquo;&lt;/h3&gt;
+&lt;p&gt;Another fantastic feature of Linux distros is that all of the configuration is held in so-called &amp;ldquo;configuration files&amp;rdquo;. Often these files reside in the users home directory (we&amp;rsquo;ll talk about filesystem organization in a later chapter) and are prefixed with a &amp;ldquo;.&amp;rdquo; like &amp;ldquo;.vimrc&amp;rdquo;, hence the nickname &amp;ldquo;dotfiles&amp;rdquo;. You can see examples of some dotfiles in my &lt;a href=&#34;https://github.com/skovati/dotfiles&#34;&gt;GitHub repo&lt;/a&gt;. These hold all of the config for my window manager, text editor, pdf and image viewer, terminal, and more. Because this config is stored in text files, I can back-up and version control them with git, and if I want to reinstall my OS or switch distros, all I have to do it clone that repo and 95% of my configuration is done already—including automatically installing important packages. Try doing that in windows where you have to manually install every piece of software and change each setting by hand with a new install. This makes Linux very portable and replaceable; my laptop&amp;rsquo;s SSD could get wiped and I wouldn&amp;rsquo;t break a sweat, because I didn&amp;rsquo;t really lose anything. You will spend a lot of time customizing these files, but it&amp;rsquo;s time well spent, as they can stay with you during your whole career.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://skovati.dev/blog/linux/intro/ch4&#34;&gt;Chapter 4 - Installing Linux&lt;/a&gt;&lt;/p&gt;
+</description> 
     </item>
     
     <item>
@@ -85,8 +404,44 @@ Distros So, say you wanted to install Microsoft Windows on a new computer. You&a
       <pubDate>Tue, 25 May 2021 18:00:48 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/linux/intro/ch2/</guid>
-      <description>What is a &amp;ldquo;Linux&amp;rdquo; anyways? Author: Skovati, Date: 2020-12-25
-This chapter is optional, but highly recommended. To really get a good perspective on Linux as a whole I think some historical context is necessary. It all starts back in the 60s when MIT and AT&amp;amp;T&amp;rsquo;s Bell Labs were developing Multics, a time-sharing operating system for the GE-645 mainframe computer. That baby had dual 435kHz processors, 3 MBs of memory, could connect to 35 terminals simultaneously, and looked like this:</description>
+      <description>&lt;h2 id=&#34;what-is-a-linux-anyways&#34;&gt;What is a &amp;ldquo;Linux&amp;rdquo; anyways?&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Author: Skovati, Date: 2020-12-25&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This chapter &lt;em&gt;is&lt;/em&gt; optional, but highly recommended. To really get a good perspective on Linux as a whole I think some historical context is necessary. It all starts back in the 60s when MIT and AT&amp;amp;T&amp;rsquo;s Bell Labs were developing Multics, a time-sharing operating system for the GE-645 mainframe computer. That baby had dual 435kHz processors, 3 MBs of memory, could connect to 35 terminals simultaneously, and looked like this:&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;https://skovati.dev/GE645.jpg&#34; alt=&#34;GE-645&#34; /&gt;
+  &lt;figcaption&gt;GE-645&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+&lt;em&gt;GE-645&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;While Multics was probably the most influential operating system of all time, it wasn&amp;rsquo;t without its issues, and after a few years working on the project, Ken Thompson, Dennis Ritchie, and a few others decided to start over with something called &lt;em&gt;Uniplexed Information and Computing Service&lt;/em&gt; or Unics—later renamed Unix. While originally written in assembly language, it was eventually ported to be the first OS written in &lt;em&gt;C&lt;/em&gt;, a new high-level programming language also created at Bell Labs (seriously look at the &lt;a href=&#34;https://en.wikipedia.org/wiki/Bell_Labs&#34;&gt;Wikipedia&lt;/a&gt; page for Bell Labs, they invented everything from Unix to the transistor). Unix was revolutionary, introducing hierarchical file systems, text-based applications, shell scripting, pipelining commands, devices as files, and the so-called &amp;ldquo;Unix Philosophy&amp;rdquo;. This philosophy can be summarized as &amp;ldquo;Each program should just do one thing and do it well&amp;rdquo;—meaning one program should list files in a directory, while an entirely separate program should facilitate changing directories or creating new files. This is in great contrast with a &lt;em&gt;monolithic&lt;/em&gt; design style, where one singular &lt;em&gt;File Manager&lt;/em&gt; is responsible for &lt;strong&gt;all&lt;/strong&gt; the desired behavior for creating, managing, moving, renaming, or deleting files. This increased modularity that Unix got from this philosophy allowed it to be extremely extensible and scale very well. The Unix philosophy is still often referenced today in software design—most commonly Keep It Simple Stupid.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Ken_Thompson_and_Dennis_Ritchie--1973.jpg/300px-Ken_Thompson_and_Dennis_Ritchie--1973.jpg&#34; alt=&#34;&#34; /&gt;
+&lt;/figure&gt;
+
+
+&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Ken Thompson and Dennis Ritchie at Bell Labs&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Although Unix was revolutionary for its time, a few notable people disagreed with it being the closed-source property of AT&amp;amp;T, and thought an operating system like that should be open-source, transparent, and free for use and redistribution. One of these people was the Richard Stallman, a researcher at MIT&amp;rsquo;s AI Laboratory. Stallman believed that computer users should be free to study the source code of the programs they used, modify the source code, and redistribute their modified versions in a collaborative sense. This philosophy was later published as the &lt;a href=&#34;https://www.gnu.org/gnu/manifesto.html&#34;&gt;GNU Manifesto&lt;/a&gt;. Stallman then went to write his own GNU operating system, inspired by and compatible with the popular proprietary Unix OS. Stallman is credited with inventing the idea of &lt;em&gt;free&lt;/em&gt; or &lt;em&gt;libre&lt;/em&gt; software. To facilitate this new idea of FOSS software, he created a new &amp;ldquo;copyleft&amp;rdquo; license called the &lt;a href=&#34;https://www.gnu.org/licenses/gpl-3.0.html&#34;&gt;GNU Public License&lt;/a&gt; or GPL for short. Software published with this license must make its source code accessible and available to modify and redistribute for free; additionally, other software that uses GPL licensed software must itself uphold the license, thus creating a cascading effect of FOSS projects that are contributed to for the greater good by both volunteers &lt;em&gt;and&lt;/em&gt; large corporations. He and his team were able to implement all of the system and user utilities needed for a general operating system, but they were still missing a kernel by the time the 90s rolled around.&lt;/p&gt;
+&lt;p&gt;So what is a &amp;ldquo;kernel&amp;rdquo; in an operating system? I&amp;rsquo;m no systems programmer, but essentially it does the translation between hardware and software in an OS. So anytime that a program is launched, it requests CPU and memory resources from the kernel; the kernel is the software that actually holds device drivers and sends instructions to the CPU and handles virtual memory for different programs. The Linux kernel also does all the filesystem work, interfaces with block devices, networks, and facilitates communication between system processes. Essentially, when you plug a USB stick into your laptop running Linux, the kernel is the software responsible for communicating with it using the USB drivers, detecting and mounting the filesystem on the drive, and sending all the serial data to and from the block device.&lt;/p&gt;
+&lt;p&gt;An operating system kernel is a &lt;em&gt;lot&lt;/em&gt; of work to create, so you can understand why it was the last thing for the GNU system to implement. Luckily, a Finnish programmer by the name of Linus Torvalds came to the rescue, as he was working on a Unix-like OS kernel called Linux around the early 90s. So, the GNU system needed a Unix-like kernel, and Linux needed Unix-like userland utilities, so Richard Stallman and Linux Torvalds worked together to create what is now know as the GNU/Linux operating system, which often goes by its nickname &amp;ldquo;Linux&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Unix_history-simple.svg/1200px-Unix_history-simple.svg.png&#34; alt=&#34;&#34; /&gt;
+&lt;/figure&gt;
+
+
+
+&lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Unix_history-simple.svg/1200px-Unix_history-simple.svg.png&#34;&gt;&lt;em&gt;Flowchart&lt;/em&gt;&lt;/a&gt; &lt;em&gt;showing the history of Unix-like systems&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Today Linux is everywhere. Over 90% of the world&amp;rsquo;s cloud infrastructure runs a Linux based operating system, over 75% of the worlds phones run a Linux kernel—as Google&amp;rsquo;s Android operating system uses the Linux kernel, and &lt;strong&gt;all&lt;/strong&gt; of the worlds top 500 supercomputers run Linux. Linux runs on everything from your router to smartwatch to your car to your bluetooth speaker to the X-ray machines at the hospital. Linux is most commonly packaged into &amp;ldquo;Linux distributions&amp;rdquo; or distros for short, which we will get to in a later chapter.&lt;/p&gt;
+&lt;p&gt;So, to recap, what we know as Linux today is actually result of decades of operating system forks, rewrites, and design. Window managers and web browsers inhabit the high-level, the GNU system utilities takes care of the mid-level, and the Linux kernel deals with the low-level.&lt;/p&gt;
+&lt;p&gt;I would be remissed if I didn&amp;rsquo;t mention Linux&amp;rsquo;s cousins, the BSDs. I&amp;rsquo;ll keep this short, but back in the 80s when Stallman was developing his own system &lt;em&gt;based&lt;/em&gt; on Unix, some genius students and researchers at UC Berkeley were creating a direct &lt;em&gt;copy&lt;/em&gt; of the Unix system called Berkeley Software Distribution or BSD for short. The original BSD has seen many forks; today the main BSDs are FreeBSD, OpenBSD, and NetBSD. The BSDs are considered to have been a more direct implementation of the Unix philosophy, which many prefer, and it was licensed with its own BSD style license. This license doesn&amp;rsquo;t require software that uses other BSD licensed software to be licensed itself, so many companies use BSDs in order to keep their code closed source; most notably Sony&amp;rsquo;s PlayStation OS and Apples macOS and iOS are BSD based for this reason.&lt;/p&gt;
+&lt;p&gt;Finally, the preamble is over, and we can get into the meat of using Linux.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://skovati.dev/blog/linux/intro/ch3&#34;&gt;Chapter 3 - Linux Terminology - Distros, Package Managers, and More.&lt;/a&gt;&lt;/p&gt;
+</description> 
     </item>
     
     <item>
@@ -95,8 +450,16 @@ This chapter is optional, but highly recommended. To really get a good perspecti
       <pubDate>Tue, 25 May 2021 18:00:47 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/linux/intro/ch1/</guid>
-      <description>Chapter 1 - Why should I care? Author: Skovati, Date: 2020-12-24
-If I had to condense why I care about free and open source (FOSS) operating systems like Linux into one word, it would be freedom. Almost everyone values having choice in their daily lives—imagine if there was only one type of car that everyone had to use, or you could only buy one style of house. Hell, the US launched a whole revolution because we wanted freedom of religion, so why don&amp;rsquo;t people care about freedom in software?</description>
+      <description>&lt;h2 id=&#34;chapter-1---why-should-i-care&#34;&gt;Chapter 1 - Why should I care?&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Author: Skovati, Date: 2020-12-24&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;If I had to condense why I care about free and open source (FOSS) operating systems like Linux into one word, it would be freedom. Almost everyone values having choice in their daily lives—imagine if there was only one type of car that everyone had to use, or you could only buy one style of house. Hell, the US launched a whole revolution because we wanted freedom of religion, so why don&amp;rsquo;t people care about freedom in software? The way it currently works with popular proprietary operating systems is the designers at Microsoft or Apple decide what&amp;rsquo;s best for the general population, and then you—even as a poweruser—are stuck with those decisions unless you &lt;em&gt;really&lt;/em&gt; want to get hacky with some unsupported third-party software.&lt;/p&gt;
+&lt;p&gt;So how is Linux different? Essentially &lt;em&gt;everything&lt;/em&gt; is third-party software, so it&amp;rsquo;s treated as a first-class citizen. Your text editor might be written by a completely different organization than your web browser or terminal or file manager. So, instead of Microsoft shoving Edge or Internet Explorer or Cortana down your throat, you&amp;rsquo;re free to choose whatever program fits your needs best, all the way down to which kernel, window manager, or distro you want to run.&lt;/p&gt;
+&lt;p&gt;Besides freedom, there are countless other reasons to run Linux. Firstly, it&amp;rsquo;s free—both in the freedom sense and in the monetary sense. This means you don&amp;rsquo;t have to worry about losing your windows activation key or buying another key when you purchase a new computer. Linux always has been and always will be free.&lt;/p&gt;
+&lt;p&gt;Linux is also open source, meaning you can view the &lt;a href=&#34;https://github.com/torvalds/linux&#34;&gt;source code&lt;/a&gt; yourself. Because of this transparent source code, you can be sure that programs you use aren&amp;rsquo;t doing anything nefarious, like constantly recording your microphone *cough* &lt;em&gt;Cortana&lt;/em&gt; or selling your personal information and habits to advertisers for profit *cough* &lt;em&gt;Google&lt;/em&gt;. Like Moxie Marlinspike, co-founder of the Signal Foundation always says, &amp;ldquo;Bad business models create bad technology.&amp;rdquo; Since Linux and other FOSS projects are driven by volunteers and donations, they don&amp;rsquo;t have to sell information or get you to pay a subscription fee to pay for the development, which is a much more sustainable business model in my view.&lt;/p&gt;
+&lt;p&gt;Also, Linux is a perfect development environment. The vast majority of servers in the world run some sort of Linux, so being comfortable with the command line and Linux filesystems is of paramount importance. Developing in a similar environment to the one used in production just &lt;em&gt;makes sense&lt;/em&gt;, and Linux is that environment.&lt;/p&gt;
+&lt;p&gt;Finally, I think Linux is just an interesting operating system. Windows and macOS &lt;strong&gt;don&amp;rsquo;t&lt;/strong&gt; want you to know how the inner-workings work, but Linux &lt;em&gt;does&lt;/em&gt; want you to understand. That means there is so much educational value in learning the ins and outs of Linux—you&amp;rsquo;ll learn everything from bash scripting to filesystems to disk partitioning to  compiling code manually to basics of networking and so much more. I&amp;rsquo;m passionate about Linux, you don&amp;rsquo;t hear many people saying that about Windows or macOS because there just isn&amp;rsquo;t much to be passionate &lt;em&gt;about&lt;/em&gt;. Sure computers are just tools to get more work done, but Linux is a tool that will improve &lt;em&gt;yourself&lt;/em&gt; as well.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://skovati.dev/blog/linux/intro/ch2&#34;&gt;Chapter 2 - What is a &amp;lsquo;Linux&amp;rsquo; anyways?&lt;/a&gt;&lt;/p&gt;
+</description> 
     </item>
     
     <item>
@@ -105,8 +468,26 @@ If I had to condense why I care about free and open source (FOSS) operating syst
       <pubDate>Tue, 25 May 2021 18:00:06 -0500</pubDate>
       
       <guid>https://skovati.dev/recipies/caramel/</guid>
-      <description>Soft, Chewy, Salted Caramels Dangerously easy to make soft caramel candies. Read through the whole recipe before starting so you&amp;rsquo;re comfortable with the process.
-Ingredients  1/2 cup (113 g) unsalted butter 1/2 cup (120 ml) heavy whipping cream 3 tablespoons water 1/4 cup (60 ml) light corn syrup 1 cup (200 grams) sugar 1/2 teaspoon course or flaked sea salt  Preparing the pan It&amp;rsquo;s important to do this step early, as things will be moving quick down the line.</description>
+      <description>&lt;h2 id=&#34;soft-chewy-salted-caramels&#34;&gt;Soft, Chewy, Salted Caramels&lt;/h2&gt;
+&lt;p&gt;Dangerously easy to make soft caramel candies. Read through the whole recipe before starting so you&amp;rsquo;re comfortable with the process.&lt;/p&gt;
+&lt;h3 id=&#34;ingredients&#34;&gt;Ingredients&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;1/2 cup (113 g) unsalted butter&lt;/li&gt;
+&lt;li&gt;1/2 cup (120 ml) heavy whipping cream&lt;/li&gt;
+&lt;li&gt;3 tablespoons water&lt;/li&gt;
+&lt;li&gt;1/4 cup (60 ml) light corn syrup&lt;/li&gt;
+&lt;li&gt;1 cup (200 grams) sugar&lt;/li&gt;
+&lt;li&gt;1/2 teaspoon course or flaked sea salt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;preparing-the-pan&#34;&gt;Preparing the pan&lt;/h3&gt;
+&lt;p&gt;It&amp;rsquo;s important to do this step early, as things will be moving quick down the line. I like to use a bread loaf pan to cool my caramels in. Take a sheet of parchment paper and line the bottom and sides of a loaf pan. Then, take a small amount of vegetable oil and spread it on the parchment paper—gotta make sure they don&amp;rsquo;t stick! Set this pan aside.&lt;/p&gt;
+&lt;h3 id=&#34;heating-the-sugar-solution&#34;&gt;Heating the sugar solution&lt;/h3&gt;
+&lt;p&gt;In a small saucepan, combine the water, corn syrup, and sugar. When pouring the sugar in, aim for the middle, and try not to get any sugar crystals on the side of the pan. Use a spatula to gently combine the water and sugar until everything is hydrated. Heat this over medium heat until the sugar solution comes to a boil. Once boiling, cover the pan with its lid for a minute or so—this is to create some condensation in the pan which helps any sugar stuck on the side of the pan fall down into the boiling mixture. If you have too much sugar on the sides of the pan, this can cause a gritty texture in your final product. Remove the lid and place a candy thermometer in the pan. Cook for 5-10 minutes until the solution reaches 320° F. While the solution is cooking, cut your stick of butter into chunks and place in a microwave safe glass measure cup. Add the heavy whipping cream, and microwave this solution for a minute or two until the butter has melted. Set this aside for the next step. As soon as the sugar reaches 320° F, start the next step.&lt;/p&gt;
+&lt;h3 id=&#34;adding-the-butter-cream&#34;&gt;Adding the butter cream&lt;/h3&gt;
+&lt;p&gt;Once the sugar reaches 320° F, add about 1/6th of the butter cream solution and start mixing it in with the base of the candy thermometer. Repeat this several times until all the cream has been incorporated. The sugar solution will bubble violently while this is happening, don&amp;rsquo;t worry, just keep adding the solution to bring the temperature down. After all the cream has been mixed in, heat this solution for another few minutes until it reaches 240° F. This will create a soft caramel—if you want slightly harder caramels, heat a few more degrees, but no hotter than 245° F. As soon as the solution reaches your desired temperature, take it off the heat and pour it into the prepared loaf pan.&lt;/p&gt;
+&lt;h3 id=&#34;letting-it-cool&#34;&gt;Letting it cool&lt;/h3&gt;
+&lt;p&gt;Don&amp;rsquo;t touch this for at least 20-30 minutes. Then sprinkle your sea salt on top. Let sit for another 1-3 hours—really as long as you can manage. Then, lift the parchment paper out of the pan, and set the caramels on a cutting board. Spray a sharp knife with cooking spray, and then cut into small cubes. Wrap with or place on parchment paper and store in an airtight container or the fridge for best longevity. Enjoy!&lt;/p&gt;
+</description> 
     </item>
     
     <item>
@@ -115,7 +496,35 @@ Ingredients  1/2 cup (113 g) unsalted butter 1/2 cup (120 ml) heavy whipping cre
       <pubDate>Tue, 25 May 2021 18:00:01 -0500</pubDate>
       
       <guid>https://skovati.dev/recipies/pizza/</guid>
-      <description>Simple Pizza Recipe Ingredients:  1/4 teaspoon active dry yeast 1 teaspoon sugar 1/2 cup warm water 1-1.5 cups flour 1/2 teaspoon salt olive oil oregano pepper 1/3 cup canned pureed tomatoes or pasta sauce fresh basil 4 ounces whole milk mozzarella any other toppings you want (garlic, onions, peppers, meat)  The Dough Mix the yeast, sugar, and water together in a bowl and let sit for 5-10 minutes. I like to wait until I can smell the yeast to make sure it&amp;rsquo;s active and happy.</description>
+      <description>&lt;h2 id=&#34;simple-pizza-recipe&#34;&gt;Simple Pizza Recipe&lt;/h2&gt;
+&lt;h3 id=&#34;ingredients&#34;&gt;Ingredients:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;1/4 teaspoon active dry yeast&lt;/li&gt;
+&lt;li&gt;1 teaspoon sugar&lt;/li&gt;
+&lt;li&gt;1/2 cup warm water&lt;/li&gt;
+&lt;li&gt;1-1.5 cups flour&lt;/li&gt;
+&lt;li&gt;1/2 teaspoon salt&lt;/li&gt;
+&lt;li&gt;olive oil&lt;/li&gt;
+&lt;li&gt;oregano&lt;/li&gt;
+&lt;li&gt;pepper&lt;/li&gt;
+&lt;li&gt;1/3 cup canned pureed tomatoes or pasta sauce&lt;/li&gt;
+&lt;li&gt;fresh basil&lt;/li&gt;
+&lt;li&gt;4 ounces whole milk mozzarella&lt;/li&gt;
+&lt;li&gt;any other toppings you want (garlic, onions, peppers, meat)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-dough&#34;&gt;The Dough&lt;/h3&gt;
+&lt;p&gt;Mix the yeast, sugar, and water together in a bowl and let sit for 5-10 minutes. I like to wait until I can smell the yeast to make sure it&amp;rsquo;s active and happy. Put in one cup of flour and the salt, and start kneading with your hands. Keep adding flour as needed to keep the dough from being too sticky, but don&amp;rsquo;t add too much! Knead until the dough passes the &amp;ldquo;window pane test&amp;rdquo; where you stretch it out carefully and check to see if you can see light through it without it ripping. When ready, place in a small bowl with olive oil and cover with cloth and let rise—at least 24 hours in the fridge, or 1-2 hours at room temp, until size has increased and the dough is very soft.&lt;/p&gt;
+&lt;p&gt;In a 10 inch cast iron pan, drizzle a little olive oil. You don&amp;rsquo;t need much—the dough is already oiled. Put in some oregano, black pepper, salt, and optionally some cornmeal. Spread that mixture around the pan. Grab the dough and rotate it slowly so it falls into a circular shape. Place and fit into the pan, and let proof another 20 minutes or so as you get the toppings ready.&lt;/p&gt;
+&lt;h3 id=&#34;the-sauce&#34;&gt;The Sauce&lt;/h3&gt;
+&lt;p&gt;Normally, I&amp;rsquo;m lazy, and I just end up using some store bought pasta sauce. I think this works totally fine, but if you want to get fancy you can use those purred tomatoes (or blend your own), and combine them with some olive oil and chopped basil leaves.&lt;/p&gt;
+&lt;h3 id=&#34;cooking-the-pizza&#34;&gt;Cooking the Pizza&lt;/h3&gt;
+&lt;p&gt;There are two main methods I go between when cooking these: if the oven can get pretty hot, around 550+° F, I usually just max out the oven and bake it in the pan anywhere from 10-15 minutes, checking on it every couple minutes to make sure the crust is baking nicely.&lt;/p&gt;
+&lt;p&gt;Alternatively, if your oven doesn&amp;rsquo;t get too hot, or you really want a crispy crust on the bottom, you can cook it on the stove and then broil it to finish. Turn a burner on medium and the broiler on high.&lt;/p&gt;
+&lt;h3 id=&#34;dressing-the-pizza&#34;&gt;Dressing the Pizza&lt;/h3&gt;
+&lt;p&gt;Depending on which cooking method you want to use, you&amp;rsquo;ll either add all the toppings at once or at different times. Regardless of which method you use, you&amp;rsquo;ll want to saute toppings like onions or peppers for a few minutes to make sure they&amp;rsquo;re fully cooked at the end. If baking in the oven, saute your toppings and then spread the sauce, toppings, and cheese on top of the pizza and throw it in the oven. If cooking on the stove, add the sauce right away, and cook on medium for around 7-8 minutes, until the dough starts bubbling underneath. Then, add the rest of your toppings now, making sure the cheese is as cold as possible. Then, throw under the broiler for 4-5 minutes, or to your liking.&lt;/p&gt;
+&lt;h3 id=&#34;and-thats-it&#34;&gt;And that&amp;rsquo;s it!&lt;/h3&gt;
+&lt;p&gt;Once your preferred cooking method is done, take the pan out and let it cool for several minutes. If you used enough oil the pizza shouldn&amp;rsquo;t stick at all. Enjoy!&lt;/p&gt;
+</description> 
     </item>
     
     <item>
@@ -124,8 +533,24 @@ Ingredients  1/2 cup (113 g) unsalted butter 1/2 cup (120 ml) heavy whipping cre
       <pubDate>Tue, 25 May 2021 17:59:56 -0500</pubDate>
       
       <guid>https://skovati.dev/recipies/pancakes/</guid>
-      <description>Simple Pancake Recipe This is a simple, effective recipe for a simple, effective food.
-Ingredients  28 g butter (2 tbsp) 25 g sugar (2 tbsp) 1 egg 5 ml vanilla extract (2 tsp) 400 ml milk (1 &amp;amp; 3/4 cup) 6 g salt (1 tsp) 16 g baking powder (1.25 tbsp) 200-300 g flour (1.5-2.5 cups)  The Batter Melt the butter without it getting too hot, I like to use a microwave safe glass measuring cup.</description>
+      <description>&lt;h2 id=&#34;simple-pancake-recipe&#34;&gt;Simple Pancake Recipe&lt;/h2&gt;
+&lt;p&gt;This is a simple, effective recipe for a simple, effective food.&lt;/p&gt;
+&lt;h3 id=&#34;ingredients&#34;&gt;Ingredients&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;28 g butter (2 tbsp)&lt;/li&gt;
+&lt;li&gt;25 g sugar (2 tbsp)&lt;/li&gt;
+&lt;li&gt;1 egg&lt;/li&gt;
+&lt;li&gt;5 ml vanilla extract (2 tsp)&lt;/li&gt;
+&lt;li&gt;400 ml milk (1 &amp;amp; 3/4 cup)&lt;/li&gt;
+&lt;li&gt;6 g salt (1 tsp)&lt;/li&gt;
+&lt;li&gt;16 g baking powder (1.25 tbsp)&lt;/li&gt;
+&lt;li&gt;200-300 g flour (1.5-2.5 cups)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-batter&#34;&gt;The Batter&lt;/h3&gt;
+&lt;p&gt;Melt the butter without it getting too hot, I like to use a microwave safe glass measuring cup. Mix in the sugar and beat the egg into the butter thoroughly, I just use a fork. Mix in the vanilla, milk, salt, and baking powder. Start mixing in a small portion of the flour, adding more until you reach a desired consistency. Don&amp;rsquo;t over-mix, the batter should be thick and lumpy. Batter should fall from the fork easily, but not too easily. The thicker the batter, the thicker the pancake, so don&amp;rsquo;t worry too much about the consistency—you&amp;rsquo;ll get a feel for it after a few attempts. Let the batter rest in order to hydrate the flour while you heat up your pan.&lt;/p&gt;
+&lt;h3 id=&#34;cooking&#34;&gt;Cooking&lt;/h3&gt;
+&lt;p&gt;Heat your pan of choice—I use cast iron―to medium heat. Put butter or oil in the pan. When the butter starts to brown or the oil is glossy, pour in the batter. Look for bubbles on the edges of the cake. Take a peek at the underside and when you think it&amp;rsquo;s ready give it a flip. Doing the chef-style pan flip gives better results for large cakes, but you risk losing it all over the floor. When the cake seems done, cook for another 30 seconds to make sure, and move to a cooling plate. Enjoy.&lt;/p&gt;
+</description> 
     </item>
     
     <item>
@@ -134,10 +559,30 @@ Ingredients  28 g butter (2 tbsp) 25 g sugar (2 tbsp) 1 egg 5 ml vanilla extract
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://skovati.dev/about/</guid>
-      <description>welcome to skovati.dev I&amp;rsquo;m a computer engineering student and amateur mathematician from the midwest region
-a few things I&amp;rsquo;m passionate about:
- digital minimalism ethical &amp;amp; sustainable technology free &amp;amp; open source software unix philosophy cryptography/cybersecurity self-hosted infrastructure analog &amp;amp; digital circuits frugality privacy &amp;amp; anonymity  lately, besides schoolwork, I&amp;rsquo;ve been working on small projects like
- gosh, an extremely simple unix shell written in Go kirpto, a cryptocurrency portfolio tracker that pulls data from the CoinGecko API micro, a collection of scripts for Arduino microcontollers  professionally, I work as a Cloud Engineer, deploying products and applications on cloud platforms like GCP and AWS using Terraform, Kubernetes, and GitLab CI</description>
+      <description>&lt;h2 id=&#34;welcome-to-skovatidev&#34;&gt;welcome to skovati.dev&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;m a computer engineering student and amateur mathematician from the midwest region&lt;/p&gt;
+&lt;p&gt;a few things I&amp;rsquo;m passionate about:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;digital minimalism&lt;/li&gt;
+&lt;li&gt;ethical &amp;amp; sustainable technology&lt;/li&gt;
+&lt;li&gt;free &amp;amp; open source software&lt;/li&gt;
+&lt;li&gt;unix philosophy&lt;/li&gt;
+&lt;li&gt;cryptography/cybersecurity&lt;/li&gt;
+&lt;li&gt;self-hosted infrastructure&lt;/li&gt;
+&lt;li&gt;analog &amp;amp; digital circuits&lt;/li&gt;
+&lt;li&gt;frugality&lt;/li&gt;
+&lt;li&gt;privacy &amp;amp; anonymity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;lately, besides schoolwork, I&amp;rsquo;ve been working on small projects like&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/skovati/gosh&#34;&gt;gosh&lt;/a&gt;, an extremely simple unix shell written in Go&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/skovati/kripto&#34;&gt;kirpto&lt;/a&gt;, a cryptocurrency portfolio tracker that pulls data from the &lt;a href=&#34;https://www.coingecko.com/en/api&#34;&gt;CoinGecko API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/skovati/micro&#34;&gt;micro&lt;/a&gt;, a collection of scripts for Arduino microcontollers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;professionally, I work as a Cloud Engineer, deploying products and applications on cloud platforms like GCP and AWS using &lt;a href=&#34;https://www.terraform.io/&#34;&gt;Terraform&lt;/a&gt;, &lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt;, and &lt;a href=&#34;https://docs.gitlab.com/ee/ci/&#34;&gt;GitLab CI&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;encrypt a message with my gpg key &lt;a href=&#34;https://gpg.skovati.dev&#34;&gt;here&lt;/a&gt;, and email me at &lt;a href=&#34;mailto:skovati@protonmail.com&#34;&gt;skovati@protonmail.com&lt;/a&gt;, include your public key if you want my response encrypted&lt;/p&gt;
+&lt;p&gt;this website was written in &lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;markdown&lt;/a&gt;, compiled by &lt;a href=&#34;https://github.com/gohugoio/hugo&#34;&gt;hugo&lt;/a&gt;, and served by a &lt;a href=&#34;https://nginx.org/en/&#34;&gt;nginx&lt;/a&gt; container on &lt;a href=&#34;https://www.debian.org/&#34;&gt;debian&lt;/a&gt; gnu/linux&lt;/p&gt;
+</description> 
     </item>
     
   </channel>

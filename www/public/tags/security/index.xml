@@ -6,15 +6,20 @@
     <description>Recent content in security on skovati</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 May 2021 17:32:45 -0500</lastBuildDate><atom:link href="https://skovati.dev/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 May 2021 17:32:45 -0500</lastBuildDate>
+    
+	<atom:link href="https://skovati.dev/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Privacy &amp; Security in the Modern Digital Age</title>
       <link>https://skovati.dev/blog/privacy/</link>
       <pubDate>Sat, 29 May 2021 17:32:45 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/privacy/</guid>
-      <description>Author: skovati Date: 2021-05-29
-The modern web is plagued by data mining, cross site tracking, intrusive ads, analytics, cookies, etc. How does one escape? It&amp;rsquo;s easy enough to say, &amp;ldquo;oh I wish it were like the 90s again with a simple internet&amp;rdquo;, but then we&amp;rsquo;d be missing out on some fantastic things from the modern web, like instant video chatting with loved ones, or having the world&amp;rsquo;s wealth of information at your fingertips with sites like Wikipedia and Youtube.</description>
+      <description>&lt;p&gt;&lt;em&gt;Author:&lt;/em&gt; skovati   &lt;em&gt;Date:&lt;/em&gt; 2021-05-29&lt;/p&gt;
+&lt;p&gt;The modern web is plagued by data mining, cross site tracking, intrusive ads, analytics, cookies, etc. How does one escape? It&amp;rsquo;s easy enough to say, &amp;ldquo;oh I wish it were like the 90s again with a simple internet&amp;rdquo;, but then we&amp;rsquo;d be missing out on some fantastic things from the modern web, like instant video chatting with loved ones, or having the world&amp;rsquo;s wealth of information at your fingertips with sites like Wikipedia and Youtube.&lt;/p&gt;
+</description> 
     </item>
     
   </channel>

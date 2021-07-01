@@ -6,14 +6,46 @@
     <description>Recent content in minimalism on skovati</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Jun 2021 21:40:31 -0500</lastBuildDate><atom:link href="https://skovati.dev/tags/minimalism/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Jun 2021 21:40:31 -0500</lastBuildDate>
+    
+	<atom:link href="https://skovati.dev/tags/minimalism/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>A minimal Vim, Markdown, and GPG powered wiki</title>
       <link>https://skovati.dev/blog/wiki/</link>
       <pubDate>Sun, 20 Jun 2021 21:40:31 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/wiki/</guid>
-      <description>Motivation and Vimwiki Lately, I&amp;rsquo;ve been keeping notes, ideas, to-do lists, and journal entries in a test based wiki, thanks to the fantastic plugin vimwiki. If you&amp;rsquo;re not familiar, vimwiki enables easy hyperlinking between text files marked up with either Markdown or a feature rich vimwiki syntax. This can be a collection of programming language snippets, notes from CS class, project to-do lists, a personal diary—whatever you want. You can navigate between linked files with and and even convert to HTML to view in a browser.</description>
+      <description>&lt;h2 id=&#34;motivation-and-vimwiki&#34;&gt;Motivation and Vimwiki&lt;/h2&gt;
+&lt;p&gt;Lately, I&amp;rsquo;ve been keeping notes, ideas, to-do lists, and journal entries in a test based wiki, thanks to the fantastic plugin &lt;a href=&#34;https://github.com/vimwiki/vimwiki&#34;&gt;vimwiki&lt;/a&gt;. If you&amp;rsquo;re not familiar, vimwiki enables easy hyperlinking between text files marked up with either Markdown or a feature rich vimwiki syntax. This can be a collection of programming language snippets, notes from CS class, project to-do lists, a personal diary—whatever you want. You can navigate between linked files with &lt;!-- raw HTML omitted --&gt; and &lt;!-- raw HTML omitted --&gt; and even convert to HTML to view in a browser. I&amp;rsquo;m actually in the process of creating my own minimal plugin with a subset of the vimwiki features I actually use, along with some other customizations, since a lot of the behavior I desire can be emulated within vanilla vim with &lt;code&gt;./relative/paths&lt;/code&gt; and &lt;code&gt;gf&lt;/code&gt;. Either way, a markdown/plain text based wiki offers many advantages, as it can be version controlled with git, takes up kBs of space, can be efficiently synced across computers, and encrypted for privacy. I tried other note taking apps like &lt;a href=&#34;https://joplinapp.org/&#34;&gt;Joplin&lt;/a&gt;, &lt;a href=&#34;https://standardnotes.org/&#34;&gt;Standard Notes&lt;/a&gt;, but why install an Electron app when we can use some Vimscript?&lt;/p&gt;
+&lt;h2 id=&#34;markdown&#34;&gt;Markdown&lt;/h2&gt;
+&lt;p&gt;Markdown has become my go-to markup language for notes and lists. It offers the essential features of a simple markup language, while staying easy to use with its syntax. I often make use of the checkboxes and tables to keep track of lists and information, which are nice additions alongside the basics of making text &lt;strong&gt;bold&lt;/strong&gt; or &lt;em&gt;italicized&lt;/em&gt; and organizing sections and lists. Plus, since it&amp;rsquo;s just plain text, unlike a Microsoft Word document, I can edit it in vim (with the help of &lt;a href=&#34;https://github.com/plasticboy/vim-markdown&#34;&gt;vim-markdown&lt;/a&gt;), interact with it via unix command line tools,&lt;/p&gt;
+&lt;p&gt;An example markdown wiki&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## to-do
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;- [ ]&lt;/span&gt; wash the dishes
+&lt;span style=&#34;color:#66d9ef&#34;&gt;- [ ]&lt;/span&gt; take out the trash
+&lt;span style=&#34;color:#66d9ef&#34;&gt;- [X]&lt;/span&gt; study
+
+&lt;span style=&#34;color:#75715e&#34;&gt;## projects
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;### games
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; [&lt;span style=&#34;color:#f92672&#34;&gt;pong&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;./projects/pong.md&lt;/span&gt;)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; [&lt;span style=&#34;color:#f92672&#34;&gt;space invaders&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;./projects/invaders.md&lt;/span&gt;)
+
+&lt;span style=&#34;color:#75715e&#34;&gt;### other
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; [&lt;span style=&#34;color:#f92672&#34;&gt;garden&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;./projects/garden.md&lt;/span&gt;)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; [&lt;span style=&#34;color:#f92672&#34;&gt;blog&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;./projects/blog.md&lt;/span&gt;)
+
+&lt;span style=&#34;color:#75715e&#34;&gt;## university classes
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Algorithms
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Number Theory
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Electrodynamics
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Metaphysics
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Statistics
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;vim&#34;&gt;Vim&lt;/h2&gt;
+&lt;h2 id=&#34;gpg&#34;&gt;GPG&lt;/h2&gt;
+&lt;h2 id=&#34;posix-shell&#34;&gt;POSIX shell&lt;/h2&gt;
+</description> 
     </item>
     
     <item>
@@ -22,8 +54,9 @@
       <pubDate>Sat, 29 May 2021 17:32:45 -0500</pubDate>
       
       <guid>https://skovati.dev/blog/privacy/</guid>
-      <description>Author: skovati Date: 2021-05-29
-The modern web is plagued by data mining, cross site tracking, intrusive ads, analytics, cookies, etc. How does one escape? It&amp;rsquo;s easy enough to say, &amp;ldquo;oh I wish it were like the 90s again with a simple internet&amp;rdquo;, but then we&amp;rsquo;d be missing out on some fantastic things from the modern web, like instant video chatting with loved ones, or having the world&amp;rsquo;s wealth of information at your fingertips with sites like Wikipedia and Youtube.</description>
+      <description>&lt;p&gt;&lt;em&gt;Author:&lt;/em&gt; skovati   &lt;em&gt;Date:&lt;/em&gt; 2021-05-29&lt;/p&gt;
+&lt;p&gt;The modern web is plagued by data mining, cross site tracking, intrusive ads, analytics, cookies, etc. How does one escape? It&amp;rsquo;s easy enough to say, &amp;ldquo;oh I wish it were like the 90s again with a simple internet&amp;rdquo;, but then we&amp;rsquo;d be missing out on some fantastic things from the modern web, like instant video chatting with loved ones, or having the world&amp;rsquo;s wealth of information at your fingertips with sites like Wikipedia and Youtube.&lt;/p&gt;
+</description> 
     </item>
     
   </channel>
