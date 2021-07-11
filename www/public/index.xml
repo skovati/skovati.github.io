@@ -239,7 +239,7 @@ echo &amp;quot;&amp;lt;/article&amp;gt;&amp;quot; &amp;gt;&amp;gt; ./index.html
 &lt;p&gt;If you&amp;rsquo;re running a server with a public IP address, I recommend running a firewall on it. Normally, a networks router or dedicated firewall will block unauthorized packets, but having a per-server firewall is recommended. If you&amp;rsquo;re running a GCP VM, the firewall can be found under VPC Network and firewall in the nav bar to the left. I recommend ufw as a firewall—it&amp;rsquo;s super simple to setup. Run &lt;code&gt;sudo apt install ufw&lt;/code&gt; to install the firewall, and then run &lt;code&gt;sudo ufw allow ssh&lt;/code&gt; to allow our ssh requests through the firewall. Then, run &lt;code&gt;sudo ufw default deny&lt;/code&gt; so that the firewall denies any traffic we don&amp;rsquo;t explicitly allow. Finally, run &lt;code&gt;sudo ufw enable&lt;/code&gt; to start the firewall.&lt;/p&gt;
 &lt;p&gt;A lot of that might&amp;rsquo;ve gone over your head, but that&amp;rsquo;s fine. We secured your system and made it essentially impenetrable while you learn the ropes. Keep in mind that you&amp;rsquo;ll have to change these things if you want to, say, give a new user ssh or sudo access, or let certain traffic through the firewall if you want to run a web server.&lt;/p&gt;
 &lt;p&gt;Congratulations though! If you&amp;rsquo;ve been following Chapters 4-5, you&amp;rsquo;ve set up a remote Linux virtual machine or bare metal install, given yourself encrypted access, locked down the traffic with a firewall, and now you have a perfect environment set up to learn the ins and outs of the command line. The next few chapters will likely be about specific topics, like the bash programming language or how to set up a web server, so feel free to skip around to the stuff that interests you!&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://skovati.dev/blog/linux/intro/ch6&#34;&gt;Chapter 6 - Bash &amp;amp;&amp;amp; &amp;ldquo;Extensibilty&amp;rdquo;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./blog/linux/intro/ch6&#34;&gt;Chapter 6 - Bash &amp;amp;&amp;amp; &amp;ldquo;Extensibilty&amp;rdquo;&lt;/a&gt;&lt;/p&gt;
 </description> 
     </item>
     
@@ -265,7 +265,7 @@ echo &amp;quot;&amp;lt;/article&amp;gt;&amp;quot; &amp;gt;&amp;gt; ./index.html
 &lt;p&gt;Choose your Linux distro you want to use. Ubuntu is the de facto starting place for beginners, although Linux Mint is another good recommendation.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Assuming you picked Ubuntu, go to the &lt;a href=&#34;https://ubuntu.com/download/desktop&#34;&gt;download&lt;/a&gt; page and grab the latest ISO for your system architecture (which is probably amd64). Alternatively, if you want to try a different &lt;em&gt;desktop environment&lt;/em&gt; (read &lt;a href=&#34;https://skovati.dev/blog/linux/intro/ch3&#34;&gt;Chapter 3&lt;/a&gt; if you haven&amp;rsquo;t already), you can check out the different &lt;a href=&#34;https://ubuntu.com/download/flavours&#34;&gt;Ubuntu flavors&lt;/a&gt;, that include DEs like KDE Plasma, LXDE, and Budgie.&lt;/p&gt;
+&lt;p&gt;Assuming you picked Ubuntu, go to the &lt;a href=&#34;https://ubuntu.com/download/desktop&#34;&gt;download&lt;/a&gt; page and grab the latest ISO for your system architecture (which is probably amd64). Alternatively, if you want to try a different &lt;em&gt;desktop environment&lt;/em&gt; (read &lt;a href=&#34;./blog/linux/intro/ch3&#34;&gt;Chapter 3&lt;/a&gt; if you haven&amp;rsquo;t already), you can check out the different &lt;a href=&#34;https://ubuntu.com/download/flavours&#34;&gt;Ubuntu flavors&lt;/a&gt;, that include DEs like KDE Plasma, LXDE, and Budgie.&lt;/p&gt;
 &lt;p&gt;Next, you&amp;rsquo;ll need a USB drive. I&amp;rsquo;d recommend at least 8 gigs, as some of these Ubuntu images can get pretty big (current release is 2.7 gigs). Make sure there isn&amp;rsquo;t anything important on it, and then download my preferred flashing utility, &lt;a href=&#34;https://www.balena.io/etcher/&#34;&gt;Balena Etcher&lt;/a&gt;. Download and run that .exe (hopefully that&amp;rsquo;s the last time you have to do &lt;em&gt;that&lt;/em&gt;), and insert your USB stick. Open Etcher, choose your USB (be careful to choose the right one), select your Ubuntu ISO, and hit flash. Once that&amp;rsquo;s done, you&amp;rsquo;ll need to make sure your computer&amp;rsquo;s BIOS is configured to boot from a USB stick before it boots from an installed hard drive; search around if you aren&amp;rsquo;t sure how to do this. Once the BIOS is configured, insert your USB and reboot. You&amp;rsquo;ll be greeted with the Ubuntu installer, which will walk you through the process. I won&amp;rsquo;t go into detail here, just make to click the &amp;ldquo;install along side existing OS&amp;rdquo; option when you&amp;rsquo;re choosing the hard drive to install to. This will partition your disks, and add your Windows install to the bootloader, so you can choose which OS to boot every time you turn your computer on. I recommend watching &lt;a href=&#34;https://www.youtube.com/watch?v=G7ffzC4S0A4&#34;&gt;this video&lt;/a&gt; to get a feel for the installation. Once the installer is done, just reboot your computer and choose Ubuntu on the GRUB bootloader screen!&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;option-2---installing-on-another-personal-machine-as-a-server&#34;&gt;Option #2 - Installing on another personal machine as a server&lt;/h3&gt;
@@ -277,16 +277,16 @@ echo &amp;quot;&amp;lt;/article&amp;gt;&amp;quot; &amp;gt;&amp;gt; ./index.html
 &lt;p&gt;First, either sign in with your existing account, or make a new account &lt;a href=&#34;https://console.cloud.google.com/&#34;&gt;here&lt;/a&gt;. Make a new project at the top, called something memorable like &amp;ldquo;Linux VM&amp;rdquo; and select it. Then, on the left side, select Compute Engine. Select your project, add your payment information (you won&amp;rsquo;t be billed anything though), and the hit create VM. Under machine configuration, choose generation N1, and under Machine type, choose f1-micro. GCP gives everyone 744 free hours of f1-micro usage per month, which is exactly 24 hours a day * 31 days in a month—so this VM is indefinitely free for you to use. You also get $300 free credit towards other GCP services if you want more horsepower. Next, under Boot Disk, I recommend choosing either Ubuntu Server or Debian 10. Ubuntu Server is going to be easier for newcomers, while Debian has less configured out of the box. Then, hit create and wait a few seconds. Soon your could VM will be up and running.&lt;/p&gt;
 &lt;p&gt;
 &lt;figure&gt;
-  &lt;img src=&#34;https://skovati.dev/vm.png&#34; alt=&#34;&#34; /&gt;
+  &lt;img src=&#34;./vm.png&#34; alt=&#34;&#34; /&gt;
 &lt;/figure&gt;
 
 
 &lt;/p&gt;
-&lt;p&gt;Go back to your VM instances page, and you should see your new server. There are a handful of ways to connect to this server: SSH through the GCP interface, using the gcloud command line tool, or SSHing manually through a program of your choice. I recommend learning how to access it from a ssh client, but you should use the GCP ssh interface at least once to see what your username is on the VM. Both Linux and Windows have an SSH client built into the terminal and PowerShell respectively. If you&amp;rsquo;re familiar with SSH, generate a key pair and continue reading, if not, skip ahead to the first part of &lt;a href=&#34;https://skovati.dev/linux/intro/ch5&#34;&gt;Chapter 5&lt;/a&gt; where I talk about what SSH is and why you should use SSH keys.&lt;/p&gt;
-&lt;p&gt;Once you have an ssh key pair generated, you&amp;rsquo;ll have to add your public key to the GCP VMs whitelist. This is done by clicking on your VM in the VM instance list, and hitting edit on the top bar. Scroll down to the SSH key section, hit view and edit, and paste your ssh public key in here. Now, you should be able to access your VM by typing &lt;code&gt;ssh your-google-username@the-vms-ip-listed-on-the-instances-page&lt;/code&gt; and boom! Remote secure shell access. Once you have this working, move onto the other parts of &lt;a href=&#34;https://skovati.dev/linux/intro/ch5&#34;&gt;Chapter 5&lt;/a&gt; where I talk about other server configuration.&lt;/p&gt;
+&lt;p&gt;Go back to your VM instances page, and you should see your new server. There are a handful of ways to connect to this server: SSH through the GCP interface, using the gcloud command line tool, or SSHing manually through a program of your choice. I recommend learning how to access it from a ssh client, but you should use the GCP ssh interface at least once to see what your username is on the VM. Both Linux and Windows have an SSH client built into the terminal and PowerShell respectively. If you&amp;rsquo;re familiar with SSH, generate a key pair and continue reading, if not, skip ahead to the first part of &lt;a href=&#34;./linux/intro/ch5&#34;&gt;Chapter 5&lt;/a&gt; where I talk about what SSH is and why you should use SSH keys.&lt;/p&gt;
+&lt;p&gt;Once you have an ssh key pair generated, you&amp;rsquo;ll have to add your public key to the GCP VMs whitelist. This is done by clicking on your VM in the VM instance list, and hitting edit on the top bar. Scroll down to the SSH key section, hit view and edit, and paste your ssh public key in here. Now, you should be able to access your VM by typing &lt;code&gt;ssh your-google-username@the-vms-ip-listed-on-the-instances-page&lt;/code&gt; and boom! Remote secure shell access. Once you have this working, move onto the other parts of &lt;a href=&#34;./linux/intro/ch5&#34;&gt;Chapter 5&lt;/a&gt; where I talk about other server configuration.&lt;/p&gt;
 &lt;p&gt;
 &lt;figure&gt;
-  &lt;img src=&#34;https://skovati.dev/ssh.png&#34; alt=&#34;&#34; /&gt;
+  &lt;img src=&#34;./ssh.png&#34; alt=&#34;&#34; /&gt;
 &lt;/figure&gt;
 
 
@@ -294,7 +294,7 @@ echo &amp;quot;&amp;lt;/article&amp;gt;&amp;quot; &amp;gt;&amp;gt; ./index.html
 &lt;hr&gt;
 &lt;h3 id=&#34;option-4---running-a-linux-vm-least-preferred&#34;&gt;Option #4 - Running a Linux VM (Least Preferred)&lt;/h3&gt;
 &lt;p&gt;I have nothing against running a VM, I just think it&amp;rsquo;s far too easy to install it once and forget about it after a week compared to installing it on your own machine or buying a Raspberry Pi. That being said, using a VM service like Oracle&amp;rsquo;s &lt;a href=&#34;https://www.virtualbox.org/&#34;&gt;VirtualBox&lt;/a&gt; is a fool-proof way to quickly get a Linux environment up and running. This is perfect if you want to try out different distros or desktop environments, or just want to see what Linux is about before installing it on a personal machine. I won&amp;rsquo;t go into detail about how to setup a VM here, there are many other tutorials online.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://skovati.dev/blog/linux/intro/ch5&#34;&gt;Chapter 5 - Configuring Your Linux Server&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./blog/linux/intro/ch5&#34;&gt;Chapter 5 - Configuring Your Linux Server&lt;/a&gt;&lt;/p&gt;
 </description> 
     </item>
     
@@ -394,7 +394,7 @@ echo &amp;quot;&amp;lt;/article&amp;gt;&amp;quot; &amp;gt;&amp;gt; ./index.html
 &lt;p&gt;&lt;em&gt;My bspwm and polybar config&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;configuration-files-aka-dotfiles&#34;&gt;Configuration Files aka &amp;ldquo;Dotfiles&amp;rdquo;&lt;/h3&gt;
 &lt;p&gt;Another fantastic feature of Linux distros is that all of the configuration is held in so-called &amp;ldquo;configuration files&amp;rdquo;. Often these files reside in the users home directory (we&amp;rsquo;ll talk about filesystem organization in a later chapter) and are prefixed with a &amp;ldquo;.&amp;rdquo; like &amp;ldquo;.vimrc&amp;rdquo;, hence the nickname &amp;ldquo;dotfiles&amp;rdquo;. You can see examples of some dotfiles in my &lt;a href=&#34;https://github.com/skovati/dotfiles&#34;&gt;GitHub repo&lt;/a&gt;. These hold all of the config for my window manager, text editor, pdf and image viewer, terminal, and more. Because this config is stored in text files, I can back-up and version control them with git, and if I want to reinstall my OS or switch distros, all I have to do it clone that repo and 95% of my configuration is done already—including automatically installing important packages. Try doing that in windows where you have to manually install every piece of software and change each setting by hand with a new install. This makes Linux very portable and replaceable; my laptop&amp;rsquo;s SSD could get wiped and I wouldn&amp;rsquo;t break a sweat, because I didn&amp;rsquo;t really lose anything. You will spend a lot of time customizing these files, but it&amp;rsquo;s time well spent, as they can stay with you during your whole career.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://skovati.dev/blog/linux/intro/ch4&#34;&gt;Chapter 4 - Installing Linux&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./blog/linux/intro/ch4&#34;&gt;Chapter 4 - Installing Linux&lt;/a&gt;&lt;/p&gt;
 </description> 
     </item>
     
@@ -409,7 +409,7 @@ echo &amp;quot;&amp;lt;/article&amp;gt;&amp;quot; &amp;gt;&amp;gt; ./index.html
 &lt;p&gt;This chapter &lt;em&gt;is&lt;/em&gt; optional, but highly recommended. To really get a good perspective on Linux as a whole I think some historical context is necessary. It all starts back in the 60s when MIT and AT&amp;amp;T&amp;rsquo;s Bell Labs were developing Multics, a time-sharing operating system for the GE-645 mainframe computer. That baby had dual 435kHz processors, 3 MBs of memory, could connect to 35 terminals simultaneously, and looked like this:&lt;/p&gt;
 &lt;p&gt;
 &lt;figure&gt;
-  &lt;img src=&#34;https://skovati.dev/GE645.jpg&#34; alt=&#34;GE-645&#34; /&gt;
+  &lt;img src=&#34;./GE645.jpg&#34; alt=&#34;GE-645&#34; /&gt;
   &lt;figcaption&gt;GE-645&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -440,7 +440,7 @@ echo &amp;quot;&amp;lt;/article&amp;gt;&amp;quot; &amp;gt;&amp;gt; ./index.html
 &lt;p&gt;So, to recap, what we know as Linux today is actually result of decades of operating system forks, rewrites, and design. Window managers and web browsers inhabit the high-level, the GNU system utilities takes care of the mid-level, and the Linux kernel deals with the low-level.&lt;/p&gt;
 &lt;p&gt;I would be remissed if I didn&amp;rsquo;t mention Linux&amp;rsquo;s cousins, the BSDs. I&amp;rsquo;ll keep this short, but back in the 80s when Stallman was developing his own system &lt;em&gt;based&lt;/em&gt; on Unix, some genius students and researchers at UC Berkeley were creating a direct &lt;em&gt;copy&lt;/em&gt; of the Unix system called Berkeley Software Distribution or BSD for short. The original BSD has seen many forks; today the main BSDs are FreeBSD, OpenBSD, and NetBSD. The BSDs are considered to have been a more direct implementation of the Unix philosophy, which many prefer, and it was licensed with its own BSD style license. This license doesn&amp;rsquo;t require software that uses other BSD licensed software to be licensed itself, so many companies use BSDs in order to keep their code closed source; most notably Sony&amp;rsquo;s PlayStation OS and Apples macOS and iOS are BSD based for this reason.&lt;/p&gt;
 &lt;p&gt;Finally, the preamble is over, and we can get into the meat of using Linux.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://skovati.dev/blog/linux/intro/ch3&#34;&gt;Chapter 3 - Linux Terminology - Distros, Package Managers, and More.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./blog/linux/intro/ch3&#34;&gt;Chapter 3 - Linux Terminology - Distros, Package Managers, and More.&lt;/a&gt;&lt;/p&gt;
 </description> 
     </item>
     
@@ -458,7 +458,98 @@ echo &amp;quot;&amp;lt;/article&amp;gt;&amp;quot; &amp;gt;&amp;gt; ./index.html
 &lt;p&gt;Linux is also open source, meaning you can view the &lt;a href=&#34;https://github.com/torvalds/linux&#34;&gt;source code&lt;/a&gt; yourself. Because of this transparent source code, you can be sure that programs you use aren&amp;rsquo;t doing anything nefarious, like constantly recording your microphone *cough* &lt;em&gt;Cortana&lt;/em&gt; or selling your personal information and habits to advertisers for profit *cough* &lt;em&gt;Google&lt;/em&gt;. Like Moxie Marlinspike, co-founder of the Signal Foundation always says, &amp;ldquo;Bad business models create bad technology.&amp;rdquo; Since Linux and other FOSS projects are driven by volunteers and donations, they don&amp;rsquo;t have to sell information or get you to pay a subscription fee to pay for the development, which is a much more sustainable business model in my view.&lt;/p&gt;
 &lt;p&gt;Also, Linux is a perfect development environment. The vast majority of servers in the world run some sort of Linux, so being comfortable with the command line and Linux filesystems is of paramount importance. Developing in a similar environment to the one used in production just &lt;em&gt;makes sense&lt;/em&gt;, and Linux is that environment.&lt;/p&gt;
 &lt;p&gt;Finally, I think Linux is just an interesting operating system. Windows and macOS &lt;strong&gt;don&amp;rsquo;t&lt;/strong&gt; want you to know how the inner-workings work, but Linux &lt;em&gt;does&lt;/em&gt; want you to understand. That means there is so much educational value in learning the ins and outs of Linux—you&amp;rsquo;ll learn everything from bash scripting to filesystems to disk partitioning to  compiling code manually to basics of networking and so much more. I&amp;rsquo;m passionate about Linux, you don&amp;rsquo;t hear many people saying that about Windows or macOS because there just isn&amp;rsquo;t much to be passionate &lt;em&gt;about&lt;/em&gt;. Sure computers are just tools to get more work done, but Linux is a tool that will improve &lt;em&gt;yourself&lt;/em&gt; as well.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://skovati.dev/blog/linux/intro/ch2&#34;&gt;Chapter 2 - What is a &amp;lsquo;Linux&amp;rsquo; anyways?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./blog/linux/intro/ch2&#34;&gt;Chapter 2 - What is a &amp;lsquo;Linux&amp;rsquo; anyways?&lt;/a&gt;&lt;/p&gt;
+</description> 
+    </item>
+    
+    <item>
+      <title>Caramel</title>
+      <link>https://skovati.dev/recipies/caramel/</link>
+      <pubDate>Tue, 25 May 2021 18:00:06 -0500</pubDate>
+      
+      <guid>https://skovati.dev/recipies/caramel/</guid>
+      <description>&lt;h2 id=&#34;soft-chewy-salted-caramels&#34;&gt;Soft, Chewy, Salted Caramels&lt;/h2&gt;
+&lt;p&gt;Dangerously easy to make soft caramel candies. Read through the whole recipe before starting so you&amp;rsquo;re comfortable with the process.&lt;/p&gt;
+&lt;h3 id=&#34;ingredients&#34;&gt;Ingredients&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;1/2 cup (113 g) unsalted butter&lt;/li&gt;
+&lt;li&gt;1/2 cup (120 ml) heavy whipping cream&lt;/li&gt;
+&lt;li&gt;3 tablespoons water&lt;/li&gt;
+&lt;li&gt;1/4 cup (60 ml) light corn syrup&lt;/li&gt;
+&lt;li&gt;1 cup (200 grams) sugar&lt;/li&gt;
+&lt;li&gt;1/2 teaspoon course or flaked sea salt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;preparing-the-pan&#34;&gt;Preparing the pan&lt;/h3&gt;
+&lt;p&gt;It&amp;rsquo;s important to do this step early, as things will be moving quick down the line. I like to use a bread loaf pan to cool my caramels in. Take a sheet of parchment paper and line the bottom and sides of a loaf pan. Then, take a small amount of vegetable oil and spread it on the parchment paper—gotta make sure they don&amp;rsquo;t stick! Set this pan aside.&lt;/p&gt;
+&lt;h3 id=&#34;heating-the-sugar-solution&#34;&gt;Heating the sugar solution&lt;/h3&gt;
+&lt;p&gt;In a small saucepan, combine the water, corn syrup, and sugar. When pouring the sugar in, aim for the middle, and try not to get any sugar crystals on the side of the pan. Use a spatula to gently combine the water and sugar until everything is hydrated. Heat this over medium heat until the sugar solution comes to a boil. Once boiling, cover the pan with its lid for a minute or so—this is to create some condensation in the pan which helps any sugar stuck on the side of the pan fall down into the boiling mixture. If you have too much sugar on the sides of the pan, this can cause a gritty texture in your final product. Remove the lid and place a candy thermometer in the pan. Cook for 5-10 minutes until the solution reaches 320° F. While the solution is cooking, cut your stick of butter into chunks and place in a microwave safe glass measure cup. Add the heavy whipping cream, and microwave this solution for a minute or two until the butter has melted. Set this aside for the next step. As soon as the sugar reaches 320° F, start the next step.&lt;/p&gt;
+&lt;h3 id=&#34;adding-the-butter-cream&#34;&gt;Adding the butter cream&lt;/h3&gt;
+&lt;p&gt;Once the sugar reaches 320° F, add about 1/6th of the butter cream solution and start mixing it in with the base of the candy thermometer. Repeat this several times until all the cream has been incorporated. The sugar solution will bubble violently while this is happening, don&amp;rsquo;t worry, just keep adding the solution to bring the temperature down. After all the cream has been mixed in, heat this solution for another few minutes until it reaches 240° F. This will create a soft caramel—if you want slightly harder caramels, heat a few more degrees, but no hotter than 245° F. As soon as the solution reaches your desired temperature, take it off the heat and pour it into the prepared loaf pan.&lt;/p&gt;
+&lt;h3 id=&#34;letting-it-cool&#34;&gt;Letting it cool&lt;/h3&gt;
+&lt;p&gt;Don&amp;rsquo;t touch this for at least 20-30 minutes. Then sprinkle your sea salt on top. Let sit for another 1-3 hours—really as long as you can manage. Then, lift the parchment paper out of the pan, and set the caramels on a cutting board. Spray a sharp knife with cooking spray, and then cut into small cubes. Wrap with or place on parchment paper and store in an airtight container or the fridge for best longevity. Enjoy!&lt;/p&gt;
+</description> 
+    </item>
+    
+    <item>
+      <title>Pizza</title>
+      <link>https://skovati.dev/recipies/pizza/</link>
+      <pubDate>Tue, 25 May 2021 18:00:01 -0500</pubDate>
+      
+      <guid>https://skovati.dev/recipies/pizza/</guid>
+      <description>&lt;h2 id=&#34;simple-pizza-recipe&#34;&gt;Simple Pizza Recipe&lt;/h2&gt;
+&lt;h3 id=&#34;ingredients&#34;&gt;Ingredients:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;1/4 teaspoon active dry yeast&lt;/li&gt;
+&lt;li&gt;1 teaspoon sugar&lt;/li&gt;
+&lt;li&gt;1/2 cup warm water&lt;/li&gt;
+&lt;li&gt;1-1.5 cups flour&lt;/li&gt;
+&lt;li&gt;1/2 teaspoon salt&lt;/li&gt;
+&lt;li&gt;olive oil&lt;/li&gt;
+&lt;li&gt;oregano&lt;/li&gt;
+&lt;li&gt;pepper&lt;/li&gt;
+&lt;li&gt;1/3 cup canned pureed tomatoes or pasta sauce&lt;/li&gt;
+&lt;li&gt;fresh basil&lt;/li&gt;
+&lt;li&gt;4 ounces whole milk mozzarella&lt;/li&gt;
+&lt;li&gt;any other toppings you want (garlic, onions, peppers, meat)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-dough&#34;&gt;The Dough&lt;/h3&gt;
+&lt;p&gt;Mix the yeast, sugar, and water together in a bowl and let sit for 5-10 minutes. I like to wait until I can smell the yeast to make sure it&amp;rsquo;s active and happy. Put in one cup of flour and the salt, and start kneading with your hands. Keep adding flour as needed to keep the dough from being too sticky, but don&amp;rsquo;t add too much! Knead until the dough passes the &amp;ldquo;window pane test&amp;rdquo; where you stretch it out carefully and check to see if you can see light through it without it ripping. When ready, place in a small bowl with olive oil and cover with cloth and let rise—at least 24 hours in the fridge, or 1-2 hours at room temp, until size has increased and the dough is very soft.&lt;/p&gt;
+&lt;p&gt;In a 10 inch cast iron pan, drizzle a little olive oil. You don&amp;rsquo;t need much—the dough is already oiled. Put in some oregano, black pepper, salt, and optionally some cornmeal. Spread that mixture around the pan. Grab the dough and rotate it slowly so it falls into a circular shape. Place and fit into the pan, and let proof another 20 minutes or so as you get the toppings ready.&lt;/p&gt;
+&lt;h3 id=&#34;the-sauce&#34;&gt;The Sauce&lt;/h3&gt;
+&lt;p&gt;Normally, I&amp;rsquo;m lazy, and I just end up using some store bought pasta sauce. I think this works totally fine, but if you want to get fancy you can use those purred tomatoes (or blend your own), and combine them with some olive oil and chopped basil leaves.&lt;/p&gt;
+&lt;h3 id=&#34;cooking-the-pizza&#34;&gt;Cooking the Pizza&lt;/h3&gt;
+&lt;p&gt;There are two main methods I go between when cooking these: if the oven can get pretty hot, around 550+° F, I usually just max out the oven and bake it in the pan anywhere from 10-15 minutes, checking on it every couple minutes to make sure the crust is baking nicely.&lt;/p&gt;
+&lt;p&gt;Alternatively, if your oven doesn&amp;rsquo;t get too hot, or you really want a crispy crust on the bottom, you can cook it on the stove and then broil it to finish. Turn a burner on medium and the broiler on high.&lt;/p&gt;
+&lt;h3 id=&#34;dressing-the-pizza&#34;&gt;Dressing the Pizza&lt;/h3&gt;
+&lt;p&gt;Depending on which cooking method you want to use, you&amp;rsquo;ll either add all the toppings at once or at different times. Regardless of which method you use, you&amp;rsquo;ll want to saute toppings like onions or peppers for a few minutes to make sure they&amp;rsquo;re fully cooked at the end. If baking in the oven, saute your toppings and then spread the sauce, toppings, and cheese on top of the pizza and throw it in the oven. If cooking on the stove, add the sauce right away, and cook on medium for around 7-8 minutes, until the dough starts bubbling underneath. Then, add the rest of your toppings now, making sure the cheese is as cold as possible. Then, throw under the broiler for 4-5 minutes, or to your liking.&lt;/p&gt;
+&lt;h3 id=&#34;and-thats-it&#34;&gt;And that&amp;rsquo;s it!&lt;/h3&gt;
+&lt;p&gt;Once your preferred cooking method is done, take the pan out and let it cool for several minutes. If you used enough oil the pizza shouldn&amp;rsquo;t stick at all. Enjoy!&lt;/p&gt;
+</description> 
+    </item>
+    
+    <item>
+      <title>Pancakes</title>
+      <link>https://skovati.dev/recipies/pancakes/</link>
+      <pubDate>Tue, 25 May 2021 17:59:56 -0500</pubDate>
+      
+      <guid>https://skovati.dev/recipies/pancakes/</guid>
+      <description>&lt;h2 id=&#34;simple-pancake-recipe&#34;&gt;Simple Pancake Recipe&lt;/h2&gt;
+&lt;p&gt;This is a simple, effective recipe for a simple, effective food.&lt;/p&gt;
+&lt;h3 id=&#34;ingredients&#34;&gt;Ingredients&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;28 g butter (2 tbsp)&lt;/li&gt;
+&lt;li&gt;25 g sugar (2 tbsp)&lt;/li&gt;
+&lt;li&gt;1 egg&lt;/li&gt;
+&lt;li&gt;5 ml vanilla extract (2 tsp)&lt;/li&gt;
+&lt;li&gt;400 ml milk (1 &amp;amp; 3/4 cup)&lt;/li&gt;
+&lt;li&gt;6 g salt (1 tsp)&lt;/li&gt;
+&lt;li&gt;16 g baking powder (1.25 tbsp)&lt;/li&gt;
+&lt;li&gt;200-300 g flour (1.5-2.5 cups)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-batter&#34;&gt;The Batter&lt;/h3&gt;
+&lt;p&gt;Melt the butter without it getting too hot, I like to use a microwave safe glass measuring cup. Mix in the sugar and beat the egg into the butter thoroughly, I just use a fork. Mix in the vanilla, milk, salt, and baking powder. Start mixing in a small portion of the flour, adding more until you reach a desired consistency. Don&amp;rsquo;t over-mix, the batter should be thick and lumpy. Batter should fall from the fork easily, but not too easily. The thicker the batter, the thicker the pancake, so don&amp;rsquo;t worry too much about the consistency—you&amp;rsquo;ll get a feel for it after a few attempts. Let the batter rest in order to hydrate the flour while you heat up your pan.&lt;/p&gt;
+&lt;h3 id=&#34;cooking&#34;&gt;Cooking&lt;/h3&gt;
+&lt;p&gt;Heat your pan of choice—I use cast iron―to medium heat. Put butter or oil in the pan. When the butter starts to brown or the oil is glossy, pour in the batter. Look for bubbles on the edges of the cake. Take a peek at the underside and when you think it&amp;rsquo;s ready give it a flip. Doing the chef-style pan flip gives better results for large cakes, but you risk losing it all over the floor. When the cake seems done, cook for another 30 seconds to make sure, and move to a cooling plate. Enjoy.&lt;/p&gt;
 </description> 
     </item>
     
