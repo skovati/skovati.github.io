@@ -5,12 +5,13 @@ draft: false
 
 ## welcome to skovati.dev
 
-I'm a computer engineering student and amateur mathematician from the midwest region
+I'm a computer engineering student and amateur mathematician from the midwest region of the USA
 
 a few things I'm passionate about:
 - digital minimalism
 - ethical & sustainable technology
 - free & open source software
+- decentralized systems
 - unix philosophy
 - cryptography/cybersecurity
 - self-hosted infrastructure
@@ -22,11 +23,12 @@ on this site, check out my [blog](https://skovati.dev/blog/)([rss](https://skova
 
 lately, besides schoolwork, I've been working on small projects like
 - [gosh](https://github.com/skovati/gosh), an extremely simple unix shell written in Go
-- [kirpto](https://github.com/skovati/kripto), a cryptocurrency portfolio tracker that pulls data from the [CoinGecko API](https://www.coingecko.com/en/api)
+- [kirpto](https://github.com/skovati/kripto), a cryptocurrency portfolio tracker
 - [micro](https://github.com/skovati/micro), a collection of scripts for Arduino microcontollers
+- [tmpst](https://github.com/skovati/tmpst), a lightweight terminal based weather application
 
 professionally, I work as a Cloud Engineer, deploying products and applications on cloud platforms like GCP and AWS using [Terraform](https://www.terraform.io/), [Kubernetes](https://kubernetes.io/), and [GitLab CI](https://docs.gitlab.com/ee/ci/)
 
-encrypt a message with my gpg key [here](https://gpg.skovati.dev), and email me at skovati@protonmail.com, include your public key if you want my response encrypted
+send me an encrypted message with my pgp key [here](https://gpg.skovati.dev)
 
-this website was written in [markdown](https://en.wikipedia.org/wiki/Markdown), compiled by [hugo](https://github.com/gohugoio/hugo), and served by a [nginx](https://nginx.org/en/) container on [debian](https://www.debian.org/) gnu/linux
+this website was written in [markdown](https://en.wikipedia.org/wiki/Markdown), compiled by [hugo](https://github.com/gohugoio/hugo), and hosted on [IPFS](https://ipfs.io/)

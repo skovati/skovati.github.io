@@ -560,12 +560,13 @@ echo &amp;quot;&amp;lt;/article&amp;gt;&amp;quot; &amp;gt;&amp;gt; ./index.html
       
       <guid>https://skovati.dev/about/</guid>
       <description>&lt;h2 id=&#34;welcome-to-skovatidev&#34;&gt;welcome to skovati.dev&lt;/h2&gt;
-&lt;p&gt;I&amp;rsquo;m a computer engineering student and amateur mathematician from the midwest region&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a computer engineering student and amateur mathematician from the midwest region of the USA&lt;/p&gt;
 &lt;p&gt;a few things I&amp;rsquo;m passionate about:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;digital minimalism&lt;/li&gt;
 &lt;li&gt;ethical &amp;amp; sustainable technology&lt;/li&gt;
 &lt;li&gt;free &amp;amp; open source software&lt;/li&gt;
+&lt;li&gt;decentralized systems&lt;/li&gt;
 &lt;li&gt;unix philosophy&lt;/li&gt;
 &lt;li&gt;cryptography/cybersecurity&lt;/li&gt;
 &lt;li&gt;self-hosted infrastructure&lt;/li&gt;
@@ -577,12 +578,13 @@ echo &amp;quot;&amp;lt;/article&amp;gt;&amp;quot; &amp;gt;&amp;gt; ./index.html
 &lt;p&gt;lately, besides schoolwork, I&amp;rsquo;ve been working on small projects like&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/skovati/gosh&#34;&gt;gosh&lt;/a&gt;, an extremely simple unix shell written in Go&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/skovati/kripto&#34;&gt;kirpto&lt;/a&gt;, a cryptocurrency portfolio tracker that pulls data from the &lt;a href=&#34;https://www.coingecko.com/en/api&#34;&gt;CoinGecko API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/skovati/kripto&#34;&gt;kirpto&lt;/a&gt;, a cryptocurrency portfolio tracker&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/skovati/micro&#34;&gt;micro&lt;/a&gt;, a collection of scripts for Arduino microcontollers&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/skovati/tmpst&#34;&gt;tmpst&lt;/a&gt;, a lightweight terminal based weather application&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;professionally, I work as a Cloud Engineer, deploying products and applications on cloud platforms like GCP and AWS using &lt;a href=&#34;https://www.terraform.io/&#34;&gt;Terraform&lt;/a&gt;, &lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt;, and &lt;a href=&#34;https://docs.gitlab.com/ee/ci/&#34;&gt;GitLab CI&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;encrypt a message with my gpg key &lt;a href=&#34;https://gpg.skovati.dev&#34;&gt;here&lt;/a&gt;, and email me at &lt;a href=&#34;mailto:skovati@protonmail.com&#34;&gt;skovati@protonmail.com&lt;/a&gt;, include your public key if you want my response encrypted&lt;/p&gt;
-&lt;p&gt;this website was written in &lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;markdown&lt;/a&gt;, compiled by &lt;a href=&#34;https://github.com/gohugoio/hugo&#34;&gt;hugo&lt;/a&gt;, and served by a &lt;a href=&#34;https://nginx.org/en/&#34;&gt;nginx&lt;/a&gt; container on &lt;a href=&#34;https://www.debian.org/&#34;&gt;debian&lt;/a&gt; gnu/linux&lt;/p&gt;
+&lt;p&gt;send me an encrypted message with my pgp key &lt;a href=&#34;https://gpg.skovati.dev&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;this website was written in &lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;markdown&lt;/a&gt;, compiled by &lt;a href=&#34;https://github.com/gohugoio/hugo&#34;&gt;hugo&lt;/a&gt;, and hosted on &lt;a href=&#34;https://ipfs.io/&#34;&gt;IPFS&lt;/a&gt;&lt;/p&gt;
 </description> 
     </item>
     
